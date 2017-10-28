@@ -2,8 +2,6 @@ package game;
 import story.Story_Mode;
 import java.util.Scanner;
 
-
-
 public class Main_Class  {
 	public static void main(String [] args){
 		Scanner input = new Scanner(System.in);

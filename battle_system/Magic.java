@@ -6,7 +6,7 @@ public class Magic {
 	int flameball;
 	int lightning_bolt;
 	
-	public int Flameball(){
+	public int flameball(){
 		magic.setMagic(30);
 		return flameball = magic.getMagic();
 	}

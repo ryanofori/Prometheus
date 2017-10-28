@@ -20,7 +20,7 @@ import character.Weapons;
 		private int magic;
 		//private int sword_attack_left=5,punch_attack_left=5;
 		public int getFlameBall(){
-			return magic_attacks.Flameball();
+			return magic_attacks.flameball();
 		}
 		
 		public int getLightningBolt(){

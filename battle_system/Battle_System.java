@@ -206,7 +206,7 @@ import character.Weapons;
 						  }
 					}
 					
-					else if (magic_options == 2 && r <= .30){ //Magic Attack
+					else if (magic_options == 1 && r <= .30 || magic_options == 2 && r <= .30){ //Magic Attack
 						health-=damage;
 						System.out.println("*The Enemy Has Dealt "+damage+" Hit Point Damage To You.*\n ");
 						 try {
@@ -217,7 +217,7 @@ import character.Weapons;
 						   }
 //						 enemyQuotes.dyingQuote(); // say's a random dying quote from the enemy_Class
 					}
-					else if(magic_options == 2 && r <= .70){	//Magic Attack
+					else if(magic_options == 1 && r <= .70 || magic_options == 2 && r <= .70){	//Magic Attack
 						enemy-=magic;
 						if(magic > 25){
 							System.out.println("Critical Damage!"); 

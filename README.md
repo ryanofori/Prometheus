@@ -21,10 +21,15 @@ There must be 5 packages to contain classes for:
 1. Tournament activity
 1. Shopping activity
 
+Additional packages included for functionality of the game:
+* Enemy
+* Battle System
+
 ## Battle System
-The battle system is the main action of the game. The following are different aspects of the battle system:
+The battle system is the main action of the game, both in story mode and tournament mode. The following are different aspects of the battle system to be included:
 * **Entering a battle -** When a player enters a battle, they will be given information about their enemies and the abilities, weapons, and items they have available, or be given an option to view the latter.
 * **Types of Enemies -** The types of enemies the player will have to face should be described well such that the player can make decisions based on their knowledge of the enemy type. Each enemy will have different advantages that will make them a challenge for the player.
 * **Health -** The health of the player and their enemies determines how much longer they can fight.
 * **Weapons and Abilities -** The player will have different abilities and weapons available for them to use in the battle (either found through the story, obtained through leveling up, or bought in the store), and information about each of them should be available to the player. Stronger weapons may have limited use in battle, while at least one attack (such as a punch) will be weak, but have unlimited uses. The player must choose wisely when deciding on how to attack.
 * **Items -** The player can obtain different items that have a one-time use during battles. These items can do things such as heal the player, boost the player's stats, or cause different effects during battle.
+

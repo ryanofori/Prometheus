@@ -14,8 +14,6 @@ import character.Weapons;
 		Enemy_Class Enemy = new Enemy_Class();
 		Weapons  weapon = new Weapons();
 		Magic magic_attacks = new Magic();
-		Lightning_Bolt lightning = new Lightning_Bolt();
-		
 		String user,enemyName;
 	
 		private int damage, health, enemy, boost,melee;
@@ -26,7 +24,7 @@ import character.Weapons;
 		}
 		
 		public int getLightningBolt(){
-			return lightning.lightning_Bolt();
+			return magic_attacks.lightning_Bolt();
 		}
 		
 		public int getWeapon_Rusty_Axe(){

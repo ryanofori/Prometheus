@@ -14,7 +14,6 @@ public class Magic {
 	public int lightning_Bolt(){
 		magic.setMagic(10);
 		return lightning_bolt = magic.getMagic();
-
 	}
 
 }

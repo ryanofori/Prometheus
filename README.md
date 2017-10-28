@@ -1,5 +1,8 @@
 # Prometheus
 
+## Contributors
+Please make all contributions to the **Prototype** branch
+
 ## Intro
 This text-based game programmed in Java assumes a character to experience 3 kinds of activities
 

@@ -25,15 +25,8 @@ public class Character_Orc {
 		return user = Orc.getName();
 	}
 	
-	public int healthOrc(){		
+	public int getOrcHealth(){		
 		Orc.setHealth(100);
 		return health = Orc.getHealth();
-	}
-	
-	public int boostOrc(){
-		Orc.setBoost(30);
-		return boost = Orc.getBoost();
-	}
-	
-	
+	}	
 }

@@ -3,80 +3,65 @@ import java.util.Scanner;
 import battle_system.Battle_System;
 import character.Character_Orc;
 import character.Character_Warrior;
-public class Story_Mode extends Battle_System {
+public class Story_Mode {
 	
 	Scanner input = new Scanner(System.in);
-	Character_Orc Orc = new Character_Orc();
-	Character_Warrior Warrior = new Character_Warrior();
+	Character_Orc orc = new Character_Orc();
+	Character_Warrior warrior = new Character_Warrior();
+	Battle_System battle = new Battle_System();
 
 	
 	int number; //This controls the Scanner options. 
 	String response,response2; //These control the String versions of the scanner options. 
 	
-	public void story(){
+	
+	/*
+	 * This is the tutorial section of the story mode
+	 * Any contributers to the story mode are allowed to expand the story past the tutorial
+	 * 
+	 * */
+	public int character_Select(int choice){	
+		return choice;
+	}
+	
+	public int character_Info(){
 		System.out.println("Choose a Character: Warrior(1) or Orc(2): ");
 		number = input.nextInt(); //Grabs the users input
-		if(number == 1){
-			number = 1;// If the user input is 1 then print out the Warrior stats and set number = to 1.		
+		if (number == 1){
+			warrior.getUserWarrior();
 			System.out.println("You have chosen the Warrior to take on this adventure! ");
-			getUserWarrior();
 			try {
-			       Thread.sleep(1000);  //A sleep timer of 1 second. 
+			       Thread.sleep(2000);  //A sleep timer of 1 second. 
 			   }
 			   catch (InterruptedException ie) {
 			     ie.printStackTrace();
 			   }
-			System.out.println(Warrior.speak()); //I am Warrior!
-			System.out.println(Warrior.speak3()+getHealthWarrior()+" Health"); //I have 120 health. 
+			System.out.println(warrior.speak()); //I am Warrior!
+			System.out.println(warrior.speak3()+warrior.getHealthWarrior()+" Health"); //I have 120 health.
+			
+		}
+		else if(number == 2){
+			System.out.println("You have chosen the Orc to take on this adventure! ");
 			try {
 			       Thread.sleep(2000); //Sleep timer of 2 seconds. 
 			   }
 			   catch (InterruptedException ie) {
 			     ie.printStackTrace();
 			   }
-			System.out.println("A quick simulated battle is about to commence. ");
-			System.out.println("Please pay attention as to what's going on. ");
-			try{
-				Thread.sleep(2000); //Sleep timer of 2 seconds. 
-			}
-			catch(InterruptedException ie){
-				ie.printStackTrace();
-			}
-			getHealthWarrior(); //Grabs the Warriors health. 
-			BattleSystem(); //The battle_System class is now initialized. 
-			story2(); //Goes to the story2 method within this class. 
-			}
+			System.out.println(orc.speak()); //I am Warrior!
+			System.out.println(orc.speak3()+orc.getOrcHealth()+" Health"); //I have 10 health.
 			
-			else if(number == 2){	//If the user input is 2 then print out the Orc stats and set number = to 2. 
-			number = 2;		
-			System.out.println("You have chosen the Orc to take on this adventure! ");
-			try {
-			       Thread.sleep(2000);	//Sleep timer of 2 seconds. 
-			   }
-			   catch (InterruptedException ie) {
-			     ie.printStackTrace();
-			   }
-			getUserOrc();
-			System.out.println(Orc.speak());	//I am Orc! 
-			System.out.println(Orc.speak3()+getOrcHealth()+" Health"); 	//I have 100 health. 
-			try {
-			       Thread.sleep(4000);	//Sleep timer of 4 seconds. 
-			   }
-			   catch (InterruptedException ie) {
-			     ie.printStackTrace();
-			   }
-			System.out.println("A quick simulated battle is about to commence. ");
-			System.out.println("Please pay attention as to what's going on. ");
-			try{
-				Thread.sleep(2000);
 			}
-			catch(InterruptedException ie){
-				ie.printStackTrace();
-			}
-			getOrcHealth(); //Set's the health = to 100.
-			BattleSystem(); //Starts the battle class.
-			story2(); //Starts the story2 method. 
-			}	
+		return number;
+		}
+	
+	public void story(){
+		character_Info();
+		int select = character_Select(number);
+		System.out.println("A quick simulated battle is about to commence. ");
+		System.out.println("Please pay attention as to what's going on. ");
+		battle.battleSystem(select); //Starts the battle class.
+		story2(); //Starts the story2 method.
 		}
 	
 	/*the beginning of the story2 method. */
@@ -115,13 +100,13 @@ public class Story_Mode extends Battle_System {
 		response2 = input.nextLine();
 		if(response2.equalsIgnoreCase("Yes")){
 			if(number == 1){
-				System.out.println("\n"+Warrior.speak());
-				System.out.println(Warrior.speak3()+getHealthWarrior()+" Health");
+				System.out.println("\n"+warrior.speak());
+				System.out.println(warrior.speak3()+warrior.getHealthWarrior()+" Health");
 					
 		}
 			if(number == 2){
-				System.out.println("\n"+Orc.speak());
-				System.out.println(Orc.speak3()+getOrcHealth()+" Health");
+				System.out.println("\n"+orc.speak());
+				System.out.println(orc.speak3()+orc.getOrcHealth()+" Health");
 				
 				}
 			}
@@ -129,10 +114,15 @@ public class Story_Mode extends Battle_System {
 			System.out.println("Good Deal then!");
 			System.out.println("This concludes this portion of the game. ");
 		}
-		}
+	}
 	
 	
 	/*End of the story3 method. */
+	/*
+	 * This concludes the tutorial session of the game. 
+	 * Contributors can add new story elements below this comment section
+	 * 
+	 * */
 	
 	/*Beginning of the endStory method. */
 	public void endStory(){

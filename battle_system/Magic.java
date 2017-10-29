@@ -3,17 +3,18 @@ import character.Character_Class;
 public class Magic {
 	
 	Character_Class magic = new Character_Class();
-	int flameball;
-	int lightning_bolt;
+	int flameball = 0;
+	int lightning_bolt = 0;
 	
-	public int flameball(){
+	public int get_Flameball(){
 		magic.setMagic(30);
 		return flameball = magic.getMagic();
 	}
 
-	public int lightning_Bolt(){
+	public int get_Lightning_Bolt(){
 		magic.setMagic(10);
 		return lightning_bolt = magic.getMagic();
 	}
+	
 
 }

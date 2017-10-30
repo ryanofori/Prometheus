@@ -10,14 +10,12 @@ import character.Weapons;
 import character.Character_Class;
 	
 public class Battle_System {
-		Character_Orc orc = new Character_Orc(); // Bringing in all of the Orc's information. 
 		Enemy_Quotes enemyQuotes = new Enemy_Quotes();
-		Character_Warrior warrior = new Character_Warrior(); // Bringing in all of the Warriors information. 
 		Character_Class c = new Character_Class();
 		Enemy_Class enemy = new Enemy_Class();
 		Weapons  weapon = new Weapons();
 		Magic magic_attacks = new Magic();
-		String user,enemyName;
+		private String user,enemyName;
 		private int magic, enemy_health, magic_options, physical_options, damage, melee, character_health, boost;
 		//private int sword_attack_left=5,punch_attack_left=5;
 		

@@ -10,13 +10,13 @@ public class Character_Orc{
 	}
 	
 	public String getSpeak2(){
-		orc.setSpeak2("I do: ");
-		return orc.getSpeak2();
+		orc.setSpeak("I do: ");
+		return orc.getSpeak();
 	}
 	
 	public String getSpeak3(){
-		orc.setSpeak3("I have: ");
-		return orc.getSpeak3();
+		orc.setSpeak("I have: ");
+		return orc.getSpeak();
 	}
 	
 	public String getUserOrc(){  

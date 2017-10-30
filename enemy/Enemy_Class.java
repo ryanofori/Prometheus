@@ -3,64 +3,61 @@ package enemy;
  * class calls on this one in order to grab the information of each method. */
 import character.Character_Class;
 public class Enemy_Class {
-    Character_Class Enemy = new Character_Class();
-	
-	int enemy; //This variable is used to get the health of each enemy. 
-	String EnemyName; //This variable is used to get the name of each enemy. 
+    Character_Class enemy = new Character_Class();
 	
 	public int getGruntHealth(){  //The get and setter method for my Grunt. 
-		Enemy.setHealth(70);
-		return enemy = Enemy.getHealth();	
+		enemy.setHealth(70);
+		return enemy.getHealth();	
 	}
 	
 	public int getGoblinHealth(){ 	//The get and setter method for my Goblin. 
-		Enemy.setHealth(80);
-		return enemy = Enemy.getHealth();
+		enemy.setHealth(80);
+		return enemy.getHealth();
 		
 	}
 	
 	public int getHalfling(){ 	//The get and setter method for my Halfling. 
-		Enemy.setHealth(90);
-		return enemy = Enemy.getHealth();
+		enemy.setHealth(90);
+		return enemy.getHealth();
 		
 	}
 	
 	public int getTrollsHealth(){	//The get and setter method for my Troll. 
-		Enemy.setHealth(100);
-		return enemy = Enemy.getHealth();
+		enemy.setHealth(100);
+		return enemy.getHealth();
 	}
 	
 	public int getScorpionHealth(){ 	//The get and setter method for my Scorpion. 
-		Enemy.setHealth(110);
-		return enemy = Enemy.getHealth();
+		enemy.setHealth(110);
+		return enemy.getHealth();
 	}
 	/*End of each get and setter method for health of each enemy. */
 	
 	/*Everything below is the get and setter methods for each enemy name. */
 	
 	public String getGoblinName(){  
-		Enemy.setName("Goblin");
-		return EnemyName = Enemy.getName();
+		enemy.setName("Goblin");
+		return enemy.getName();
 	}
 	
 	public String getScorpionName(){
-		Enemy.setName("Scorpion");
-		return EnemyName = Enemy.getName();
+		enemy.setName("Scorpion");
+		return enemy.getName();
 	}
 	
 	public String getTrollsName(){
-		Enemy.setName("Troll");
-		return EnemyName = Enemy.getName();
+		enemy.setName("Troll");
+		return enemy.getName();
 	}
 	
 	public String getHalflingName(){
-		Enemy.setName("Halfling");
-		return EnemyName = Enemy.getName();
+		enemy.setName("Halfling");
+		return enemy.getName();
 	}
 	
 	public String getGruntName(){
-		Enemy.setName("Grunt");
-		return EnemyName = Enemy.getName();
+		enemy.setName("Grunt");
+		return enemy.getName();
 	}
 	
 	

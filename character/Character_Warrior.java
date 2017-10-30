@@ -15,13 +15,13 @@ public class Character_Warrior{
 	}
 	
 	public String getSpeak2(){
-		warrior.setSpeak2("I do: ");
-		return warrior.getSpeak2();
+		warrior.setSpeak("I do: ");
+		return warrior.getSpeak();
 	}
 	
 	public String getSpeak3(){
-		warrior.setSpeak3("I have: ");
-		return warrior.getSpeak3();
+		warrior.setSpeak("I have: ");
+		return warrior.getSpeak();
 	}
 
 	

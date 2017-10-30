@@ -151,7 +151,7 @@ public class Battle_System {
 			END NEW BATTLE SYSTEM
 			------------------------------------------ */
 		
-			while(character_health > 0){ //If your health is greater than 0, keep going through the loop.
+			while(true){ //If your health is greater than 0, keep going through the loop.
 				System.out.println("\nChoose an Action:  Melee(1)/Magic(2): ");
 				action = input.nextInt();
 				if(action == 2){
@@ -159,10 +159,14 @@ public class Battle_System {
 					magic_options = input.nextInt();
 				}
 				
-				if(action == 1){
+				else if(action == 1){
 					System.out.println("Choose a Physical Attack: "+weapon.getPunch_Name()+"(1) "+weapon.getRustyAxe_Name()+"(2)");
 					physical_options = input.nextInt();
 					
+				}
+				
+				else {
+					System.out.println("Please choose a valid response");
 				}
 //				if(physical_options == 1 && punch_attack_left == 0){
 //					action = 0;

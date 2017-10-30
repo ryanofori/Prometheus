@@ -59,6 +59,16 @@ public class Story_Mode {
 			System.out.println(speak3+" "+health+" Health");
 			
 			}
+		else{
+			System.out.println("Please select a valid response");
+			try{
+				Thread.sleep(1000);
+			}
+			catch(InterruptedException ie){
+				ie.printStackTrace();
+			}
+			character_Info();
+		}
 		return number;
 		}
 	
@@ -108,13 +118,18 @@ public class Story_Mode {
 		if(response2.equalsIgnoreCase("Yes")){
 			System.out.println("\n"+speak);
 			System.out.println(speak3+" "+health+" Health");
+			endTutorial();
 			}
 		else if(response2.equalsIgnoreCase("No")){
 			System.out.println("Good Deal then!");
 			System.out.println("This concludes this portion of the game. ");
+			endTutorial();
 		}
 	}
-	/*End of the third tutorial. */
+	
+	public void endTutorial(){
+		System.out.println("Thanks for playing! ");
+	} 
 	
 	/*
 	 * This concludes the tutorial session of the game. 
@@ -122,9 +137,9 @@ public class Story_Mode {
 	 * 
 	 * */
 	
-	/*Beginning of the endStory method. */
-	public void endTutorial(){
-		System.out.println("Thanks for playing! ");
-	} 
-	/*End of the endStory method. */
+	public void Chapter1(){
+		//Contributors can start here
+		
+	}
+	
 }

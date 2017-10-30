@@ -14,10 +14,10 @@ public class Main_Class  {
 		response = input.nextLine();
 		
 		if(response.equalsIgnoreCase ("Yes")){
-			Story.story();
+			Story.tutorial();;
 		}
 		else{
-			Story.endStory();
+			Story.endTutorial();
 		}
 		input.close();
 	}

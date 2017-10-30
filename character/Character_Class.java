@@ -2,7 +2,7 @@ package character;
 public class Character_Class  {
 	private int health,damage,magic,defense,boost,endurance, weapon_damage,armor;
 	private int intelligence,wisdom,speed,strength,resistance,weight;
-	private String name;
+	private String name,speak,speak2,speak3;
 	public Character_Class(){   //These are the defaults stats, just in case I didn't set one up 
 		health = 0;        // in the main_Class.
 		damage = 0;
@@ -18,41 +18,68 @@ public class Character_Class  {
 		strength = 0;
 		resistance = 0;
 		weight = 0;
+		speak = "";
+		speak2 = "";
+		speak3 = "";
 	}
 	
 	public void setEndurance(int e){
-		endurance = e;
+		this.endurance = e;
 	}
 	
 	public void setWeapon_Damage(int wd){
-		weapon_damage = wd;
+		this.weapon_damage = wd;
 	}
 	
 	public void setArmor(int a){
-		armor = a;
+		this.armor = a;
 	}
 	public void setHealth(int h){
-		health = h;
+		this.health = h;
 	}
 	public void setDamage(int d){
-		damage = d;
+		this.damage = d;
 	}
 	public void setMagic(int m){
-		magic = m;
+		this.magic = m;
 	}
 	public void setDefense(int def){
-		defense = def;
+		this.defense = def;
 	}
 	public void setBoost(int boo){
-		boost = boo;
+		this.boost = boo;
 	}
 	
 	public void setName(String usr){
-		name = usr;
+		this.name = usr;
 	}
 	
 	public void setWeight(int w){
-		weight = w;
+		this.weight = w;
+	}
+	
+	public void setSpeak(String s){
+		this.speak = s;
+	}
+	
+	public void setSpeak2(String s){
+		this.speak2 = s;
+	}
+	
+	public void setSpeak3(String s){
+		this.speak3 = s;
+	}
+	
+	public String getSpeak(){
+		return speak;
+	}
+	
+	public String getSpeak2(){
+		return speak2;
+	}
+	
+	public String getSpeak3(){
+		return speak3;
 	}
 	
 	public String getName(){

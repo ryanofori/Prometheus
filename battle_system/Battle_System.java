@@ -20,7 +20,7 @@ public class Battle_System {
 		String user,enemyName;
 		private int magic, enemy_health, magic_options, physical_options, damage, melee, character_health, boost;
 		//private int sword_attack_left=5,punch_attack_left=5;
-	
+		
 		public void battleSystem(int choice){
 			@SuppressWarnings("resource")
 			Scanner input = new Scanner(System.in);
@@ -157,12 +157,12 @@ public class Battle_System {
 				System.out.println("\nChoose an Action:  Melee(1)/Magic(2): ");
 				action = input.nextInt();
 				if(action == 2){
-					System.out.println("Choose a Magic Attack: Flame_Ball(1)/Lightning_Bolt(2): ");
+					System.out.println("Choose a Magic Attack: "+magic_attacks.get_Flameball_Name()+"(1) "+magic_attacks.get_Lightning_Bolt_Name()+"(2)");
 					magic_options = input.nextInt();
 				}
 				
 				if(action == 1){
-					System.out.println("Choose a Physical Attack: Punch(1)/Rusty_Axe(2): ");
+					System.out.println("Choose a Physical Attack: "+weapon.getPunch_Name()+"(1) "+weapon.getRustyAxe_Name()+"(2)");
 					physical_options = input.nextInt();
 					
 				}
@@ -182,9 +182,9 @@ public class Battle_System {
 //				}
 					
 				for(int counter=0; counter<1;counter++){  
-					damage = 1+number.nextInt(10);
+					damage = 1+number.nextInt(10); //default enemy damage
 					if(action == 1 && physical_options == 1){
-						melee = 1+number.nextInt(10);
+						melee = 1+number.nextInt(weapon.getPunch_Damage());
 					}
 					if(action == 1 && physical_options == 2){
 						melee = 1+number.nextInt(weapon.getRusty_Axe_Damage());
@@ -317,7 +317,7 @@ public class Battle_System {
 		 * Here is the method that controls how much boosted health we provide the user after each battle
 		 * 
 		 * */
-		public void boost_Health(){
+		private void boost_Health(){
 		 System.out.println("You have earned boost points towards your health.\n ");
 		 if(character_health > 30 && character_health <= 40){
 			 c.setBoost(20);

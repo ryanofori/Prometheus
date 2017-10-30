@@ -2,8 +2,6 @@ package game;
 import story.Story_Mode;
 import java.util.Scanner;
 
-
-
 public class Main_Class  {
 	public static void main(String [] args){
 		Scanner input = new Scanner(System.in);
@@ -16,10 +14,10 @@ public class Main_Class  {
 		response = input.nextLine();
 		
 		if(response.equalsIgnoreCase ("Yes")){
-			Story.story();
+			Story.tutorial();;
 		}
 		else{
-			Story.endStory();
+			Story.endTutorial();
 		}
 		input.close();
 	}

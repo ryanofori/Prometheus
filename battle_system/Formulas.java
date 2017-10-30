@@ -1,9 +1,7 @@
 package battle_system;
 
 public class Formulas {
-	int pdd;
-	int weapon_variable,weapon_proficiency,strength;
-	int weapon_damage;
+	int pdd,weapon_variable,weapon_proficiency,strength,weapon_damage;	
 	
 	public int getWeapon_variable(){
 		return weapon_variable;
@@ -24,7 +22,6 @@ public class Formulas {
 	
 	public int getPhysicalDamageDealt(){
 		 pdd = weapon_variable * (weapon_proficiency*(strength+weapon_damage));
-		 //weapon_profieciency  //Continuing this with Glenn on Skype. 
 		 return pdd;
 			 
 	}

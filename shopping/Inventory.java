@@ -4,10 +4,10 @@ import java.util.Iterator;
 
 public class Inventory{
     private ArrayList<String> backpack = new ArrayList<String>();
-    private ArrayList<int>itemQuantity = new ArrayList<int>();
+    //private ArrayList<int>itemQuantity = new ArrayList<int>();
     private int backpackSize;
     private Iterator bkIt = backpack.iterator();
-    private Iterator quanIt = itemQuantity.iterator();
+    //private Iterator quanIt = itemQuantity.iterator();
 
     /**
      * Constrcutor for Inventory
@@ -30,6 +30,7 @@ public class Inventory{
      * Gets the size of the backpack
      * accounting for stacks
      */
+    /*
     int sizeOfInventory(){
         int size = 0;
         for(int i=0; i<=itemQuantity.size(); i++) {
@@ -37,6 +38,7 @@ public class Inventory{
         }
         return size;
     }
+    */
 
     /**
      * Increase size of Inventory
@@ -60,6 +62,8 @@ public class Inventory{
      * Method to add items to Inventory
      * @param itemToAdd - Name of the Weapon/Potion to add
      */
+    
+    /**
     void addToInventory(String itemToAdd, int quantity){
         if((sizeOfInventory() + quantity) <= backpackSize && quantity > 0) {
             backpack.add(itemToAdd);
@@ -70,30 +74,31 @@ public class Inventory{
             throw new Exception("Inventory Is Full!");
         }
     }
+    
+    **/
 
     /**
      * Method to remove items from Inventory
      * @param itemToRemove
      */
+    
     void removeFromInventory(String itemToRemove){
         for(int i=0; i<=backpack.size(); i++) {
             if(backpack.get(i).equalsIgnoreCase(itemToRemove)) {
                 backpack.remove(i);
-                itemQuantity.remove(i);
+                //itemQuantity.remove(i);
                 System.out.println(itemToRemove+" was successfully removed form backpack!");
             }
         }
     }
-}
 
     /**
      * Method to view Inventory
      */
     void viewInventory(){
         int counter = 0;
-        while(bkIt.hasNext() && quanIt.hasNext()){
+        //while(bkIt.hasNext() && quanIt.hasNext()){
             counter++;
-            System.out.println(counter+") "+bkIt.next()+"("+quanIt.next()+")");
+           // System.out.println(counter+") "+bkIt.next()+"("+quanIt.next()+")");
         }
     }
-}

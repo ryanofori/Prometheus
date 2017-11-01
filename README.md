@@ -13,6 +13,7 @@ This text-based game programmed in Java assumes a character to experience 3 kind
 
 * **Shopping** is where the character can spend previously gained money (in story or tournament activity) and purchase better items for battles. Better items such as weapons, armor, and skills increases the chance of winning.
 
+
 ## Problem Formulation
 All 3 activities should be implemented as standalone Java modules that can be instantiated into the game. The player should be given an interface (likely menu driven) to enter/leave particular game activities. The character him/herself should be modeled as an object with certain ammunition, money, health, and other attributes. Starting up particular activity should be implemented as a call to method `go()` of the character class that would take an instance of the activity object. The variety of activities should be implemented as derived classes from a set of 3 base classes (one per each kind of activity).
 
@@ -27,6 +28,28 @@ There must be 5 packages to contain classes for:
 Additional packages included for functionality of the game:
 * Enemy
 * Battle System
+
+##Characters
+There should be additional characters alongside the Warrior and Orc for users to choose from. These are Wizard, Dwarf, Elf. Each character including the choosable and the enemies will have their own set of unique attributes set on a scale from 0 to 200. (The base attributes will be 0-100, but the scale to 200 allows for upgrades.) 
+  Base	Character Attributes:		Warrior		Orc		Wizard		Dwarf		Elf
+		damage =                       50		60		60			40			60
+		magic =                        20		30		100			30			60
+		defense =                      50		80		10			50			40							
+		boost =                        50		50		50			50			50
+		weapon_damage =                60		80		40			60			60
+		armor =                        50		70		20			50			70
+		intelligence =                 50		10		100			30			80
+		speed =                        70		20		50			50			80			
+		strength =                     60		90		40			60			60
+		
+A new class should be created for each character, and will derive from the character class. 
+
+Damage level will be affected by the character intelligence, speed, and magic. 
+
+
+##Tournament Activity
+The Tournament mode should be arcade style. Once you enter a tournament, the character is unable to leave the tournament until either they have defeated each opponent or they have run out of money and are unable to purchase a revive. You are unable to start a tournament unless you have the set wager amount.  
+
 
 ## Battle System
 The battle system is the main action of the game, both in story mode and tournament mode. The following are different aspects of the battle system to be included:

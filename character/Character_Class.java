@@ -4,20 +4,16 @@ public class Character_Class  {
 	private int intelligence,wisdom,speed,strength,resistance,weight;
 	private String name,speak;
 	public Character_Class(){   //These are the defaults stats, just in case I didn't set one up 
-		health = 0;        // in the main_Class.
+		health = 100;        // in the main_Class.
 		damage = 0;
 		magic = 0;
 		defense = 0;
 		boost = 0;
-		endurance = 0;
 		weapon_damage = 0;
 		armor = 0;
 		intelligence = 0;
-		wisdom = 0;
 		speed = 0;
 		strength = 0;
-		resistance = 0;
-		weight = 0;
 		speak = "";
 	}
 	
@@ -85,9 +81,6 @@ public class Character_Class  {
 		return defense;
 	}
 	
-	public int getEndurance(){
-		return endurance;
-	}
 	
 	public int getArmor(){
 		return armor;
@@ -105,19 +98,9 @@ public class Character_Class  {
 		return intelligence;
 	}
 	
-	public int getWisdom(){
-		return wisdom;
-	}
 	
 	public int getSpeed(){
 		return speed;
 	}
 	
-	public int getResistance(){
-		return resistance;
-	}
-	
-	public int getWeight(){
-		return weight;
-	}
 }

@@ -6,8 +6,6 @@ public class Character_Warrior{
 	
 	public String user,speak;	//This variable controls what the users name is, which in this case is "Warrior". 
 	
-	public int health;	//Variable that hold the classes health, magic and boost. 
-	
 	
 	public String getSpeak(){
 		warrior.setSpeak("I am a Warrior");
@@ -27,7 +25,7 @@ public class Character_Warrior{
 	
 	/*The beginning of the get and set methods for the Warrior Class. */
 	public int getHealthWarrior(){
-		warrior.setHealth(120);	//I have given the warrior 120 health. 
+		warrior.setHealth(100);	//I have given the warrior 100 health. 
 		return warrior.getHealth();
 	}
 	

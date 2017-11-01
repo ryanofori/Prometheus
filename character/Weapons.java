@@ -8,10 +8,6 @@ public class Weapons  {
 		return weapon.getDamage();
 	}
 	
-	public int getRusty_Axe_Weight(){
-		weapon.setWeight(6);
-		return weapon.getWeight();
-	}
 	
 	public String getRustyAxe_Name(){
 		return "Rusty Axe";
@@ -32,9 +28,6 @@ public class Weapons  {
 		
 		}
 	
-	public int getBattle_Axe_Weight(){
-		weapon.setWeight(10);
-		return weapon.getWeight();
-	}
+	
 	
 }

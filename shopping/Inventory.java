@@ -1,12 +1,12 @@
-package Inventory;
+package shopping;
 import java.util.ArrayList;
 
 public class Inventory{
-    private ArrayList<String> backpack = new ArrayList<String>;
+    private ArrayList<String> backpack = new ArrayList<String>();
     private int backpackSize;
 
     /**
-     * Constrcutor for Inventory
+     * Constructor for Inventory
      * with a default backpack size of 20
      */
     public Inventory(){
@@ -14,7 +14,7 @@ public class Inventory{
     }
 
     /**
-     * Constrcutor for Inventory with ability
+     * Constructor for Inventory with ability
      * to set the backpack size
      * @param backpackSize
      */
@@ -25,7 +25,7 @@ public class Inventory{
     /**
      * Gets the size of the backpack
      */
-    public int sizeOfInventory{
+    public int sizeOfInventory(){
         return backpackSize;
         //Will add ability to increase size later on
     }
@@ -33,8 +33,9 @@ public class Inventory{
     /**
      * Method to add items to Inventory
      * @param itemToAdd - Name of the Weapon/Potion to add
+     * @throws Exception 
      */
-    void addToInventory(String itemToAdd){
+    void addToInventory(String itemToAdd) throws Exception{
         if(backpack.size() <= backpackSize) {
             backpack.add(itemToAdd);
         }
@@ -61,7 +62,7 @@ public class Inventory{
     void viewInventory(){
         int counter = 0;
         for (String item: backpack) {
-            count++;
+            counter++;
             System.out.println(counter+") "+item);
         }
     }

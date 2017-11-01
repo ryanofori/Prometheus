@@ -76,14 +76,15 @@ public class Inventory{
      * @param itemToRemove
      */
     void removeFromInventory(String itemToRemove){
-        for(int i=0; i<=backpack.size(); i++)
-            if(backpack.get(i).equalsIgnoreCase(itemToRemove)){
+        for(int i=0; i<=backpack.size(); i++) {
+            if(backpack.get(i).equalsIgnoreCase(itemToRemove)) {
                 backpack.remove(i);
                 itemQuantity.remove(i);
                 System.out.println(itemToRemove+" was successfully removed form backpack!");
             }
         }
     }
+}
 
     /**
      * Method to view Inventory

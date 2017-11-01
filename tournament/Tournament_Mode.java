@@ -11,5 +11,10 @@ public class Tournament_Mode {
 			ie.printStackTrace();
 		}
 	}
+	
+	/*
+	 * Contributers may begin making methods here for how the Tournament mode should work
+	 * 
+	 * */
 
 }

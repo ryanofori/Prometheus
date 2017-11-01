@@ -51,6 +51,14 @@ public class Character_Class  {
 		this.name = usr;
 	}
 	
+	public void setSpeed(int spd) {
+		this.speed = spd;
+	}
+	
+	public void setStrength(int strnth) {
+		this.strength = strnth;
+	}
+	
 	
 	public void setSpeak(String s){
 		this.speak = s;

@@ -3,8 +3,8 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 public class Inventory{
-    private ArrayList<String> backpack = new ArrayList<String>;
-    private ArrayList<int> itemQuantity = new ArratList<int>;
+    private ArrayList<String> backpack = new ArrayList<String>();
+    private ArrayList<int>itemQuantity = new ArrayList<int>();
     private int backpackSize;
     private Iterator bkIt = backpack.iterator();
     private Iterator quanIt = itemQuantity.iterator();

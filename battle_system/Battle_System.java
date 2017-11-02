@@ -19,6 +19,11 @@ public class Battle_System {
 		private int magic, enemy_health, magic_options, physical_options, damage, melee, character_health, boost;
 		//private int sword_attack_left=5,punch_attack_left=5;
 		
+		/*
+		 * We should re-adjust the entire battle system 
+		 * 
+		 * */
+		
 		public void battleSystem(int choice){
 			@SuppressWarnings("resource")
 			Scanner input = new Scanner(System.in);

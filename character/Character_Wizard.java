@@ -37,7 +37,7 @@ public class Character_Wizard {
 	
 	public int getDamageWizard(){
 		wizard.setDamage(60);				//The wizard has base damage level 60
-		return warrior.getDamage();
+		return wizard.getDamage();
 	}
 	
 	public int getMagicWizard(){

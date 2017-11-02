@@ -55,13 +55,22 @@ public class Inventory{
     /**
      * Method to add items to Inventory
      * @param itemToAdd - Name of the Weapon/Potion to add
+     * @param quantity - Amount to add
      * @throws Exception - Cast message inventory full
      */
     void addToInventory(String itemToAdd, int quantity) throws Exception{
         if((sizeOfInventory() + quantity) <= backpackSize && quantity > 0) {
-            backpack.add(itemToAdd);
-            backpack.add(Integer.toString(quantity));
-            System.out.println(itemToAdd+"("+quantity+") was successfully added to your backpack!");
+            if(backpack.contains(itemToAdd)) {
+            	int indexOfItem = backpack.indexOf(itemToAdd);
+            	int itemStack = Integer.parseInt(backpack.get(indexOfItem+1));
+            	backpack.set(Math.addExact(indexOfItem, 1), Integer.toString(Math.addExact(itemStack, quantity)));
+            	System.out.println("Added "+quantity+" more "+itemToAdd+" to your backpack successfully!");
+            }
+            else {
+            	backpack.add(itemToAdd);
+            	backpack.add(Integer.toString(quantity));
+            	System.out.println(itemToAdd+"("+quantity+") was successfully added to your backpack!");
+            }
         }
         else{
             throw new Exception("Inventory Is Full!");
@@ -75,14 +84,14 @@ public class Inventory{
     void removeFromInventory(String itemToRemove){
         for(int i=0; i<backpack.size(); i++) {
             if(backpack.get(i).equalsIgnoreCase(itemToRemove)) {
-            		if(Integer.parseInt(backpack.get(i+1)) > 1) {
-            			backpack.remove(i+1);
-            		}
-            		else {
-            			backpack.remove(i);
-            			backpack.remove(i+1);
-            		}
-                System.out.println(itemToRemove+" was successfully removed from backpack!");
+            	if(Integer.parseInt(backpack.get(i+1)) > 1) {
+            		backpack.remove(i+1);
+            	}
+            	else {
+            		backpack.remove(i);
+            		backpack.remove(i+1);
+            	}
+            	System.out.println(itemToRemove+" was successfully removed from backpack!");
             }
         }
     }

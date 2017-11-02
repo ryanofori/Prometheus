@@ -1,12 +1,12 @@
 package shopping;
 import java.util.ArrayList;
-import java.util.Iterator;
+//import java.util.Iterator;
 
 public class Inventory{
     private ArrayList<String> backpack = new ArrayList<String>();
     //private ArrayList<int>itemQuantity = new ArrayList<int>();
-    private int backpackSize;
-    private Iterator bkIt = backpack.iterator();
+    //private int backpackSize;
+    //private Iterator bkIt = backpack.iterator();
     //private Iterator quanIt = itemQuantity.iterator();
 
     /**
@@ -14,7 +14,7 @@ public class Inventory{
      * with a default backpack size of 25
      */
     public Inventory(){
-        backpackSize = 25;
+       // backpackSize = 25;
     }
 
     /**
@@ -23,7 +23,7 @@ public class Inventory{
      * @param backpackSize - Inventory size
      */
     public Inventory(int backpackSize){
-        this.backpackSize = backpackSize;
+        //this.backpackSize = backpackSize;
     }
 
     /**
@@ -45,7 +45,7 @@ public class Inventory{
      * @param amt - Amount to increase by
      */
     void increaseInventorySize(int amt) {
-        backpackSize += amt;
+        //backpackSize += amt;
     }
 
     /**
@@ -96,9 +96,9 @@ public class Inventory{
      * Method to view Inventory
      */
     void viewInventory(){
-        int counter = 0;
+        //int counter = 0;
         //while(bkIt.hasNext() && quanIt.hasNext()){
-            counter++;
+            //counter++;
            // System.out.println(counter+") "+bkIt.next()+"("+quanIt.next()+")");
         }
     }

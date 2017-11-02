@@ -10,7 +10,7 @@ public class Character_Dwarf {
 	
 	public String getSpeak(){
 		dwarf.setSpeak("I am a Dwarf");
-		return warrior.getSpeak();
+		return dwarf.getSpeak();
 	}
 	
 	public String getSpeak2(){
@@ -36,8 +36,8 @@ public class Character_Dwarf {
 	}
 	
 	public int getDamageDwarf(){
-		dwraf.setDamage(40);				//The dwarf has base damage level 40
-		return dwraf.getDamage();
+		dwarf.setDamage(40);				//The dwarf has base damage level 40
+		return dwarf.getDamage();
 	}
 	
 	public int getMagicDwarf(){

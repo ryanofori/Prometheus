@@ -56,7 +56,7 @@ public class Character_Wizard {
 	}
 	
 	public int getWeapon_DamageWizard(){
-		wizard.setWeapon_Damage(60);		//The wizard has base weapon damage level 60
+		wizard.setWeapon_Damage(40);		//The wizard has base weapon damage level 40
 		return wizard.getWeapon_Damage();
 	}
 	

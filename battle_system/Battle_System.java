@@ -163,7 +163,7 @@ public class Battle_System {
 			
 			/*
 			 * while(true) {perform battle system}
-			 * I believe that before a battle the user should choose 1 magic attacks and 2 physical attacks
+			 * I believe that before a battle the user should choose 2 magic attacks and 2 physical attacks
 			 * to use before each battle. 
 			 * 
 			 * [Menu Example]

@@ -29,13 +29,13 @@ public class Battle_System {
 			//boolean temp;
 			if(choice == 1){
 				Character_Warrior character  = new Character_Warrior();
-				character_health = character.getHealthWarrior();
-				user = character.getUserWarrior();
+				character_health = character.getHealth();
+				user = character.getUser();
 			}
 			else if(choice == 2){
 				Character_Orc character = new Character_Orc();
-				character_health = character.getOrcHealth();
-				user = character.getUserOrc();
+				character_health = character.getHealth();
+				user = character.getUser();
 			}
 				
 			
@@ -45,7 +45,7 @@ public class Battle_System {
 			 * enemyName is assigned to the same thing as enemy.*/
 			
 			String [] eName ={enemy.getGruntName(),enemy.getGoblinName(),enemy.getTrollsName(),enemy.getScorpionName(),enemy.getHalflingName()};		
-			int [] selection = {enemy.getGruntHealth(),enemy.getGoblinHealth(),enemy.getTrollsHealth(),enemy.getScorpionHealth(),enemy.getHalfling()};
+			int [] selection = {enemy.getGruntHealth(),enemy.getGoblinHealth(),enemy.getTrollHealth(),enemy.getScorpionHealth(),enemy.getHalflingHealth()};
 			for(int counter = 0; counter < 1;counter++){
 				int rand = (int) (Math.random() * selection.length);
 				enemy_health = selection[rand];

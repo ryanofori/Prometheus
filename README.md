@@ -31,7 +31,7 @@ Additional packages included for functionality of the game:
 
 ##Characters
 There should be additional characters alongside the Warrior and Orc for users to choose from. These are Wizard, Dwarf, Elf. Each character including the choosable and the enemies will have their own set of unique attributes set on a scale from 0 to 200. (The base attributes will be 0-100, but the scale to 200 allows for upgrades.) 
-  Base	Character Attributes:		Warrior		Orc		Wizard		Dwarf		Elf
+ /* Base	Character Attributes:		Warrior		Orc		Wizard		Dwarf		Elf
 		damage =                       50		60		60			40			60
 		magic =                        20		30		100			30			60
 		defense =                      50		80		10			50			40							
@@ -40,7 +40,7 @@ There should be additional characters alongside the Warrior and Orc for users to
 		armor =                        50		70		20			50			70
 		intelligence =                 50		10		100			30			80
 		speed =                        70		20		50			50			80			
-		strength =                     60		90		40			60			60
+		strength =                     60		90		40			60			60*/
 		
 A new class should be created for each character, and will derive from the character class. 
 

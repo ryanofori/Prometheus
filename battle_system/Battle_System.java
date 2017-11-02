@@ -155,6 +155,89 @@ public class Battle_System {
 
 			END NEW BATTLE SYSTEM
 			------------------------------------------ */
+			
+			/*
+			 * New Battle System Menu
+			 *  
+			 * */
+			
+			/*
+			 * while(true) {perform battle system}
+			 * I believe that before a battle the user should choose 1 magic attacks and 2 physical attacks
+			 * to use before each battle. 
+			 * 
+			 * [Menu Example]
+			 * 
+			 * Display Character Stats(1) | Display Enemy Stats(2) | Choose Weapons/Abilities(3) | Start Battle(4)
+			 * 
+			 * [Selecting Character Stats]
+			 * eg.
+			 * Character: Warrior
+			 * Health: 100
+			 * Magic: 60
+			 * Physical Damage = 0;
+			 * Defense = 30
+			 * Armor = 50
+			 * Intelligence = 80
+			 * Speed = 20
+			 * Strength = 30
+			 * Resistance = 60
+			 * 
+			 * Press Enter To Return To Menu
+			 * 
+			 * [Selecting Enemy Stats]
+			 * 
+			 * Character: Halfling
+			 * Health: 100
+			 * Magic: 60
+			 * Physical Damage = 60
+			 * Defense = 30
+			 * Armor = 50
+			 * Armor = 40
+			 * Intelligence = 80
+			 * Speed = 20
+			 * Strength = 20
+			 * Resistance = 49
+			 * 
+			 * Press Enter To Return To Menu
+			 * 
+			 * [Choose Weapons/Abilities]
+			 * 
+			 * Select Physical Attacks(1) | Select Magic(2) | Confirm(3)
+			 * 
+			 * [Select Physical Attack] 
+			 * 1. Dagger
+			 * 2. Sword
+			 * 3. Knife
+			 * .
+			 * .
+			 * .
+			 * Type 'quit' to exit or 'remove' to remove weapons
+			 * eg. [Error Prompt] - User cannot have more than 2 physical attacks
+			 * eg. [Remove Weapons]
+			 * 1. Knife
+			 * 2. Dagger
+			 * 
+			 * Type 'quit' to exit
+			 * 
+			 * [Select Magic Abilities]
+			 * 1. Flameball
+			 * 2. Lightning Bolt
+			 * .
+			 * .
+			 * .
+			 * Type 'quit' to exit or 'remove' to change items
+			 * eg. [Error Prompt] - User cannot have more than 2 magic abilities
+			 * eg. [Remove Magic Abilities]
+			 * 1. Flameball
+			 * 2. Lightning Bolt
+			 * 
+			 * 
+			 * [Confirm] - Inventory Saved
+			 * 
+			 * [Start Battle]
+			 * Choose an Action: Melee(1) | Magic(2) 
+			 * */
 		
 			while(true){ //If your health is greater than 0, keep going through the loop.
 				System.out.println("\nChoose an Action:  Melee(1)/Magic(2): ");

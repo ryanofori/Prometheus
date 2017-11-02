@@ -317,7 +317,7 @@ public class Battle_System {
 		
 		/*
 		 * Here is the method that controls how much boosted health we provide the user after each battle
-		 * 
+		 * Values are completely random. These values should be adjusted. 
 		 * */
 		private void boost_Health(){
 		 System.out.println("You have earned boost points towards your health.\n ");

@@ -1,30 +1,47 @@
 package character;
 /*This is the sub class for the Dwarf_Class. 
  * This is where I add some return statements. */
-public class Character_Dwarf {
-	Character_Class dwarf = new Character_Class();
+public class Character_Dwarf extends Character_Class {
 	
+	// NEW CONSTRUCTOR:
 	
-	public String user,speak;	//This variable controls what the users name is, which in this case is "Dwraf". 
+	public Character_Dwarf() {
+		super.name = "Dwarf";
+		super.health = 100;
+		super.damage = 40;
+		super.magic = 30;
+		super.defense = 50;
+		super.boost = 50;
+		super.weapon_damage = 60;
+		super.armor = 50;
+		super.intelligence = 30;
+		super.speed = 50 ;
+		super.strength = 60;
+		super.resistance = 50;
+	}
+	
+	// END NEW CONSTRUCTOR.
+	
+	public String user,speak;	//This variable controls what the users name is, which in this case is "Dwarf". 
 	
 	
 	public String getSpeak(){
-		dwarf.setSpeak("I am a Dwarf");
-		return dwarf.getSpeak();
+		return "I am a Dwarf";
 	}
 	
 	public String getSpeak2(){
-		dwarf.setSpeak("I do: ");
-		return dwarf.getSpeak();
+		return "I do: ";
 	}
 	
 	public String getSpeak3(){
-		dwarf.setSpeak("I have: ");
-		return dwarf.getSpeak();
+		return "I have: ";
 	}
 	
 	
-	/*The beginning of the get and set methods for the dwarf Class. */
+	/*The beginning of the get and set methods for the dwarf Class. 
+	 * COMMENTED OUT FOR NOW UNLESS NEEDED LATER.
+	 * 
+	 * 
 	public int getHealthDwarf(){
 		dwarf.setHealth(100);	//I have given the dwarf 100 health. 
 		return dwarf.getHealth();
@@ -79,4 +96,6 @@ public class Character_Dwarf {
 		dwarf.setStrength(60);  		    //The dwarf has base strength level 60
 		return dwarf.getStrength();
 	}
+	
+	*/
 }

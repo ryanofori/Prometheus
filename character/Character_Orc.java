@@ -1,23 +1,40 @@
 package character;
 /*This is the sub class for the orc_Class. 
  * This is where I add some return statements. */
-public class Character_Orc{
-	Character_Class orc = new Character_Class();
+public class Character_Orc extends Character_Class {
+	
+	// NEW CONSTRUCTOR:
+	
+	public Character_Orc() {
+			super.name = "Orc";
+			super.health = 100;
+			super.damage = 60;
+			super.magic = 30;
+			super.defense = 80;
+			super.boost = 50;
+			super.weapon_damage = 80;
+			super.armor = 70;
+			super.intelligence = 10;
+			super.speed = 10;
+			super.strength = 90;
+			super.resistance = 30;
+	}
+		
+		// END NEW CONSTRUCTOR.
 	
 	public String getSpeak(){
-		orc.setSpeak("I am an Orc");
-		return orc.getSpeak();
+		return "I am an Orc";
 	}
 	
 	public String getSpeak2(){
-		orc.setSpeak("I do: ");
-		return orc.getSpeak();
+		return "I do: ";
 	}
 	
 	public String getSpeak3(){
-		orc.setSpeak("I have: ");
-		return orc.getSpeak();
+		return "I have: ";
 	}
+	
+	/* COMMENTED OUT FOR NOW.
 	
 	public String getUser(){  
 		orc.setName("Orc");             
@@ -73,4 +90,6 @@ public class Character_Orc{
 		orc.setStrength(90);  		    //The orc has base strength level 90
 		return orc.getStrength();
 	}
+	
+	*/
 }

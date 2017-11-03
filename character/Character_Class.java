@@ -1,8 +1,8 @@
 package character;
 public class Character_Class  {
-	private int health,damage,magic,defense,boost, weapon_damage,armor;
-	private int intelligence,speed,strength, resistance;
-	private String name,speak;
+	protected int health,damage,magic,defense,boost, weapon_damage,armor;
+	protected int intelligence,speed,strength, resistance;
+	protected String name,speak;
 	public Character_Class(){   //These are the defaults stats, just in case I didn't set one up 
 		health = 100;        // in the main_Class.
 		damage = 0;

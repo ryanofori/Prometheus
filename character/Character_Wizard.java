@@ -1,30 +1,43 @@
 package character;
 
-public class Character_Wizard {
-	Character_Class wizard = new Character_Class();
+public class Character_Wizard extends Character_Class {
 	
-
+	// NEW CONSTRUCTOR:
 	
-	public String user,speak;	//This variable controls what the users name is, which in this case is "Wizard". 
+		public Character_Wizard() {
+			super.name = "Wizard";
+			super.health = 100;
+			super.damage = 60;
+			super.magic = 100;
+			super.defense = 10;
+			super.boost = 50;
+			super.weapon_damage = 40;
+			super.armor = 20;
+			super.intelligence = 100;
+			super.speed = 50;
+			super.strength = 40;
+			super.resistance = 60;
+		}
+		
+		// END NEW CONSTRUCTOR.
 	
 	
 	public String getSpeak(){
-		wizard.setSpeak("I am a Wizard");
-		return wizard.getSpeak();
+		return "I am a Wizard";
 	}
 	
 	public String getSpeak2(){
-		wizard.setSpeak("I do: ");
-		return wizard.getSpeak();
+		return "I do: ";
 	}
 	
 	public String getSpeak3(){
-		wizard.setSpeak("I have: ");
-		return wizard.getSpeak();
+		return "I have: ";
 	}
 	
 	
-	/*The beginning of the get and set methods for the Wizard Class. */
+	/*The beginning of the get and set methods for the Wizard Class.
+	 * COMMENTED OUT FOR NOW.
+	 
 	public int getHealthWizard(){
 		wizard.setHealth(100);	//I have given the wizard 100 health. 
 		return wizard.getHealth();
@@ -79,4 +92,5 @@ public class Character_Wizard {
 		wizard.setStrength(40);  		    //The wizard has base strength level 40
 		return wizard.getStrength();
 	}
+	*/
 }

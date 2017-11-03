@@ -72,7 +72,7 @@ public class Story_Mode {
 		return number;
 		}
 	
-	public void tutorial(){
+	public void tutorial() throws Exception{
 		character_Info();
 		int select = character_Select(number);
 		System.out.println("A quick simulated battle is about to commence. ");

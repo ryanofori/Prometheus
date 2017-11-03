@@ -1,10 +1,10 @@
 package character;
 
-public class Character_Elf extends Characer_Class {
+public class Character_Elf extends Character_Class {
 	
 	// NEW CONSTRUCTOR:
 	
-		public Character_Elf() {
+	public Character_Elf() {
 			super.name = "Elf";
 			super.health = 100;
 			super.damage = 60;
@@ -17,28 +17,28 @@ public class Character_Elf extends Characer_Class {
 			super.speed = 80;
 			super.strength = 60;
 			super.resistance = 40;
-		}
+	}
 		
-		// END NEW CONSTRUCTOR.
+	// END NEW CONSTRUCTOR.
 	
-public String user,speak;	//This variable controls what the users name is, which in this case is "Warrior". 
+	public String user,speak;	//This variable controls what the users name is, which in this case is "Warrior". 
 	
 	
 	public String getSpeak(){
-		elf.setSpeak("I am an Elf");
-		return elf.getSpeak();
+		return "I am an Elf";
 	}
 	
 	public String getSpeak2(){
-		elf.setSpeak("I do: ");
-		return elf.getSpeak();
+		return "I do: ";
 	}
 	
 	public String getSpeak3(){
-		elf.setSpeak("I have: ");
-		return elf.getSpeak();
+		return "I have: ";
 	}
 	
+	/* COMMENTED OUT FOR NOW.
+	 * 
+	 
 	public int getHealthElf(){
 		elf.setHealth(100);				//All characters start at 100 health
 		return elf.getHealth();
@@ -88,5 +88,7 @@ public String user,speak;	//This variable controls what the users name is, which
 		elf.setStrength(60);  		    //The elf has base strength level 60
 		return elf.getStrength();
 	}
+	
+	*/
 	
 }

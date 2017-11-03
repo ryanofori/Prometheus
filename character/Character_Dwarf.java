@@ -22,26 +22,26 @@ public class Character_Dwarf extends Character_Class {
 	
 	// END NEW CONSTRUCTOR.
 	
-	public String user,speak;	//This variable controls what the users name is, which in this case is "Dwraf". 
+	public String user,speak;	//This variable controls what the users name is, which in this case is "Dwarf". 
 	
 	
 	public String getSpeak(){
-		dwarf.setSpeak("I am a Dwarf");
-		return dwarf.getSpeak();
+		return "I am a Dwarf";
 	}
 	
 	public String getSpeak2(){
-		dwarf.setSpeak("I do: ");
-		return dwarf.getSpeak();
+		return "I do: ";
 	}
 	
 	public String getSpeak3(){
-		dwarf.setSpeak("I have: ");
-		return dwarf.getSpeak();
+		return "I have: ";
 	}
 	
 	
-	/*The beginning of the get and set methods for the dwarf Class. */
+	/*The beginning of the get and set methods for the dwarf Class. 
+	 * COMMENTED OUT FOR NOW UNLESS NEEDED LATER.
+	 * 
+	 * 
 	public int getHealthDwarf(){
 		dwarf.setHealth(100);	//I have given the dwarf 100 health. 
 		return dwarf.getHealth();
@@ -96,4 +96,6 @@ public class Character_Dwarf extends Character_Class {
 		dwarf.setStrength(60);  		    //The dwarf has base strength level 60
 		return dwarf.getStrength();
 	}
+	
+	*/
 }

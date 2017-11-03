@@ -22,26 +22,23 @@ public class Character_Warrior extends Character_Class {
 		
 		// END NEW CONSTRUCTOR.
 	
-	public String user,speak;	//This variable controls what the users name is, which in this case is "Warrior". 
+		public String getSpeak(){
+			return "I am a Warrior";
+		}
+		
+		public String getSpeak2(){
+			return "I do: ";
+		}
+		
+		public String getSpeak3(){
+			return "I have: ";
+		}
 	
 	
-	public String getSpeak(){
-		warrior.setSpeak("I am a Warrior");
-		return warrior.getSpeak();
-	}
-	
-	public String getSpeak2(){
-		warrior.setSpeak("I do: ");
-		return warrior.getSpeak();
-	}
-	
-	public String getSpeak3(){
-		warrior.setSpeak("I have: ");
-		return warrior.getSpeak();
-	}
-	
-	
-	/*The beginning of the get and set methods for the Warrior Class. */
+	/*The beginning of the get and set methods for the Warrior Class. 
+	 * COMMENTED OUT FOR NOW.
+	 * 
+	 * 
 	public int getHealth(){
 		warrior.setHealth(100);	//I have given the warrior 100 health. 
 		return warrior.getHealth();
@@ -101,4 +98,5 @@ public class Character_Warrior extends Character_Class {
 		warrior.setStrength(60);  		    //The warrior has base strength level 60
 		return warrior.getStrength();
 	}
+	*/
 }

@@ -1,5 +1,10 @@
 package game;
 import story.Story_Mode;
+import character.Character_Warrior;
+import character.Character_Orc;
+import character.Character_Wizard;
+import character.Character_Elf;
+import character.Character_Dwarf;
 import tournament.Tournament_Mode;
 import shopping.Shopping;
 import java.util.Scanner;

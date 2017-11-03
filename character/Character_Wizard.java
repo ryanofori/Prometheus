@@ -20,28 +20,24 @@ public class Character_Wizard extends Character_Class {
 		}
 		
 		// END NEW CONSTRUCTOR.
-
-	
-	public String user,speak;	//This variable controls what the users name is, which in this case is "Wizard". 
 	
 	
 	public String getSpeak(){
-		wizard.setSpeak("I am a Wizard");
-		return wizard.getSpeak();
+		return "I am a Wizard";
 	}
 	
 	public String getSpeak2(){
-		wizard.setSpeak("I do: ");
-		return wizard.getSpeak();
+		return "I do: ";
 	}
 	
 	public String getSpeak3(){
-		wizard.setSpeak("I have: ");
-		return wizard.getSpeak();
+		return "I have: ";
 	}
 	
 	
-	/*The beginning of the get and set methods for the Wizard Class. */
+	/*The beginning of the get and set methods for the Wizard Class.
+	 * COMMENTED OUT FOR NOW.
+	 
 	public int getHealthWizard(){
 		wizard.setHealth(100);	//I have given the wizard 100 health. 
 		return wizard.getHealth();
@@ -96,4 +92,5 @@ public class Character_Wizard extends Character_Class {
 		wizard.setStrength(40);  		    //The wizard has base strength level 40
 		return wizard.getStrength();
 	}
+	*/
 }

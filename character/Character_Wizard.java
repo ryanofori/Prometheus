@@ -16,7 +16,7 @@ public class Character_Wizard extends Character_Class {
 			super.intelligence = 100;
 			super.speed = 50;
 			super.strength = 40;
-			super.resistance = 40;
+			super.resistance = 60;
 		}
 		
 		// END NEW CONSTRUCTOR.

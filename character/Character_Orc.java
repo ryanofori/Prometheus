@@ -17,7 +17,7 @@ public class Character_Orc extends Character_Class {
 			super.intelligence = 10;
 			super.speed = 10;
 			super.strength = 90;
-			super.resistance = 50;
+			super.resistance = 30;
 		}
 		
 		// END NEW CONSTRUCTOR.

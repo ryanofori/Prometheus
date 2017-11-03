@@ -16,7 +16,7 @@ public class Character_Elf extends Characer_Class {
 			super.intelligence = 80;
 			super.speed = 80;
 			super.strength = 60;
-			super.resistance = 60;
+			super.resistance = 40;
 		}
 		
 		// END NEW CONSTRUCTOR.

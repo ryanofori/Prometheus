@@ -4,15 +4,7 @@ import battle_system.Battle_System;
 
 public class Tournament_Mode {
 	
-	public void fight(){
-		System.out.println("Welcome to the Tournament Mode");
-		try{
-			Thread.sleep(1000);
-		}
-		catch(InterruptedException ie){
-			ie.printStackTrace();
-		}
-	}
+	
 	public void fight(){
 		Scanner input = new Scanner(System.in);
 		System.out.println("Welcome to the Tournament Mode");

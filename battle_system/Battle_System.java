@@ -39,12 +39,12 @@ public class Battle_System {
 			if(choice == 1){
 				Character_Warrior character  = new Character_Warrior();
 				character_health = character.getHealth();
-				user = character.getUser();
+				user = character.getName();
 			}
 			else if(choice == 2){
 				Character_Orc character = new Character_Orc();
 				character_health = character.getHealth();
-				user = character.getUser();
+				user = character.getName();
 			}
 				
 			

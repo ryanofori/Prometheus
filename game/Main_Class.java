@@ -1,10 +1,10 @@
 package game;
 import story.Story_Mode;
-import character.Character_Warrior;
-import character.Character_Orc;
-import character.Character_Wizard;
-import character.Character_Elf;
-import character.Character_Dwarf;
+//import character.Character_Warrior;
+//import character.Character_Orc;
+//import character.Character_Wizard;
+//import character.Character_Elf;
+//import character.Character_Dwarf;
 import tournament.Tournament_Mode;
 import shopping.Shopping;
 import java.util.Scanner;
@@ -27,7 +27,7 @@ public class Main_Class  {
 		Shopping shopping = new Shopping();
 		
 		/*Here I am asking you which character you would like to be. */
-		
+		/**
 		System.out.println("Which character class would you like to play as for this session?:"
 				+ "\n\t1.) Warrior"
 				+ "\n\t1.) Orc"
@@ -66,7 +66,7 @@ public class Main_Class  {
 				System.out.println("Invalid Response. Please enter a number from the list above.");
 				response = input.nextInt();
 			}
-		}
+		} */
 		
 		/* The character has been chosen and will remain the same throughout the game.
 		 * Reference to the character object may need to be passed to each mode in order to save progress from each mode.

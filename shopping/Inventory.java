@@ -1,9 +1,11 @@
 package shopping;
+import character.Character_Class;
 import java.util.ArrayList;
 
 public class Inventory{
     private ArrayList<String> backpack = new ArrayList<String>();
     private int backpackSize = 0;
+    private Character_Class user = new Character_Class();
 
     /**
      * Constructor for Inventory
@@ -43,13 +45,22 @@ public class Inventory{
     }
 
     /**
-     * Use method for items
-     * @param itemName
+     * Use method for items(Potions/boost)
+     * @param itemName - Item to use
      */
-    public void useItem(String itemName){
-        //Use function for items/weapons
-        //Not 100% sure if this is a needed function
-        //Left blank until answer received
+    public void useItem(String itemName)throws Exception{
+        if(backpack.contains(itemName)) {
+        	if(itemName.endsWith("Potion")) {
+        		if(itemName.startsWith("Health")) {
+	        		int addHp = user.getHealth() + 20; //Example of normal potion giving 20 hp back on use
+	        		user.setHealth(addHp); //Add the health 
+	        		removeFromInventory(itemName); //Remove the item
+        		}
+        	}
+        }
+        else {
+        	throw new Exception(itemName+" is not in your inventory!");
+        }
     }
 
     /**
@@ -79,7 +90,7 @@ public class Inventory{
 
     /**
      * Method to remove items from Inventory
-     * @param itemToRemove
+     * @param itemToRemove - Item to remove from inventory
      */
     public void removeFromInventory(String itemToRemove){
         for(int i=0; i<backpack.size(); i++) {

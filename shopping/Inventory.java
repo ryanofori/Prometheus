@@ -26,7 +26,7 @@ public class Inventory{
      * Gets the size of the backpack
      * accounting for stacks
      */
-    int sizeOfInventory(){
+    public int sizeOfInventory(){
         int size = 0;
         for(int i=1; i<=backpack.size(); i+=2) {
         	size += Integer.parseInt(backpack.get(i));
@@ -38,7 +38,7 @@ public class Inventory{
      * Increase size of Inventory
      * @param amt - Amount to increase by
      */
-    void increaseInventorySize(int amt) {
+    public void increaseInventorySize(int amt) {
         backpackSize += amt;
     }
 
@@ -46,7 +46,7 @@ public class Inventory{
      * Use method for items
      * @param itemName
      */
-    void useItem(String itemName){
+    public void useItem(String itemName){
         //Use function for items/weapons
         //Not 100% sure if this is a needed function
         //Left blank until answer received
@@ -58,7 +58,7 @@ public class Inventory{
      * @param quantity - Amount to add
      * @throws Exception - Cast message inventory full
      */
-    void addToInventory(String itemToAdd, int quantity) throws Exception{
+    public void addToInventory(String itemToAdd, int quantity) throws Exception{
         if((sizeOfInventory() + quantity) <= backpackSize && quantity > 0) {
             if(backpack.contains(itemToAdd)) {
             	int indexOfItem = backpack.indexOf(itemToAdd);
@@ -81,7 +81,7 @@ public class Inventory{
      * Method to remove items from Inventory
      * @param itemToRemove
      */
-    void removeFromInventory(String itemToRemove){
+    public void removeFromInventory(String itemToRemove){
         for(int i=0; i<backpack.size(); i++) {
             if(backpack.get(i).equalsIgnoreCase(itemToRemove)) {
             	if(Integer.parseInt(backpack.get(i+1)) > 1) {
@@ -99,7 +99,7 @@ public class Inventory{
     /**
      * Method to view Inventory
      */
-    void viewInventory(){
+    public void viewInventory(){
         int counter = 0;
         for(int i=0; i<backpack.size(); i+=2){
             counter++;

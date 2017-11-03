@@ -50,6 +50,8 @@ A new class should be created for each character, and will derive from the chara
 
 Damage level will be affected by the character intelligence, speed, and magic. 
 
+The attributes of the characters should be displayed when the user is deciding which character to choose, and also after a powerup. 
+
 ## Enemies
 
 There are various enemies. each enemy will have it's own class, deriving from the base character class. 
@@ -76,6 +78,7 @@ Giant:   |  damage: 160 | magic: 60 | defense:  190 | weapon damage: 100 | armor
 Necromancer:   |  damage: 200 | magic: 200 | defense:  140 | weapon damage: 190 | armor: 50 | intelligence:  200 | speed: 80 | resistance: 200 | strength: 190 |
   
 
+Enemy Stats should be displayed before battle as well, then only the health will be displayed during battle.
 
 
 ##Tournament Activity

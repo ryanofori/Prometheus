@@ -13,7 +13,6 @@ import shopping.Inventory;
 public class Battle_System {
 		Enemy_Quotes enemyQuotes = new Enemy_Quotes();
 		Character_Class c = new Character_Class();
-		Enemy_Class enemy = new Enemy_Class();
 		Weapons  weapon = new Weapons();
 		Magic magic_attacks = new Magic();
 		Inventory inventory = new Inventory();

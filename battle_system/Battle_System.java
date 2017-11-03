@@ -8,6 +8,7 @@ import character.Character_Warrior;
 import enemy.Enemy_Class;
 import character.Weapons;
 import character.Character_Class;
+import shopping.Inventory;
 	
 public class Battle_System {
 		Enemy_Quotes enemyQuotes = new Enemy_Quotes();
@@ -15,6 +16,7 @@ public class Battle_System {
 		Enemy_Class enemy = new Enemy_Class();
 		Weapons  weapon = new Weapons();
 		Magic magic_attacks = new Magic();
+		Inventory inventory = new Inventory();
 		private String user,enemyName;
 		private int magic, enemy_health, magic_options, physical_options, damage, melee, character_health, boost;
 		//private int sword_attack_left=5,punch_attack_left=5;
@@ -24,7 +26,8 @@ public class Battle_System {
 		 * 
 		 * */
 		
-		public void battleSystem(int choice){
+		
+		public void battleSystem(int choice) throws Exception{
 			@SuppressWarnings("resource")
 			Scanner input = new Scanner(System.in);
 			Random number = new Random();
@@ -32,6 +35,7 @@ public class Battle_System {
 			//char type;
 			double r = Math.random();
 			//boolean temp;
+			
 			if(choice == 1){
 				Character_Warrior character  = new Character_Warrior();
 				character_health = character.getHealth();
@@ -398,6 +402,8 @@ public class Battle_System {
 						 ie.printStackTrace(); 
 					 }
 				 boost_Health();
+				 inventory.addToInventory("Health Potion", 1);
+				 //inventory.viewInventory();
 		}
 	}	//End of BattleSystem method.
 	

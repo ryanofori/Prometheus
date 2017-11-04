@@ -1,10 +1,12 @@
 package shopping;
-//import character.Items;
+//import character.Items;	//uncomment when Items class is made
 import character.Weapons;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Shopping {
+	
+	
 	
 	//private Weapons[] weaponsStock = {new Weapons(), new Weapons(), new Weapons(), new Weapons(), new Weapons()};
 	//private Items[] ItemsStock = {new Items(), new Items(), new Items(), new Items(), new Items()};	//when Items class is created, uncomment
@@ -44,16 +46,26 @@ public class Shopping {
 	}
 	
 	/*
+	 *  Stock Shop
+	 */
+	
+	public void stockShop(){
+		setWeaponsStock();
+		setItemsStock();
+	}
+	
+	/*
 	 * Browse
 	 */
 	
+	//Displays weapons then switch statement to handle player choices
 	public void browseWeapons(){
 		System.out.println("Weaponss:\n"); // (Number to Type) [Weapon] - [Price]
 		displayWeapons();
 		browsing = true;
 		response = input.nextLine();
 			
-		while (browsing == true){
+		while (browsing == true){    //using placeholder strings for parameters
 			switch (response){
 				case "0":	buyItem("Sword");
 							break;
@@ -76,13 +88,13 @@ public class Shopping {
 		
 	}
 	
-	//using placeholder strings for parameters
+	//Displays weapons then switch statement to handle player choices
 	public void browseItems(){
 		System.out.println("Items:\n"); // (Number to Buy) Item - $Price
 		displayItems();
 		response = input.nextLine();
 		
-		while (browsing == true){
+		while (browsing == true){   //using placeholder strings for parameters
 			switch (response){
 				case "0":	buyItem("Health Potion");
 							break;
@@ -104,6 +116,28 @@ public class Shopping {
 		
 	}
 	
+	/*
+	 * Display
+	 */
+	
+	public void displayWeapons(){
+		//for(int index = 0; i < weaponsStock.size(); i++){
+		//	System.out.println("("index+") "+ weaponsStock[index].getName() + " - "+ weaponsStock[index].getPrice());
+		//}
+	}
+	
+	public void displayItems(){
+	/*	
+		for(int index = 0; i < weaponsStock.size(); i++){
+		System.out.println("("index+") "+ itemsStock[index].getName() +" - "+ itemsStock[index].getPrice());
+		}
+	*/	 
+	}
+	
+	/*
+	 * Buy Item
+	 */
+	
 	public void buyItem(String item){ //change String item to shopstock or whatever when I figure out how to implement.
 		/*	if (money >= price){
 		 * 		money -= price
@@ -117,13 +151,12 @@ public class Shopping {
 		 */
 	}
 	
+	/*
+	 * Leave store (exit shopping)
+	 */
+	
 	public void exitStore(){
 		currentlyHere = false;
-	}
-	
-	public void stockShop(){
-		setWeaponsStock();
-		setItemsStock();
 	}
 	
 	public void setWeaponsStock(){
@@ -131,6 +164,11 @@ public class Shopping {
 		//	add weapon to weaponsStock arraylist
 	}
 	
+	public void setItemsStock(){
+		
+	}
+	
+	/*
 	public Weapons[] getWeaponsStock(){
 		return weaponsStock;
 	}
@@ -138,38 +176,16 @@ public class Shopping {
 	public Items[] getItemsStock(){
 		return itemsStock;
 	}
+	*/
 	
-	public void setItemsStock(){
-		
-	}
-	
-	
-	
-	public void displayWeapons(){
-		/*
-		for(int index = 0; i < weaponsStock.size(); i++){
-			System.out.println("("index+") "+ weaponsStock[index].getName() + " - "+ weaponsStock[index].getPrice());
-		}
-		*/
-		
-	}
-	
-	public void displayItems(){
-	/*	
-		for(Items item:itemsStock){
-		System.out.println("("index+") "+ item[index].getName() +" - "+ item[index].getPrice());
-		}
-	*/	 
-	}
-	
-	
+	/*
 	public void selectOption(String choice){
 		if (choice == "1")		//Weapons selection
 			System.out.println();
-		else if (choice == "2")	//Consumables selection
+		else if (choice == "2")	//Items selection
 			System.out.println();
 		else if (choice == "3")	//Back to main selection
 			System.out.println();
 	}	
-
+	*/
 }

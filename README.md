@@ -70,4 +70,4 @@ Current thinking of how it goes:
 * Player is allowed to back out a level like say (Store -> Weapons (types 'back' or key mapped to it) -> Store.
 * Player buys one item at a time. (No shopping cart)
 
-Willing to add more.
+

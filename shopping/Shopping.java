@@ -63,9 +63,9 @@ public class Shopping {
 		System.out.println("Weaponss:\n"); // (Number to Type) [Weapon] - [Price]
 		displayWeapons();
 		browsing = true;
-		response = input.nextLine();
 			
 		while (browsing == true){    //using placeholder strings for parameters
+			response = input.nextLine();
 			switch (response){
 				case "0":	buyItem("Sword");
 							break;
@@ -81,20 +81,19 @@ public class Shopping {
 				case "exit":
 				case "back": browsing = false;
 							break;
-				default: System.out.println("Invalid input.");
+				default: 
+					System.out.println("Invalid input.");
 			}
 		}	
-			
-		
 	}
 	
 	//Displays weapons then switch statement to handle player choices
 	public void browseItems(){
 		System.out.println("Items:\n"); // (Number to Buy) Item - $Price
 		displayItems();
-		response = input.nextLine();
 		
 		while (browsing == true){   //using placeholder strings for parameters
+			response = input.nextLine();
 			switch (response){
 				case "0":	buyItem("Health Potion");
 							break;

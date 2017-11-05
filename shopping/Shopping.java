@@ -31,6 +31,7 @@ public class Shopping {
 		currentlyHere = true;
 		while (currentlyHere == true){
 			System.out.println("Weapons (1) / Consumables (2) / Exit Store (3)");
+			response = input.nextLine();
 			
 			if (response == "1")
 				browseWeapons();

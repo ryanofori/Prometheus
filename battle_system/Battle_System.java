@@ -2,20 +2,8 @@ package battle_system;
 
 import java.util.Scanner;
 import java.util.Random;
-import character.Character_Orc;
-import enemy.Enemy_Quotes;
-import character.Character_Warrior;
-import enemy.Enemy_Giant;
-import enemy.Enemy_Goblin;
-import enemy.Enemy_Grunt;
-import enemy.Enemy_Halfling;
-import enemy.Enemy_Necromancer;
-import enemy.Enemy_Scorpion;
-import enemy.Enemy_Shapeshifter;
-import enemy.Enemy_Siren;
-import enemy.Enemy_Troll;
-import character.Weapons;
-import character.Character_Class;
+import enemy.*;
+import character.*;
 import shopping.Inventory;
 	
 public class Battle_System {

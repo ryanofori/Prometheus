@@ -80,6 +80,7 @@ public class Story_Mode {
 			health = character.getHealth();
 			System.out.println(speak);
 			System.out.println(speak3+" "+health+" Health");
+			}
 
 		else{
 			System.out.println("Please select a valid response");

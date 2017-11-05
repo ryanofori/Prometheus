@@ -91,6 +91,7 @@ public class Shopping {
 	public void browseItems(){
 		System.out.println("Items:\n"); // (Number to Buy) Item - $Price
 		displayItems();
+		browsing = true;
 		
 		while (browsing == true){   //using placeholder strings for parameters
 			response = input.nextLine();

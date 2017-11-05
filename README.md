@@ -93,3 +93,15 @@ The battle system is the main action of the game, both in story mode and tournam
 * **Weapons and Abilities -** The player will have different abilities and weapons available for them to use in the battle (either found through the story, obtained through leveling up, or bought in the store), and information about each of them should be available to the player. Stronger weapons may have limited use in battle, while at least one attack (such as a punch) will be weak, but have unlimited uses. The player must choose wisely when deciding on how to attack.
 * **Items -** The player can obtain different items that have a one-time use during battles. These items can do things such as heal the player, boost the player's stats, or cause different effects during battle.
 
+## Shopping
+The Shopping mode is when the player enters the store to buy available good weapons or items. 
+Current thinking of how it goes:
+
+* Player calls shop method in Battle_System.
+* Shop loads stock of Weapons and Consumables.
+* Player has options of looking at  'Weapons (1)', 'Consumables (2)' or leaving.
+* Items are currently categorized as: weapons and items
+* Player is allowed to back out a level like say (Store -> Weapons (types 'back' or key mapped to it) -> Store.
+* Player buys one item at a time. (No shopping cart)
+
+

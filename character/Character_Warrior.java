@@ -1,41 +1,102 @@
 package character;
 /*This is the sub class for the warrior_Class. 
  * This is where I add some return statements. */
-public class Character_Warrior  {
+public class Character_Warrior extends Character_Class {
 	
-	Character_Class Warrior = new Character_Class();
+	// NEW CONSTRUCTOR:
 	
-	public String user;	//This variable controls what the users name is, which in this case is "Warrior". 
+		public Character_Warrior() {
+			super.name = "Warrior";
+			super.health = 100;
+			super.damage = 50;
+			super.magic = 20;
+			super.defense = 50;
+			super.boost = 50;
+			super.weapon_damage = 60;
+			super.armor = 50;
+			super.intelligence = 50;
+			super.speed = 70;
+			super.strength = 60;
+			super.resistance = 60;
+		}
+		
+		// END NEW CONSTRUCTOR.
 	
-	public int health,magic,boost;	//Variable that hold the classes health, magic and boost. 
-
-	public String speak(){
-		return "I am a Warrior! ";
+		public String getSpeak(){
+			return "I am a Warrior";
+		}
+		
+		public String getSpeak2(){
+			return "I do: ";
+		}
+		
+		public String getSpeak3(){
+			return "I have: ";
+		}
+	
+	
+	/*The beginning of the get and set methods for the Warrior Class. 
+	 * COMMENTED OUT FOR NOW.
+	 * 
+	 * 
+	public int getHealth(){
+		warrior.setHealth(100);	//I have given the warrior 100 health. 
+		return warrior.getHealth();
 	}
 	
-	public String speak2(){
-		return "I do: ";
+	public String getUser(){  
+		warrior.setName("Warrior");	//This is where the user get's it's Classes name. 
+		return warrior.getName();
 	}
 	
-	public String speak3(){
-		return "I have: ";
+	public int getDamage(){
+		warrior.setDamage(50);				//The warrior has base damage level 50
+		return warrior.getDamage();
 	}
 	
-	/*The beginning of the get and set methods for the Warrior Class. */
-	public int getHealthWarrior(){
-		Warrior.setHealth(120);	//I have given the warrior 120 health. 
-		return health = Warrior.getHealth();
+	public int getMagic(){
+		warrior.setMagic(20);				//The warrior has base magic level 20
+		return warrior.getMagic();
 	}
 	
-	public String getUserWarrior(){  
-		Warrior.setName("Warrior");	//This is where the user get's it's Classes name. 
-		return user = Warrior.getName();
+	public int getDefense(){
+		warrior.setDefense(50);				//The warrior has base defense level 50
+		return warrior.getDefense();
 	}
 	
-	public int boostWarrior(){
-		Warrior.setBoost(30);	//I am giving the warrior a boost of 30 health points at the end of each battle. 
-		return boost = Warrior.getBoost();
-	}	
+	public int getBoost(){
+		warrior.setBoost(50);				//The warrior has base boost level 50
+		return warrior.getBoost();
+	}
 	
-	/*The end of the get and set methods for the Warrior Class. */
+	public int getWeapon_Damage(){
+		warrior.setWeapon_Damage(60);		//The warrior has base weapon damage level 60
+		return warrior.getWeapon_Damage();
+	}
+	
+	public int getArmor(){
+		warrior.setArmor(50);				//The warrior has base armor level 50
+		return warrior.getArmor();
+	}
+	
+	public int getIntelligence(){
+		warrior.setIntelligence(50);			//The warrior has base intelligence level 50
+		return warrior.getIntelligence();
+	}
+	
+	public int getSpeed(){
+		warrior.setSpeed(70);				//The warrior has base speed level 70
+		return warrior.getSpeed();
+	}
+	
+	public int getResistance(){
+		warrior.setResistance(60);
+		return warrior.getResistance();
+	}
+	
+	public int getStrength(){
+		warrior.setStrength(60);  		    //The warrior has base strength level 60
+		return warrior.getStrength();
+	}
+	*/
 }

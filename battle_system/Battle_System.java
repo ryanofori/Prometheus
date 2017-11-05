@@ -5,25 +5,67 @@ import java.util.Random;
 import character.Character_Orc;
 import enemy.Enemy_Quotes;
 import character.Character_Warrior;
-import enemy.Enemy_Class;
+import enemy.Enemy_Giant;
+import enemy.Enemy_Goblin;
+import enemy.Enemy_Grunt;
+import enemy.Enemy_Halfling;
+import enemy.Enemy_Necromancer;
+import enemy.Enemy_Scorpion;
+import enemy.Enemy_Shapeshifter;
+import enemy.Enemy_Siren;
+import enemy.Enemy_Troll;
 import character.Weapons;
 import character.Character_Class;
 import shopping.Inventory;
 	
 public class Battle_System {
 		Enemy_Quotes enemyQuotes = new Enemy_Quotes();
+		Enemy_Giant giant = new Enemy_Giant();
+		Enemy_Goblin goblin = new Enemy_Goblin();
+		Enemy_Grunt grunt = new Enemy_Grunt();
+		Enemy_Halfling halfling = new Enemy_Halfling();
+		Enemy_Necromancer necromancer = new Enemy_Necromancer();
+		Enemy_Scorpion scorpion = new Enemy_Scorpion();
+		Enemy_Shapeshifter shapeshifter = new Enemy_Shapeshifter();
+		Enemy_Siren siren = new Enemy_Siren();
+		Enemy_Troll troll = new Enemy_Troll();
+		
 		Character_Class c = new Character_Class();
 		Weapons  weapon = new Weapons();
 		Magic magic_attacks = new Magic();
 		Inventory inventory = new Inventory();
 		private String user,enemyName;
 		private int magic, enemy_health, magic_options, physical_options, damage, melee, character_health, boost;
-		//private int sword_attack_left=5,punch_attack_left=5;
 		
 		/*
 		 * We should re-adjust the entire battle system 
 		 * 
 		 * */
+		
+		/** Enemy List
+		 * -------------
+		 * Giant
+		 * Goblin
+		 * Grunt
+		 * Halfing
+		 * Necromancer
+		 * Scorpion
+		 * Shapeshifter
+		 * Siren
+		 * Troll
+		 * -------------
+		 * */
+		
+		public void random_Enemy(){
+			String [] eName ={giant.getName(),goblin.getName(),grunt.getName(),halfling.getName(),necromancer.getName(),scorpion.getName(),shapeshifter.getName(),siren.getName(),troll.getName()};		
+			int [] selection = {giant.getHealth(),goblin.getHealth(),grunt.getHealth(),halfling.getHealth(),necromancer.getHealth(),scorpion.getHealth(),shapeshifter.getHealth(),siren.getHealth(),troll.getHealth()};
+			for(int counter = 0; counter < 1;counter++){
+				int rand = (int) (Math.random() * selection.length);
+				enemy_health = selection[rand];
+				enemyName = eName[rand];
+			}
+			
+		}
 		
 		
 		public void battleSystem(int choice) throws Exception{
@@ -51,14 +93,6 @@ public class Battle_System {
 			 * I assigned each method with health and a name. 
 			 * I then assign enemy to which ever enemy method is chosen in the array. 
 			 * enemyName is assigned to the same thing as enemy.*/
-			
-			String [] eName ={enemy.getGruntName(),enemy.getGoblinName(),enemy.getTrollsName(),enemy.getScorpionName(),enemy.getHalflingName()};		
-			int [] selection = {enemy.getGruntHealth(),enemy.getGoblinHealth(),enemy.getTrollHealth(),enemy.getScorpionHealth(),enemy.getHalflingHealth()};
-			for(int counter = 0; counter < 1;counter++){
-				int rand = (int) (Math.random() * selection.length);
-				enemy_health = selection[rand];
-				enemyName = eName[rand];
-			}
 			
 
 			/* ------------------------------------------
@@ -241,6 +275,8 @@ public class Battle_System {
 			 * [Start Battle]
 			 * Choose an Action: Melee(1) | Magic(2) 
 			 * */
+			
+			random_Enemy(); //chooses a random enemy to fight
 		
 			while(true){ //If your health is greater than 0, keep going through the loop.
 				System.out.println("\nChoose an Action:  Melee(1)/Magic(2): ");

@@ -6,6 +6,15 @@ import character.Character_Warrior;
 import character.Character_Dwarf;
 import character.Character_Elf;
 import character.Character_Wizard;
+import enemy.Enemy_Giant;
+import enemy.Enemy_Goblin;
+import enemy.Enemy_Grunt;
+import enemy.Enemy_Halfling;
+import enemy.Enemy_Necromancer;
+import enemy.Enemy_Scorpion;
+import enemy.Enemy_Shapeshifter;
+import enemy.Enemy_Siren;
+import enemy.Enemy_Troll;
 public class Story_Mode {
 	
 	static Scanner input = new Scanner(System.in);
@@ -80,7 +89,39 @@ public class Story_Mode {
 			health = character.getHealth();
 			System.out.println(speak);
 			System.out.println(speak3+" "+health+" Health");
-
+		}
+		else if(number == 4){
+			Character_Elf character = new Character_Elf();
+			System.out.println("You have chosen the Elf to take on this adventure! ");
+			try {
+			       Thread.sleep(2000); //Sleep timer of 2 seconds. 
+			   }
+			   catch (InterruptedException ie) {
+			     ie.printStackTrace();
+			   }
+			speak = character.getSpeak();
+			speak2 = character.getSpeak2();
+			speak3 = character.getSpeak3();
+			health = character.getHealth();
+			System.out.println(speak);
+			System.out.println(speak3+" "+health+" Health");
+		}
+		else if(number == 5){
+			Character_Wizard character = new Character_Wizard();
+			System.out.println("You have chosen the Wizard to take on this adventure! ");
+			try {
+			       Thread.sleep(2000); //Sleep timer of 2 seconds. 
+			   }
+			   catch (InterruptedException ie) {
+			     ie.printStackTrace();
+			   }
+			speak = character.getSpeak();
+			speak2 = character.getSpeak2();
+			speak3 = character.getSpeak3();
+			health = character.getHealth();
+			System.out.println(speak);
+			System.out.println(speak3+" "+health+" Health");
+		}
 		else{
 			System.out.println("Please select a valid response");
 			try{

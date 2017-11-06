@@ -201,7 +201,10 @@ public class Story_Mode {
 	 * */
 	
 	public void Chapter1(){
-		//Contributors can start here
+		System.out.println("Hello "+ user);
+		System.out.println("Welcome to Prometheus! Are you ready for an adventure?");
+		System.out.println("You appear in a field of luscious green grass and the sun beaming through the clouds abover");
+		System.out.println("You have 5 options as to where you shall go first in your journey: City(1), Forest(2), Lake(3), Mountain(4), or Desert(5)");
 		
 	}
 	

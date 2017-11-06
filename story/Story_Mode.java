@@ -3,6 +3,9 @@ import java.util.Scanner;
 import battle_system.Battle_System;
 import character.Character_Orc;
 import character.Character_Warrior;
+import character.Character_Dwarf;
+import character.Character_Elf;
+import character.Character_Wizard;
 public class Story_Mode {
 	
 	static Scanner input = new Scanner(System.in);
@@ -18,18 +21,21 @@ public class Story_Mode {
 	 * Any contributers to the story mode are allowed to expand the story past the tutorial
 	 * 
 	 * */
+	
+	//Josey was here
+	
 	private int character_Select(int choice){	
 		return choice;
 	}
 	
 	private int character_Info(){
-		System.out.println("Choose a Character: Warrior(1) or Orc(2): ");
+		System.out.println("Choose a Character: Warrior(1), Orc(2), Dwarf(3), Elf(4), or Wizard(5): ");
 		number = input.nextInt(); //Grabs the users input
 		if (number == 1){
 			Character_Warrior character = new Character_Warrior();
 			System.out.println("You have chosen the Warrior to take on this adventure! ");
 			try {
-			       Thread.sleep(2000);  //A sleep timer of 1 second. 
+			       Thread.sleep(2000);  //A sleep timer of 2 second. 
 			   }
 			   catch (InterruptedException ie) {
 			     ie.printStackTrace();
@@ -39,7 +45,7 @@ public class Story_Mode {
 			speak3 = character.getSpeak3();
 			health = character.getHealth();
 			System.out.println(speak); //I am Warrior!
-			System.out.println(speak3+" "+health+" Health"); //I have 120 health.
+			System.out.println(speak3+" "+health+" Health"); //I have 100 health.
 			
 		}
 		else if(number == 2){
@@ -59,6 +65,23 @@ public class Story_Mode {
 			System.out.println(speak3+" "+health+" Health");
 			
 			}
+		else if(number == 3){
+			Character_Dwarf character = new Character_Dwarf();
+			System.out.println("You have chosen the Dwarf to take on this adventure! ");
+			try {
+			       Thread.sleep(2000); //Sleep timer of 2 seconds. 
+			   }
+			   catch (InterruptedException ie) {
+			     ie.printStackTrace();
+			   }
+			speak = character.getSpeak();
+			speak2 = character.getSpeak2();
+			speak3 = character.getSpeak3();
+			health = character.getHealth();
+			System.out.println(speak);
+			System.out.println(speak3+" "+health+" Health");
+			}
+
 		else{
 			System.out.println("Please select a valid response");
 			try{

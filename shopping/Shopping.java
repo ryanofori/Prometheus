@@ -104,13 +104,13 @@ public class Shopping {
 			switch (response.toString()){
 				case "0":	buyItem(itemsStock[0].getName()); //"Health Potion"
 							break;
-				case "1":	buyItem(itemsStock[0].getName()); //"Mana Potion"
+				case "1":	buyItem(itemsStock[1].getName()); //"Mana Potion"
 							break;
-				case "2":	buyItem(itemsStock[0].getName()); //"Antidote"
+				case "2":	buyItem(itemsStock[2].getName()); //"Antidote"
 							break;
-				case "3":	buyItem(itemsStock[0].getName()); //"Energy Restore"
+				case "3":	buyItem(itemsStock[3].getName()); //"Energy Restore"
 							break;
-				case "4":	buyItem(itemsStock[0].getName()); //"Burn Repel"
+				case "4":	buyItem(itemsStock[4].getName()); //"Burn Repel"
 							break;
 				case "9":
 				case "exit":

@@ -66,11 +66,11 @@ public class Shopping {
 	
 	//Displays weapons then switch statement to handle player choices
 	public void browseWeapons(){
-		System.out.println("Weaponss:\n"); // (Number to Type) [Weapon] - [Price]
-		displayWeapons();
+		System.out.println("Weapons:"); // (Number to Type) [Weapon] - [Price]
 		browsing = true;
 			
 		while (browsing == true){    //using placeholder strings for parameters
+			displayStock(weaponsStock);
 			response = input.nextLine();
 			switch (response.toString()){
 				case "0":	buyItem(weaponsStock[0].getName()); //Sword
@@ -90,17 +90,16 @@ public class Shopping {
 				default: 
 					System.out.println("Invalid input.");
 			}
-			displayWeapons();
 		}	
 	}
 	
 	//Displays weapons then switch statement to handle player choices
 	public void browseItems(){
-		System.out.println("Items:\n"); // (Number to Buy) Item - $Price
-		displayItems();
+		System.out.println("Items:"); // (Number to Buy) Item - $Price
 		browsing = true;
 		
 		while (browsing == true){   //using placeholder strings for parameters
+			displayStock(itemsStock);
 			response = input.nextLine();
 			switch (response.toString()){
 				case "0":	buyItem(itemsStock[0].getName()); //"Health Potion"
@@ -119,28 +118,22 @@ public class Shopping {
 							break;
 				default: System.out.println("Invalid input.");
 			}	
-			displayItems();
 		}
 		
 	}
 	
 	/*
-	 * Display
+	 * Display Stock
 	 */
 	
-	public void displayWeapons(){
+	public void displayStock(asdf[] stock){
+		System.out.println();
 		for(int index = 0; index < weaponsStock.length; index++){
-			System.out.println("("+ index +") "+  weaponsStock[index].getPrice() + " - "+ weaponsStock[index].getName() );
+			System.out.println("("+ index +") "+  stock[index].getPrice() + " - "+ stock[index].getName() );
 		}
+		System.out.println("(9) Back to Store Menu");
 	}
-	
-	public void displayItems(){
-		for(int index = 0; index < itemsStock.length; index++){
-		System.out.println("( "+index+") "+ itemsStock[index].getPrice() + " - " + itemsStock[index].getName());
-		}
-		 
-	}
-	
+
 	/*
 	 * Buy Item
 	 */
@@ -166,6 +159,10 @@ public class Shopping {
 	public void exitStore(){
 		currentlyHere = false;
 	}
+	
+	/*
+	 * Getters and Setters
+	 */
 	
 	public void setWeaponsStock(){
 		//foreach normal weapon

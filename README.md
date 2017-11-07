@@ -50,32 +50,35 @@ A new class should be created for each character, and will derive from the chara
 
 Damage level will be affected by the character intelligence, speed, and magic. 
 
+The attributes of the characters should be displayed when the user is deciding which character to choose, and also after a powerup. 
+
 ## Enemies
 
 There are various enemies. each enemy will have it's own class, deriving from the base character class. 
 There is a grunt, goblin, halfling, siren, troll, scorpion, shapeshifter, giant, and necromancer. Each enemy will be given attributes, similar to the choosable characters. All of the enemies will have their strengths and weaknesses against whatever character is chosen. for example, The Grunt is the weakest enemy, susceptible to all attacks physical or magical, and the siren is strong against magic but very weak against physical attacks.
 
-Base Attributes for each enemy:
+Attributes for each enemy: (are already on the 0-200 scale as they cannot be boosted)
  
-Grunt: | damage: 20 | magic: 20  | defense: 20 | boost: 20 | weapon damage: 20 | armor: 20 | intelligence: 20  | speed: 20 | resistance: 30 | strength: 20 |
+Grunt: | damage: 20 | magic: 20  | defense: 20 | weapon damage: 20 | armor: 20 | intelligence: 20  | speed: 20 | resistance: 30 | strength: 20 |
 
-Goblin:  |  damage: 40 | magic: 30  | defense: 50 | boost: 30 | weapon damage: 50 | armor: 40 | intelligence: 60  | speed: 40 | resistance: 40 | strength: 40 |
+Goblin:  |  damage: 40 | magic: 30  | defense: 50 | weapon damage: 50 | armor: 40 | intelligence: 60  | speed: 40 | resistance: 40 | strength: 40 |
 
-Halfling: |  damage: 60 | magic: 40 | defense: 40 | boost: 50 | weapon damage: 40 | armor: 20 | intelligence: 50 | speed: 50 | resistance: 80 | strength: 40 |
+Halfling: |  damage: 60 | magic: 40 | defense: 40 | weapon damage: 40 | armor: 20 | intelligence: 50 | speed: 50 | resistance: 80 | strength: 40 |
 
-Siren:  | damage: 100 | magic: 100  | defense: 20 | boost: 50 | weapon damage: 60 | armor: 30 | intelligence:  100 | speed: 80 | resistance: 100 | strength: 40 |
+Siren:  | damage: 100 | magic: 100  | defense: 20 | weapon damage: 30 | armor: 30 | intelligence:  100 | speed: 80 | resistance: 100 | strength: 40 |
 
-Troll:   |  damage: 70 | magic: 60 | defense:  90 | boost: 50 | weapon damage: 60 | armor: 70 | intelligence:  30 | speed: 40 | resistance: 110 | strength: 140 |
+Troll:   |  damage: 70 | magic: 60 | defense:  90 | weapon damage: 60 | armor: 70 | intelligence:  30 | speed: 40 | resistance: 110 | strength: 140 |
 
-Scorpion:   |  damage: 100 | magic: 60 | defense:  160 | boost: 50 | weapon damage: 60 | armor: 140 | intelligence:  60 | speed: 110 | resistance: 180 | strength: 100 |
+Scorpion:   |  damage: 100 | magic: 80 | defense:  160 | weapon damage: 140 | armor: 140 | intelligence:  60 | speed: 110 | resistance: 20 | strength: 100 |
 
-Shapeshifter:   |  damage: 120 | magic: 60 | defense:  150 | boost: 50 | weapon damage: 60 | armor: 70 | intelligence:  180 | speed: 100 | resistance: 150 | strength: 80 |
+Shapeshifter:   |  damage: 120 | magic: 180 | defense:  150 | weapon damage: 40 | armor: 70 | intelligence:  180 | speed: 100 | resistance: 150 | strength: 80 |
 
-Giant:   |  damage: 160 | magic: 60 | defense:  190 | boost: 50 | weapon damage: 100 | armor: 200 | intelligence:  10 | speed: 30 | resistance: 80 | strength: 190 |
+Giant:   |  damage: 160 | magic: 60 | defense:  190 | weapon damage: 100 | armor: 200 | intelligence:  10 | speed: 30 | resistance: 80 | strength: 190 |
 
-Necromancer:   |  damage: 200 | magic: 200 | defense:  140 | boost: 170 | weapon damage: 190 | armor: 130 | intelligence:  200 | speed: 80 | resistance: 200 | strength: 190 |
+Necromancer:   |  damage: 200 | magic: 200 | defense:  140 | weapon damage: 190 | armor: 50 | intelligence:  200 | speed: 80 | resistance: 200 | strength: 190 |
   
 
+Enemy Stats should be displayed before battle as well, then only the health will be displayed during battle.
 
 
 ##Tournament Activity

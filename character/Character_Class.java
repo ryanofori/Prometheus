@@ -18,8 +18,6 @@ public class Character_Class  {
 		speak = "";
 	}
 	
-	
-	
 	public void setWeapon_Damage(int wd){
 		this.weapon_damage = wd;
 	}

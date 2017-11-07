@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Inventory{
     private ArrayList<String> backpack = new ArrayList<String>();
     private int backpackSize = 0;
-    private Character_Class user = new Character_Class();
+ //   private Character_Class user = new Character_Class();
 
     /**
      * Constructor for Inventory
@@ -48,19 +48,22 @@ public class Inventory{
      * Use method for items(Potions/boost)
      * @param itemName - Item to use
      */
-    public void useItem(String itemName)throws Exception{
+    public int useItem(String itemName)throws Exception{
         if(backpack.contains(itemName)) {
         	if(itemName.endsWith("Potion")) {
         		if(itemName.startsWith("Health")) {
-	        		int addHp = user.getHealth() + 20; //Example of normal potion giving 20 hp back on use
+	        	/*	int addHp = user.getHealth() + 20; //Example of normal potion giving 20 hp back on use
 	        		user.setHealth(addHp); //Add the health 
 	        		removeFromInventory(itemName); //Remove the item
+	        	*/
+        			removeFromInventory(itemName); //Remove the item
         		}
         	}
         }
         else {
         	throw new Exception(itemName+" is not in your inventory!");
         }
+		return 0;
     }
 
     /**

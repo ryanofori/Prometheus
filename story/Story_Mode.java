@@ -6,13 +6,22 @@ import character.Character_Warrior;
 import character.Character_Dwarf;
 import character.Character_Elf;
 import character.Character_Wizard;
+import enemy.Enemy_Giant;
+import enemy.Enemy_Goblin;
+import enemy.Enemy_Grunt;
+import enemy.Enemy_Halfling;
+import enemy.Enemy_Necromancer;
+import enemy.Enemy_Scorpion;
+import enemy.Enemy_Shapeshifter;
+import enemy.Enemy_Siren;
+import enemy.Enemy_Troll;
 public class Story_Mode {
 	
 	static Scanner input = new Scanner(System.in);
 	Battle_System battle = new Battle_System();
 
 	
-	static int number,health; //This controls the Scanner options. 
+	static int number,health, place; //This controls the Scanner options. 
 	String response; //These control the String versions of the scanner options. 
 	static String response2, speak, speak2,speak3;
 	
@@ -80,8 +89,40 @@ public class Story_Mode {
 			health = character.getHealth();
 			System.out.println(speak);
 			System.out.println(speak3+" "+health+" Health");
+		}
+		else if(number == 4){
+			Character_Elf character = new Character_Elf();
+			System.out.println("You have chosen the Elf to take on this adventure! ");
+			try {
+			       Thread.sleep(2000); //Sleep timer of 2 seconds. 
+			   }
+			   catch (InterruptedException ie) {
+			     ie.printStackTrace();
+			   }
+			speak = character.getSpeak();
+			speak2 = character.getSpeak2();
+			speak3 = character.getSpeak3();
+			health = character.getHealth();
+			System.out.println(speak);
+			System.out.println(speak3+" "+health+" Health");
+		}
+		else if(number == 5){
+			Character_Wizard character = new Character_Wizard();
+			System.out.println("You have chosen the Wizard to take on this adventure! ");
+			try {
+			       Thread.sleep(2000); //Sleep timer of 2 seconds. 
+			   }
+			   catch (InterruptedException ie) {
+			     ie.printStackTrace();
+			   }
+			speak = character.getSpeak();
+			speak2 = character.getSpeak2();
+			speak3 = character.getSpeak3();
+			health = character.getHealth();
+			System.out.println(speak);
+			System.out.println(speak3+" "+health+" Health");
+		}
 			}
-
 		else{
 			System.out.println("Please select a valid response");
 			try{
@@ -161,8 +202,18 @@ public class Story_Mode {
 	 * */
 	
 	public void Chapter1(){
-		//Contributors can start here
+		String user = null;
+		System.out.println("Hello "+ user);
+		System.out.println("Welcome to Prometheus! Are you ready for an adventure?");
+		System.out.println("You appear in a field of luscious green grass and the sun beaming through the clouds above");
+		System.out.println("You have 5 options as to where you shall go first in your journey: City(1), Forest(2), Lake(3), Mountain(4), or Desert(5)");
+		place = input.nextInt();
+		if(place == 1){
+			System.out.println("You have chosen to go to the city!");
+			System.out.println("");
+	}
 		
 	}
+		
 	
 }

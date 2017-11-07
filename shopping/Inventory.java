@@ -57,6 +57,7 @@ public class Inventory{
 	        		removeFromInventory(itemName); //Remove the item
 	        	*/
         			removeFromInventory(itemName); //Remove the item
+        			return 20; //HP to be added since HP is handled in the battle system
         		}
         	}
         }

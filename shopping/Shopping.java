@@ -36,7 +36,6 @@ public class Shopping {
 		while (currentlyHere == true){
 			System.out.println("Weapons (1) / Consumables (2) / Exit Store (3)");
 			response = input.nextLine();
-			System.out.println(response);
 			
 			if (response.equals("1"))
 				browseWeapons();
@@ -66,7 +65,7 @@ public class Shopping {
 	
 	//Displays weapons then switch statement to handle player choices
 	public void browseWeapons(){
-		System.out.println("Weapons:"); // (Number to Type) [Weapon] - [Price]
+		System.out.println("Weapons:"); // (Number to Type) [Price] - [Weapons]
 		browsing = true;
 			
 		while (browsing == true){    //using placeholder strings for parameters
@@ -95,7 +94,7 @@ public class Shopping {
 	
 	//Displays weapons then switch statement to handle player choices
 	public void browseItems(){
-		System.out.println("Items:"); // (Number to Buy) Item - $Price
+		System.out.println("Items:"); // (Number to Buy) [Price] - [Item]
 		browsing = true;
 		
 		while (browsing == true){   //using placeholder strings for parameters

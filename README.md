@@ -81,7 +81,7 @@ Necromancer:   |  damage: 200 | magic: 200 | defense:  140 | weapon damage: 190 
 Enemy Stats should be displayed before battle as well, then only the health will be displayed during battle.
 
 
-##Tournament Activity
+## Tournament Activity
 The Tournament mode should be arcade style. Once you enter a tournament, the character is unable to leave the tournament until either they have defeated each opponent or they have run out of money and are unable to purchase a revive. You are unable to start a tournament unless you have the set wager amount.  
 
 

@@ -6,13 +6,22 @@ import character.Character_Warrior;
 import character.Character_Dwarf;
 import character.Character_Elf;
 import character.Character_Wizard;
+import enemy.Enemy_Giant;
+import enemy.Enemy_Goblin;
+import enemy.Enemy_Grunt;
+import enemy.Enemy_Halfling;
+import enemy.Enemy_Necromancer;
+import enemy.Enemy_Scorpion;
+import enemy.Enemy_Shapeshifter;
+import enemy.Enemy_Siren;
+import enemy.Enemy_Troll;
 public class Story_Mode {
 	
 	static Scanner input = new Scanner(System.in);
 	Battle_System battle = new Battle_System();
 
 	
-	static int number,health; //This controls the Scanner options. 
+	static int number,health, place; //This controls the Scanner options. 
 	String response; //These control the String versions of the scanner options. 
 	static String response2, speak, speak2,speak3;
 	
@@ -22,7 +31,7 @@ public class Story_Mode {
 	 * 
 	 * */
 	
-	//Josey was here
+	
 	
 	private int character_Select(int choice){	
 		return choice;
@@ -80,8 +89,39 @@ public class Story_Mode {
 			health = character.getHealth();
 			System.out.println(speak);
 			System.out.println(speak3+" "+health+" Health");
-			}
-
+		}
+		else if(number == 4){
+			Character_Elf character = new Character_Elf();
+			System.out.println("You have chosen the Elf to take on this adventure! ");
+			try {
+			       Thread.sleep(2000); //Sleep timer of 2 seconds. 
+			   }
+			   catch (InterruptedException ie) {
+			     ie.printStackTrace();
+			   }
+			speak = character.getSpeak();
+			speak2 = character.getSpeak2();
+			speak3 = character.getSpeak3();
+			health = character.getHealth();
+			System.out.println(speak);
+			System.out.println(speak3+" "+health+" Health");
+		}
+		else if(number == 5){
+			Character_Wizard character = new Character_Wizard();
+			System.out.println("You have chosen the Wizard to take on this adventure! ");
+			try {
+			       Thread.sleep(2000); //Sleep timer of 2 seconds. 
+			   }
+			   catch (InterruptedException ie) {
+			     ie.printStackTrace();
+			   }
+			speak = character.getSpeak();
+			speak2 = character.getSpeak2();
+			speak3 = character.getSpeak3();
+			health = character.getHealth();
+			System.out.println(speak);
+			System.out.println(speak3+" "+health+" Health");
+		}
 		else{
 			System.out.println("Please select a valid response");
 			try{
@@ -93,7 +133,7 @@ public class Story_Mode {
 			character_Info();
 		}
 		return number;
-		}
+	}
 	
 	public void tutorial() throws Exception{
 		character_Info();
@@ -154,15 +194,51 @@ public class Story_Mode {
 		System.out.println("Thanks for playing! ");
 	} 
 	
+	public void endStory(){
+		System.out.println("Thanks for playing! ");
+	}
+	
 	/*
 	 * This concludes the tutorial session of the game. 
 	 * Contributors can add new story elements below this comment section
 	 * 
 	 * */
-	
-	public void Chapter1(){
-		//Contributors can start here
-		
+	public void Introduction(){
+		String user;
+		System.out.println("What will you name your character?");
+		response = input.nextLine();
+		user = response;
+		System.out.println("Hello! "+ user);
+		System.out.println("Welcome to Prometheus! Are you ready for an adventure?");
+		try{
+				Thread.sleep(1000);
+			}
+			catch(InterruptedException ie){
+				ie.printStackTrace();
+			}
+		System.out.println("During your journey, you will encounter 9 enemies in 5 different settings.");
+		System.out.println("The 5 places you will battle will be city, forest, lake, mountain, and desert and there will be enemies in each.");	
+		try{
+				Thread.sleep(1000);
+			}
+			catch(InterruptedException ie){
+				ie.printStackTrace();
+			}
+		System.out.println("If you shall lose any of these battles, it will result in GAME OVER.");
+		System.out.println("If you win all of your battles, you will be rewarded with a large monetary prize that you may use to buy weapons and potions to be used in the tournament.");
+		try{
+				Thread.sleep(2000);
+			}
+			catch(InterruptedException ie){
+				ie.printStackTrace();
+			}
+		System.out.println("Are you ready to begin? (Yes/No)");
+		response2 = input.nextLine();
+		if(response2.equalsIgnoreCase("Yes")){
+		//	Chapter1();
+		}
+		else if (response2.equalsIgnoreCase("No")){
+			endStory();
+		}	
 	}
-	
 }

@@ -1,8 +1,7 @@
 package shopping;
 //import character.Items;	//uncomment when Items class is made
 import character.Weapons;
-
-import java.util.ArrayList;
+import character.Character_Class;
 import java.util.Scanner;
 
 public class Shopping {
@@ -19,7 +18,7 @@ public class Shopping {
 	private boolean currentlyHere, browsing = false; //using it for while loop so I don't have to use recursion
 	
 	
-	public void store(){
+	public void store(Character_Class person) throws Exception{
 		if (currentlyHere == false){
 			System.out.println("Welcome to my store. Take a look at my wares.\n");
 			try{
@@ -34,15 +33,16 @@ public class Shopping {
 		
 		currentlyHere = true;
 		while (currentlyHere == true){
-			System.out.println("Weapons (1) / Consumables (2) / Exit Store (3)");
+			System.out.println("Weapons (1) / Consumables (2) / View Backpack(3) /Exit Store (4)");
 			response = input.nextLine();
-			System.out.println(response);
 			
 			if (response.equals("1"))
-				browseWeapons();
+				browseWeapons(person);
 			else if (response.equals("2"))
-				browseItems();
+				browseItems(person);
 			else if (response.equals("3"))
+				person.backpack.viewInventory();
+			else if (response.equals("4"))
 				exitStore();
 			else
 				System.out.println("Invalid input.");
@@ -65,23 +65,23 @@ public class Shopping {
 	 */
 	
 	//Displays weapons then switch statement to handle player choices
-	public void browseWeapons(){
-		System.out.println("Weapons:"); // (Number to Type) [Weapon] - [Price]
+	public void browseWeapons(Character_Class person) throws Exception{
+		System.out.println("Weapons:"); // (Number to Type) [Price] - [Weapons]
 		browsing = true;
 			
 		while (browsing == true){    //using placeholder strings for parameters
 			displayStock(weaponsStock);
 			response = input.nextLine();
 			switch (response.toString()){
-				case "0":	buyItem(weaponsStock[0].getName()); //Sword
+				case "0":	buyItem(person, weaponsStock[0].getName(), weaponsStock[0].getPrice()); //Sword
 							break;
-				case "1":	buyItem(weaponsStock[1].getName()); //Knife
+				case "1":	buyItem(person, weaponsStock[1].getName(), weaponsStock[0].getPrice()); //Knife
 							break;
-				case "2":	buyItem(weaponsStock[2].getName()); //Dagger
+				case "2":	buyItem(person, weaponsStock[2].getName(), weaponsStock[0].getPrice()); //Dagger
 							break;
-				case "3":	buyItem(weaponsStock[3].getName()); //Mace
+				case "3":	buyItem(person, weaponsStock[3].getName(), weaponsStock[0].getPrice()); //Mace
 							break;
-				case "4":	buyItem(weaponsStock[4].getName()); //Broken Stick
+				case "4":	buyItem(person, weaponsStock[4].getName(), weaponsStock[0].getPrice()); //Broken Stick
 							break;
 				case "9":
 				case "exit":
@@ -94,23 +94,23 @@ public class Shopping {
 	}
 	
 	//Displays weapons then switch statement to handle player choices
-	public void browseItems(){
-		System.out.println("Items:"); // (Number to Buy) Item - $Price
+	public void browseItems(Character_Class person) throws Exception{
+		System.out.println("Items:"); // (Number to Buy) [Price] - [Item]
 		browsing = true;
 		
 		while (browsing == true){   //using placeholder strings for parameters
 			displayStock(itemsStock);
 			response = input.nextLine();
 			switch (response.toString()){
-				case "0":	buyItem(itemsStock[0].getName()); //"Health Potion"
+				case "0":	buyItem(person, itemsStock[0].getName(), itemsStock[0].getPrice()); //"Health Potion"
 							break;
-				case "1":	buyItem(itemsStock[1].getName()); //"Mana Potion"
+				case "1":	buyItem(person, itemsStock[1].getName(), itemsStock[1].getPrice()); //"Mana Potion"
 							break;
-				case "2":	buyItem(itemsStock[2].getName()); //"Antidote"
+				case "2":	buyItem(person, itemsStock[2].getName(), itemsStock[2].getPrice()); //"Antidote"
 							break;
-				case "3":	buyItem(itemsStock[3].getName()); //"Energy Restore"
+				case "3":	buyItem(person, itemsStock[3].getName(), itemsStock[3].getPrice()); //"Energy Restore"
 							break;
-				case "4":	buyItem(itemsStock[4].getName()); //"Burn Repel"
+				case "4":	buyItem(person, itemsStock[4].getName(), itemsStock[4].getPrice()); //"Burn Repel"
 							break;
 				case "9":
 				case "exit":
@@ -137,19 +137,16 @@ public class Shopping {
 	/*
 	 * Buy Item
 	 */
-	
-	public void buyItem(String item){ //change String item to shopstock or whatever when I figure out how to implement.
-		System.out.println("You bought a " + item + ". Anything else?\n");
-		/*	if (money >= price){
-		 * 		money -= price
-		 * 		//add item to inventory
-		 * 		System.out.println("Here's your " + item.getName() + ".");
-		 *  }
-		 *  else {
-		 *  	System.out.println("Not enough gold. \nMaybe try farming a local dungeon. Probably some thieves still around.");
-		 *  }
-		 * 
-		 */
+	public void buyItem(Character_Class person, String item, int price) throws Exception{ //change String item to shopstock or whatever when I figure out how to implement.
+		if(person.getMoney() >= price){
+			person.setMoney(person.getMoney() - price);
+			person.backpack.addToInventory(item, 1);//add item to inventory
+			System.out.println("Here's your " + item + ". Anything else");
+		//	System.out.println("You bought a " + item + ". Anything else?\n");
+		}
+		else {
+			System.out.println("Not enough gold. \nMaybe try farming a local dungeon. Probably some thieves still around.");
+		}
 	}
 	
 	/*

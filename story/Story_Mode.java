@@ -122,7 +122,6 @@ public class Story_Mode {
 			System.out.println(speak);
 			System.out.println(speak3+" "+health+" Health");
 		}
-			}
 		else{
 			System.out.println("Please select a valid response");
 			try{
@@ -134,7 +133,7 @@ public class Story_Mode {
 			character_Info();
 		}
 		return number;
-		}
+	}
 	
 	public void tutorial() throws Exception{
 		character_Info();
@@ -195,12 +194,15 @@ public class Story_Mode {
 		System.out.println("Thanks for playing! ");
 	} 
 	
+	public void endStory(){
+		System.out.println("Thanks for playing! ");
+	}
+	
 	/*
 	 * This concludes the tutorial session of the game. 
 	 * Contributors can add new story elements below this comment section
 	 * 
 	 * */
-	
 	public void Introduction(){
 		String user;
 		System.out.println("What will you name your character?");
@@ -232,20 +234,11 @@ public class Story_Mode {
 			}
 		System.out.println("Are you ready to begin? (Yes/No)");
 		response2 = input.nextLine();
-		if(response2.equalsIgnoreCase ("Yes")){
-			Chapter1();
+		if(response2.equalsIgnoreCase("Yes")){
+		//	Chapter1();
 		}
 		else if (response2.equalsIgnoreCase("No")){
-			endStory();	
-		
+			endStory();
+		}	
 	}
-		public void endStory(){
-		System.out.println("Thanks for playing! ");
-	} 
-	
-		
-	}
-
-		
-	
 }

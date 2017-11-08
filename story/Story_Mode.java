@@ -232,10 +232,10 @@ public class Story_Mode {
 			}
 		System.out.println("Are you ready to begin? (Yes/No)");
 		response2 = input.nextLine();
-		if(response.equalsIgnoreCase ("Yes")){
+		if(response2.equalsIgnoreCase ("Yes")){
 			Chapter1();
 		}
-		else if (response.equalsIgnoreCase("No")){
+		else if (response2.equalsIgnoreCase("No")){
 			endStory();	
 		
 	}

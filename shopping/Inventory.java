@@ -66,13 +66,13 @@ public class Inventory{
 		}
 		if(itemName.endsWith("Restore")) {
 			if(itemName.startsWith("Energy")) {
-				removeItemFromInventory(itemName); //Remove the item
+				removeFromInventory(itemName); //Remove the item
 				return 1; //Use in battle system, for restore energy
 			}
 		}
 		if(itemName.endsWith("Heal")) {
 			if(itemName.startsWith("Burn")) {
-				removeItemFromInventory(itemName); //Remove the item
+				removeFromInventory(itemName); //Remove the item
 				return 1; //Use in battle system, for heal?
 			}
 		}

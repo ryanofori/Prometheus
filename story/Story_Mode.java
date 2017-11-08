@@ -31,7 +31,7 @@ public class Story_Mode {
 	 * 
 	 * */
 	
-	//Josey was here
+	
 	
 	private int character_Select(int choice){	
 		return choice;
@@ -201,19 +201,51 @@ public class Story_Mode {
 	 * 
 	 * */
 	
-	public void Chapter1(){
-		String user = null;
-		System.out.println("Hello "+ user);
+	public void Introduction(){
+		String user;
+		System.out.println("What will you name your character?");
+		response = input.nextLine();
+		user = response;
+		System.out.println("Hello! "+ user);
 		System.out.println("Welcome to Prometheus! Are you ready for an adventure?");
-		System.out.println("You appear in a field of luscious green grass and the sun beaming through the clouds above");
-		System.out.println("You have 5 options as to where you shall go first in your journey: City(1), Forest(2), Lake(3), Mountain(4), or Desert(5)");
-		place = input.nextInt();
-		if(place == 1){
-			System.out.println("You have chosen to go to the city!");
-			System.out.println("");
-	}
+		try{
+				Thread.sleep(1000);
+			}
+			catch(InterruptedException ie){
+				ie.printStackTrace();
+			}
+		System.out.println("During your journey, you will encounter 9 enemies in 5 different settings.");
+		System.out.println("The 5 places you will battle will be city, forest, lake, mountain, and desert and there will be enemies in each.");	
+		try{
+				Thread.sleep(1000);
+			}
+			catch(InterruptedException ie){
+				ie.printStackTrace();
+			}
+		System.out.println("If you shall lose any of these battles, it will result in GAME OVER.");
+		System.out.println("If you win all of your battles, you will be rewarded with a large monetary prize that you may use to buy weapons and potions to be used in the tournament.");
+		try{
+				Thread.sleep(2000);
+			}
+			catch(InterruptedException ie){
+				ie.printStackTrace();
+			}
+		System.out.println("Are you ready to begin? (Yes/No)");
+		response2 = input.nextLine();
+		if(response.equalsIgnoreCase ("Yes")){
+			Chapter1();
+		}
+		else if (response.equalsIgnoreCase("No")){
+			endStory();	
 		
 	}
+		public void endStory(){
+		System.out.println("Thanks for playing! ");
+	} 
+	
+		
+	}
+
 		
 	
 }

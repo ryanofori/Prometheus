@@ -5,9 +5,8 @@ import java.util.Scanner;
 public class Character_Select {
 	static int response = 0;
 	static Scanner input = new Scanner(System.in);
-	
+
 	public static Character_Class character_Select(){
-		
 		
 		/*Here I am asking you which character you would like to be. */
 		System.out.println("Which character class would you like to play as for this session?:"

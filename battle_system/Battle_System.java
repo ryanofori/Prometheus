@@ -54,9 +54,7 @@ public class Battle_System {
 			}
 			
 		}
-		
-		
-		public void battleSystem(Character_Class person) throws Exception{
+		public void battleSystem(Character_Class player) throws Exception{
 			@SuppressWarnings("resource")
 			Scanner input = new Scanner(System.in);
 			Random number = new Random();
@@ -64,10 +62,10 @@ public class Battle_System {
 			//char type;
 			double r = Math.random();
 			//boolean temp;
+
+			character_health = player.getHealth();
+			user = player.getName();	
 			
-			user = person.getName();
-			character_health = person.getHealth();
-							
 			/*The eName array and the selection array are in a random. 
 			 * I assigned each method with health and a name. 
 			 * I then assign enemy to which ever enemy method is chosen in the array. 

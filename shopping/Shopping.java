@@ -19,7 +19,8 @@ public class Shopping {
 	
 	public void store(Character_Class person) throws Exception{
 		if (currentlyHere == false){
-			System.out.println("Welcome to my store. Take a look at my wares.\n");
+			System.out.println("Welcome to my store. Take a look at my wares.");
+			System.out.println("You currently have $" + person.getMoney() + "\n");
 			try{
 				Thread.sleep(1000);
 			}
@@ -74,13 +75,13 @@ public class Shopping {
 			switch (response.toString()){
 				case "0":	buyItem(person, weaponsStock[0].getName(), weaponsStock[0].getPrice()); //Sword
 							break;
-				case "1":	buyItem(person, weaponsStock[1].getName(), weaponsStock[0].getPrice()); //Knife
+				case "1":	buyItem(person, weaponsStock[1].getName(), weaponsStock[1].getPrice()); //Knife
 							break;
-				case "2":	buyItem(person, weaponsStock[2].getName(), weaponsStock[0].getPrice()); //Dagger
+				case "2":	buyItem(person, weaponsStock[2].getName(), weaponsStock[2].getPrice()); //Dagger
 							break;
-				case "3":	buyItem(person, weaponsStock[3].getName(), weaponsStock[0].getPrice()); //Mace
+				case "3":	buyItem(person, weaponsStock[3].getName(), weaponsStock[3].getPrice()); //Mace
 							break;
-				case "4":	buyItem(person, weaponsStock[4].getName(), weaponsStock[0].getPrice()); //Broken Stick
+				case "4":	buyItem(person, weaponsStock[4].getName(), weaponsStock[4].getPrice()); //Broken Stick
 							break;
 				case "9":
 				case "exit":
@@ -140,8 +141,8 @@ public class Shopping {
 		if(person.getMoney() >= price){
 			person.setMoney(person.getMoney() - price);
 			person.backpack.addToInventory(item, 1);//add item to inventory
-			System.out.println("Here's your " + item + ". Anything else");
-		//	System.out.println("You bought a " + item + ". Anything else?\n");
+			System.out.println("Here's your " + item);
+			System.out.println("You have $" + person.getMoney() + " left. \n Would you like anything else? \n");
 		}
 		else {
 			System.out.println("Not enough gold. \nMaybe try farming a local dungeon. Probably some thieves still around.");

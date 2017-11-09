@@ -56,7 +56,7 @@ public class Battle_System {
 		}
 		
 		
-		public void battleSystem(int choice) throws Exception{
+		public void battleSystem(Character_Class person) throws Exception{
 			@SuppressWarnings("resource")
 			Scanner input = new Scanner(System.in);
 			Random number = new Random();
@@ -65,18 +65,9 @@ public class Battle_System {
 			double r = Math.random();
 			//boolean temp;
 			
-			if(choice == 1){
-				Character_Warrior character  = new Character_Warrior();
-				character_health = character.getHealth();
-				user = character.getName();
-			}
-			else if(choice == 2){
-				Character_Orc character = new Character_Orc();
-				character_health = character.getHealth();
-				user = character.getName();
-			}
-				
-			
+			user = person.getName();
+			character_health = person.getHealth();
+							
 			/*The eName array and the selection array are in a random. 
 			 * I assigned each method with health and a name. 
 			 * I then assign enemy to which ever enemy method is chosen in the array. 
@@ -283,20 +274,6 @@ public class Battle_System {
 				else {
 					System.out.println("Please choose a valid response");
 				}
-//				if(physical_options == 1 && punch_attack_left == 0){
-//					action = 0;
-//				}
-				
-//				if(action == 0){
-//				System.out.println("You can't use this Punch Attack anymore.");
-//				melee = 0;
-//				}
-//				if(physical_options == 1 ){
-//					punch_attack_left--;
-//				}
-//				if(physical_options == 2 ){
-//					sword_attack_left--;
-//				}
 					
 				for(int counter=0; counter<1;counter++){  
 					damage = 1+number.nextInt(10); //default enemy damage
@@ -313,9 +290,6 @@ public class Battle_System {
 					if(action == 2 && magic_options == 1){
 						magic = 1+number.nextInt(magic_attacks.get_Flameball());
 					}
-//					if(action == 0){
-//						break;
-//					}
 				}
 					
 				if(physical_options == 1 && r <= .30 || physical_options == 2 && r <= .30){
@@ -472,4 +446,5 @@ public class Battle_System {
 				 ie.printStackTrace(); 
 			 } 	
 	}
+
 }	//public class battle_SystemTest

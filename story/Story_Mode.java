@@ -3,6 +3,7 @@ import java.util.Scanner;
 import battle_system.Battle_System;
 import character.Character_Orc;
 import character.Character_Warrior;
+import character.Character_Class;
 import character.Character_Dwarf;
 import character.Character_Elf;
 import character.Character_Wizard;
@@ -32,7 +33,7 @@ public class Story_Mode {
 	 * */
 	
 	
-	
+	/**
 	private int character_Select(int choice){	
 		return choice;
 	}
@@ -133,14 +134,12 @@ public class Story_Mode {
 			character_Info();
 		}
 		return number;
-	}
+	}*/
 	
-	public void tutorial() throws Exception{
-		character_Info();
-		int select = character_Select(number);
+	public void tutorial(Character_Class person) throws Exception{
 		System.out.println("A quick simulated battle is about to commence. ");
 		System.out.println("Please pay attention as to what's going on. ");
-		battle.battleSystem(select); //Starts the battle class.
+		battle.battleSystem(person); //Starts the battle class.
 		tutorial2(); //Starts the story2 method.
 		}
 	

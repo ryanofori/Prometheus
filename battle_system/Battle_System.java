@@ -7,65 +7,30 @@ import character.*;
 import shopping.Inventory;
 	
 public class Battle_System {
-		Enemy_Quotes enemyQuotes = new Enemy_Quotes();
-		Enemy_Giant giant = new Enemy_Giant();
-		Enemy_Goblin goblin = new Enemy_Goblin();
-		Enemy_Grunt grunt = new Enemy_Grunt();
-		Enemy_Halfling halfling = new Enemy_Halfling();
-		Enemy_Necromancer necromancer = new Enemy_Necromancer();
-		Enemy_Scorpion scorpion = new Enemy_Scorpion();
-		Enemy_Shapeshifter shapeshifter = new Enemy_Shapeshifter();
-		Enemy_Siren siren = new Enemy_Siren();
-		Enemy_Troll troll = new Enemy_Troll();
-		
+		Enemy_Quotes enemyQuotes = new Enemy_Quotes();	
 		Character_Class c = new Character_Class();
 		Weapons  weapon = new Weapons();
 		Magic magic_attacks = new Magic();
 		Inventory inventory = new Inventory();
 		private String user,enemyName;
-		private int magic, enemy_health, magic_options, physical_options, damage, melee, character_health, boost;
+		private int magic, enemy_health, magic_options, physical_options, damage, melee, character_health;
 		
-		/*
-		 * We should re-adjust the entire battle system 
-		 * 
-		 * */
-		
-		/** Enemy List
-		 * -------------
-		 * Giant
-		 * Goblin
-		 * Grunt
-		 * Halfing
-		 * Necromancer
-		 * Scorpion
-		 * Shapeshifter
-		 * Siren
-		 * Troll
-		 * -------------
-		 * */
-		
-		public void random_Enemy(){
-			String [] eName ={giant.getName(),goblin.getName(),grunt.getName(),halfling.getName(),necromancer.getName(),scorpion.getName(),shapeshifter.getName(),siren.getName(),troll.getName()};		
-			int [] selection = {giant.getHealth(),goblin.getHealth(),grunt.getHealth(),halfling.getHealth(),necromancer.getHealth(),scorpion.getHealth(),shapeshifter.getHealth(),siren.getHealth(),troll.getHealth()};
-			for(int counter = 0; counter < 1;counter++){
-				int rand = (int) (Math.random() * selection.length);
-				enemy_health = selection[rand];
-				enemyName = eName[rand];
-			}
-			
-		}
-		
+		Character_Class enemy = Character_Select.randomEnemy();
 		
 		public void battleSystem(Character_Class player) throws Exception{
 			@SuppressWarnings("resource")
 			Scanner input = new Scanner(System.in);
 			Random number = new Random();
-			int action;
+			int action, menu_selection;
 			//char type;
 			double r = Math.random();
 			//boolean temp;
+
 			character_health = player.getHealth();
 			user = player.getName();	
+			
+			enemyName = enemy.getName();
+			enemy_health = enemy.getHealth();
 			
 			/*The eName array and the selection array are in a random. 
 			 * I assigned each method with health and a name. 
@@ -254,9 +219,30 @@ public class Battle_System {
 			 * Choose an Action: Melee(1) | Magic(2) 
 			 * */
 			
-			random_Enemy(); //chooses a random enemy to fight
+			while(true){
+				System.out.println("\nDisplay Character Stats(1) | Display Enemy Stats(2) | Choose Weapons/Abilities(3) | Start Battle(4)");
+				menu_selection = input.nextInt();
+				if (menu_selection == 1){
+					player.displayStats();
+					menu_selection = 0;
+				}
+				
+				else if (menu_selection == 2){
+					enemy.displayStats();
+					menu_selection = 0;
+				}
+				
+				else if (menu_selection == 3){
+					//Displays weapons and Items
+					System.out.println("Weapons/Items");
+					menu_selection = 0;
+				}
+				else if (menu_selection == 4){
+					break;
+				}
+			}
 		
-			while(true){ //If your health is greater than 0, keep going through the loop.
+			while(true){ //If your health is greater than 0, keep going through the loop.		
 				System.out.println("\nChoose an Action:  Melee(1)/Magic(2): ");
 				action = input.nextInt();
 				if(action == 2){
@@ -273,20 +259,6 @@ public class Battle_System {
 				else {
 					System.out.println("Please choose a valid response");
 				}
-//				if(physical_options == 1 && punch_attack_left == 0){
-//					action = 0;
-//				}
-				
-//				if(action == 0){
-//				System.out.println("You can't use this Punch Attack anymore.");
-//				melee = 0;
-//				}
-//				if(physical_options == 1 ){
-//					punch_attack_left--;
-//				}
-//				if(physical_options == 2 ){
-//					sword_attack_left--;
-//				}
 					
 				for(int counter=0; counter<1;counter++){  
 					damage = 1+number.nextInt(10); //default enemy damage
@@ -303,9 +275,6 @@ public class Battle_System {
 					if(action == 2 && magic_options == 1){
 						magic = 1+number.nextInt(magic_attacks.get_Flameball());
 					}
-//					if(action == 0){
-//						break;
-//					}
 				}
 					
 				if(physical_options == 1 && r <= .30 || physical_options == 2 && r <= .30){
@@ -319,23 +288,12 @@ public class Battle_System {
 						  } 
 						}
 				
-//				if(physical_options == 2 && sword_attack_left == 0){
-//					System.out.println("You can't use this Punch Attack anymore.");
-//					damage = 0;
-//				}
-				
 					/* if the user chooses melee and it's attack has a percent of 60. It will execute
 					 * the following. 
 					 */
 					
 				if(physical_options == 1 && r <= .70 || physical_options == 2 && r <= .70){
 					enemy_health-=melee;
-//					if(punch_attack_left == 0){
-//						  melee = 0;
-//						  }
-//					if(sword_attack_left == 0){
-//						melee = 0;
-//					}
 					if(melee > 15){
 						System.out.println("Critical Damage!");
 					}
@@ -357,7 +315,6 @@ public class Battle_System {
 						   catch (InterruptedException ie) { //Sleep timer for .5 seconds
 						     ie.printStackTrace();
 						   }
-//						 enemyQuotes.dyingQuote(); // say's a random dying quote from the enemy_Class
 					}
 					else if(magic_options == 1 && r <= .70 || magic_options == 2 && r <= .70){	//Magic Attack
 						enemy_health-=magic;
@@ -414,52 +371,7 @@ public class Battle_System {
 					 (InterruptedException ie){
 						 ie.printStackTrace(); 
 					 }
-				 boost_Health();
 				 inventory.addToInventory("Health Potion", 1);
-				 //inventory.viewInventory();
 		}
 	}	//End of BattleSystem method.
-	
-		
-		
-		/*
-		 * Here is the method that controls how much boosted health we provide the user after each battle
-		 * Values are completely random. These values should be adjusted. 
-		 * */
-		private void boost_Health(){
-		 System.out.println("You have earned boost points towards your health.\n ");
-		 if(character_health > 30 && character_health <= 40){
-			 c.setBoost(20);
-			 boost = c.getBoost();
-			 System.out.println(boost+" Has Been Added");
-			 System.out.println(character_health+boost+" Is Your New Health Points.\n ");
-		 }
-		 else if(character_health > 20 && character_health <= 30){
-			 c.setBoost(30);
-			 boost = c.getBoost();
-			 System.out.println(boost+" Has Been Added");
-			 System.out.println(character_health+boost+" Is Your New Health Points.\n "); 
-		 }
-		 
-		 else if(character_health > 40){
-			    c.setBoost(40);
-			    boost = c.getBoost();
-			 	System.out.println(boost+" Has Been Added");
-			 	System.out.println(character_health+boost+" Is Your New Health Points.\n");
-		 }
-		 
-		 else{
-			 c.setBoost(60);
-			 boost = c.getBoost();
-			 System.out.println(boost+" Has Been Added");
-			 System.out.println(character_health+boost+" Is Your New Health Points.\n");
-		 }
-		 try{
-			 Thread.sleep(1000);
-		 }
-		 catch
-			 (InterruptedException ie){
-				 ie.printStackTrace(); 
-			 } 	
-	}
 }	//public class battle_SystemTest

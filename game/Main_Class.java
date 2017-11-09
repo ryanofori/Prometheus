@@ -38,7 +38,7 @@ public class Main_Class  {
 			    shopping.store(player);
 		    }
 		    else if(response == 3){
-			    tournament.fight();
+			    tournament.fight(player);
 		    }
 		    else if(response == 4){
 			    System.out.println("Thanks for playing");

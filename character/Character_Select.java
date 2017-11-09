@@ -35,7 +35,7 @@ public class Character_Select {
 			}
 			else if(response == 2) {
 				Character_Orc character = new Character_Orc();
-				System.out.print("You have chosen to be an Orc");
+				System.out.println("You have chosen to be an Orc");
 				return character;
 			}
 			else if(response == 3) {

@@ -1,6 +1,5 @@
 package shopping;
 //import character.Items;	//uncomment when Items class is made
-import character.Weapons;
 import character.Character_Class;
 import java.util.Scanner;
 

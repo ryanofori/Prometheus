@@ -1,6 +1,7 @@
 package battle_system;
 
 import java.util.Scanner;
+import weapons.Select_Weapon;
 import java.util.Random;
 import enemy.*;
 import character.*;
@@ -9,9 +10,9 @@ import shopping.Inventory;
 public class Battle_System {
 		Enemy_Quotes enemyQuotes = new Enemy_Quotes();	
 		Character_Class c = new Character_Class();
-		Weapons  weapon = new Weapons();
 		Magic magic_attacks = new Magic();
 		Inventory inventory = new Inventory();
+		Select_Weapon weapons = new Select_Weapon();
 		private String user,enemyName;
 		private int magic, enemy_health, magic_options, physical_options, damage, melee, character_health;
 		
@@ -231,8 +232,9 @@ public class Battle_System {
 				}
 				
 				else if (menu_selection == 3){
-					//Displays weapons and Items
-					System.out.println("Weapons/Items");
+					player.backpack.viewInventory();
+					int response = input.nextInt();
+					player.setPrimaryWeapon(player.backpack.selectWeapon(response));
 					menu_selection = 0;
 				}
 				else if (menu_selection == 4){
@@ -249,7 +251,7 @@ public class Battle_System {
 				}
 				
 				else if(action == 1){
-					System.out.println("Choose a Physical Attack: "+weapon.getPunch_Name()+"(1) "+weapon.getRustyAxe_Name()+"(2)");
+					System.out.println("Choose a Physical Attack: "+player.getPrimaryWeapon()+"(1)");
 					physical_options = input.nextInt();
 					
 				}
@@ -261,10 +263,10 @@ public class Battle_System {
 				for(int counter=0; counter<1;counter++){  
 					damage = 1+number.nextInt(10); //default enemy damage
 					if(action == 1 && physical_options == 1){
-						melee = 1+number.nextInt(weapon.getPunch_Damage());
+						melee = 1+number.nextInt(player.getPrimaryWeaponDamage());
 					}
 					if(action == 1 && physical_options == 2){
-						melee = 1+number.nextInt(weapon.getRusty_Axe_Damage());
+						melee = 1+number.nextInt(player.getSecondaryWeaponDamage());
 					}
 					
 					if(action == 2 && magic_options == 2){
@@ -360,16 +362,6 @@ public class Battle_System {
 					 (InterruptedException ie){
 						 ie.printStackTrace(); 
 					 }
-				 
-				 System.out.println("As A Reward For Your Accomplishment... ");
-				 try{
-					 Thread.sleep(500); //Sleep timer of .5 seconds. 
-				 }
-				 catch
-					 (InterruptedException ie){
-						 ie.printStackTrace(); 
-					 }
-				 inventory.addToInventory("Health Potion", 1);
 		}
 	}	//End of BattleSystem method.
 }	//public class battle_SystemTest

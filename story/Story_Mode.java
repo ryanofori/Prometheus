@@ -19,10 +19,12 @@ public class Story_Mode {
 	 * 
 	 * */
 	
+	Character_Class enemy = Character_Select.randomEnemy();
+	
 	public void tutorial(Character_Class player) throws Exception{
 		System.out.println("A quick simulated battle is about to commence. ");
 		System.out.println("Please pay attention as to what's going on. ");
-		battle.battleSystem(player); //Starts the battle class.
+		battle.battleSystem(player,enemy); //Starts the battle class.
 		tutorial2(player); //Starts the story2 method.
 		}
 	

@@ -99,9 +99,11 @@ Current thinking of how it goes:
 
 * Player calls shop method in Battle_System.
 * Shop loads stock of Weapons and Consumables.
-* Player has options of looking at  'Weapons (1)', 'Consumables (2)' or leaving.
+* Player has options of looking at  'Weapons (1)', 'Consumables (2)', 'View Backpack (3)' or leaving.
 * Items are currently categorized as: weapons and items
 * Player is allowed to back out a level like say (Store -> Weapons (types 'back' or key mapped to it) -> Store.
 * Player buys one item at a time. (No shopping cart)
+* Purchasing the item will add it to the players inventory.
+* Player can view the contents of his backpack before or after purchasing.
 
 

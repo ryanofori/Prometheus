@@ -56,7 +56,7 @@ public class Battle_System {
 		}
 		
 		
-		public void battleSystem(int choice) throws Exception{
+		public void battleSystem(Character_Class player) throws Exception{
 			@SuppressWarnings("resource")
 			Scanner input = new Scanner(System.in);
 			Random number = new Random();
@@ -64,18 +64,8 @@ public class Battle_System {
 			//char type;
 			double r = Math.random();
 			//boolean temp;
-			
-			if(choice == 1){
-				Character_Warrior character  = new Character_Warrior();
-				character_health = character.getHealth();
-				user = character.getName();
-			}
-			else if(choice == 2){
-				Character_Orc character = new Character_Orc();
-				character_health = character.getHealth();
-				user = character.getName();
-			}
-				
+			character_health = player.getHealth();
+			user = player.getName();	
 			
 			/*The eName array and the selection array are in a random. 
 			 * I assigned each method with health and a name. 

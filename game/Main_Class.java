@@ -32,7 +32,7 @@ public class Main_Class  {
 			System.out.println("Please select a mode: Story Mode(1) | Shopping(2) | Tournament(3) | Exit(4)");
 			response = input.nextInt();
 			if(response == 1){
-				story.tutorial();
+				story.tutorial(player);
 			}
 			else if(response == 2){
 			    shopping.store(player);

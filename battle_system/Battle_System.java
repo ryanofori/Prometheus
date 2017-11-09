@@ -8,15 +8,6 @@ import shopping.Inventory;
 	
 public class Battle_System {
 		Enemy_Quotes enemyQuotes = new Enemy_Quotes();
-		Enemy_Giant giant = new Enemy_Giant();
-		Enemy_Goblin goblin = new Enemy_Goblin();
-		Enemy_Grunt grunt = new Enemy_Grunt();
-		Enemy_Halfling halfling = new Enemy_Halfling();
-		Enemy_Necromancer necromancer = new Enemy_Necromancer();
-		Enemy_Scorpion scorpion = new Enemy_Scorpion();
-		Enemy_Shapeshifter shapeshifter = new Enemy_Shapeshifter();
-		Enemy_Siren siren = new Enemy_Siren();
-		Enemy_Troll troll = new Enemy_Troll();
 		
 		Character_Class c = new Character_Class();
 		Weapons  weapon = new Weapons();
@@ -44,16 +35,8 @@ public class Battle_System {
 		 * -------------
 		 * */
 		
-		public void random_Enemy(){
-			String [] eName ={giant.getName(),goblin.getName(),grunt.getName(),halfling.getName(),necromancer.getName(),scorpion.getName(),shapeshifter.getName(),siren.getName(),troll.getName()};		
-			int [] selection = {giant.getHealth(),goblin.getHealth(),grunt.getHealth(),halfling.getHealth(),necromancer.getHealth(),scorpion.getHealth(),shapeshifter.getHealth(),siren.getHealth(),troll.getHealth()};
-			for(int counter = 0; counter < 1;counter++){
-				int rand = (int) (Math.random() * selection.length);
-				enemy_health = selection[rand];
-				enemyName = eName[rand];
-			}
-			
-		}
+		Character_Class enemy = Character_Select.randomEnemy();
+		
 		public void battleSystem(Character_Class player) throws Exception{
 			@SuppressWarnings("resource")
 			Scanner input = new Scanner(System.in);
@@ -65,6 +48,9 @@ public class Battle_System {
 
 			character_health = player.getHealth();
 			user = player.getName();	
+			
+			enemyName = enemy.getName();
+			enemy_health = enemy.getHealth();
 			
 			/*The eName array and the selection array are in a random. 
 			 * I assigned each method with health and a name. 
@@ -253,8 +239,6 @@ public class Battle_System {
 			 * Choose an Action: Melee(1) | Magic(2) 
 			 * */
 			
-			random_Enemy(); //chooses a random enemy to fight
-			
 			while(true){
 				System.out.println("\nDisplay Character Stats(1) | Display Enemy Stats(2) | Choose Weapons/Abilities(3) | Start Battle(4)");
 				menu_selection = input.nextInt();
@@ -264,7 +248,7 @@ public class Battle_System {
 				}
 				
 				else if (menu_selection == 2){
-					//enemy.displayEnemyStats();
+					enemy.displayStats();
 					menu_selection = 0;
 				}
 				

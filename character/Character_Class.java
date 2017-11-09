@@ -138,5 +138,4 @@ public class Character_Class  {
 				+ "\nResistance: " + resistance
 				);
 	}
-
 }

@@ -2,14 +2,18 @@ package tournament;
 import java.util.Scanner;
 import battle_system.Battle_System;
 import character.Character_Class;
+import character.Character_Select;
 import character.Character_Class;;
 
 public class Tournament_Mode {
 	Scanner input = new Scanner(System.in);
 	Character_Class health = new Character_Class();
 	Character_Class name = new Character_Class();
-	Character_Class defence = new Character_Class();
+	Character_Class defense = new Character_Class();
+	Character_Class enemy = Character_Select.randomEnemy();
+	
 	public void fight(){		
+		
 		System.out.println("Welcome to the Tournament Mode");
 		while(true)
 		{
@@ -20,7 +24,7 @@ public class Tournament_Mode {
 		//System.out.println(name.getName());
 		
 		System.out.println("Health: " + health.getHealth());
-		System.out.println("Defence: " + defence.getDefense());
+		System.out.println("Defence: " + defense.getDefense());
 		Battle();
 //		try{
 //			Thread.sleep(1000);

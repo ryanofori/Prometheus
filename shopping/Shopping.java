@@ -20,7 +20,8 @@ public class Shopping {
 	
 	public void store(Character_Class person) throws Exception{
 		if (currentlyHere == false){
-			System.out.println("Welcome to my store. Take a look at my wares.\n");
+			System.out.println("Welcome to my store. Take a look at my wares.");
+			System.out.println("You currently have $" + person.getMoney() + "\n");
 			try{
 				Thread.sleep(1000);
 			}

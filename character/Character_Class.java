@@ -1,8 +1,10 @@
 package character;
+import shopping.Inventory;
 public class Character_Class  {
 	protected int health,damage,magic,defense,boost, weapon_damage,armor;
-	protected int intelligence,speed,strength, resistance;
+	protected int intelligence,speed,strength, resistance, money;
 	protected String name,speak;
+	public Inventory backpack;
 	public Character_Class(){   //These are the defaults stats, just in case I didn't set one up 
 		health = 100;        // in the main_Class.
 		damage = 0;
@@ -16,6 +18,8 @@ public class Character_Class  {
 		strength = 0;
 		resistance = 0;
 		speak = "";
+		money = 200;
+		backpack = new Inventory();
 	}
 	
 	public void setWeapon_Damage(int wd){
@@ -29,7 +33,9 @@ public class Character_Class  {
 	public void setIntelligence(int i){
 		this.intelligence = i;
 	}
-	
+	public void setMoney(int c) {
+		this.money = c;
+	}
 	public void setHealth(int h){
 		this.health = h;
 	}
@@ -76,7 +82,9 @@ public class Character_Class  {
 	public int getBoost(){
 		return boost;
 	}
-	
+	public int getMoney(){
+		return money;
+	}
 	public int getHealth(){
 		return health;
 	}

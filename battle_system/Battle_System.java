@@ -7,33 +7,13 @@ import character.*;
 import shopping.Inventory;
 	
 public class Battle_System {
-		Enemy_Quotes enemyQuotes = new Enemy_Quotes();
-		
+		Enemy_Quotes enemyQuotes = new Enemy_Quotes();	
 		Character_Class c = new Character_Class();
 		Weapons  weapon = new Weapons();
 		Magic magic_attacks = new Magic();
 		Inventory inventory = new Inventory();
 		private String user,enemyName;
-		private int magic, enemy_health, magic_options, physical_options, damage, melee, character_health, boost;
-		
-		/*
-		 * We should re-adjust the entire battle system 
-		 * 
-		 * */
-		
-		/** Enemy List
-		 * -------------
-		 * Giant
-		 * Goblin
-		 * Grunt
-		 * Halfing
-		 * Necromancer
-		 * Scorpion
-		 * Shapeshifter
-		 * Siren
-		 * Troll
-		 * -------------
-		 * */
+		private int magic, enemy_health, magic_options, physical_options, damage, melee, character_health;
 		
 		Character_Class enemy = Character_Select.randomEnemy();
 		
@@ -308,23 +288,12 @@ public class Battle_System {
 						  } 
 						}
 				
-//				if(physical_options == 2 && sword_attack_left == 0){
-//					System.out.println("You can't use this Punch Attack anymore.");
-//					damage = 0;
-//				}
-				
 					/* if the user chooses melee and it's attack has a percent of 60. It will execute
 					 * the following. 
 					 */
 					
 				if(physical_options == 1 && r <= .70 || physical_options == 2 && r <= .70){
 					enemy_health-=melee;
-//					if(punch_attack_left == 0){
-//						  melee = 0;
-//						  }
-//					if(sword_attack_left == 0){
-//						melee = 0;
-//					}
 					if(melee > 15){
 						System.out.println("Critical Damage!");
 					}
@@ -346,7 +315,6 @@ public class Battle_System {
 						   catch (InterruptedException ie) { //Sleep timer for .5 seconds
 						     ie.printStackTrace();
 						   }
-//						 enemyQuotes.dyingQuote(); // say's a random dying quote from the enemy_Class
 					}
 					else if(magic_options == 1 && r <= .70 || magic_options == 2 && r <= .70){	//Magic Attack
 						enemy_health-=magic;
@@ -403,53 +371,7 @@ public class Battle_System {
 					 (InterruptedException ie){
 						 ie.printStackTrace(); 
 					 }
-				 boost_Health();
 				 inventory.addToInventory("Health Potion", 1);
-				 //inventory.viewInventory();
 		}
 	}	//End of BattleSystem method.
-	
-		
-		
-		/*
-		 * Here is the method that controls how much boosted health we provide the user after each battle
-		 * Values are completely random. These values should be adjusted. 
-		 * */
-		private void boost_Health(){
-		 System.out.println("You have earned boost points towards your health.\n ");
-		 if(character_health > 30 && character_health <= 40){
-			 c.setBoost(20);
-			 boost = c.getBoost();
-			 System.out.println(boost+" Has Been Added");
-			 System.out.println(character_health+boost+" Is Your New Health Points.\n ");
-		 }
-		 else if(character_health > 20 && character_health <= 30){
-			 c.setBoost(30);
-			 boost = c.getBoost();
-			 System.out.println(boost+" Has Been Added");
-			 System.out.println(character_health+boost+" Is Your New Health Points.\n "); 
-		 }
-		 
-		 else if(character_health > 40){
-			    c.setBoost(40);
-			    boost = c.getBoost();
-			 	System.out.println(boost+" Has Been Added");
-			 	System.out.println(character_health+boost+" Is Your New Health Points.\n");
-		 }
-		 
-		 else{
-			 c.setBoost(60);
-			 boost = c.getBoost();
-			 System.out.println(boost+" Has Been Added");
-			 System.out.println(character_health+boost+" Is Your New Health Points.\n");
-		 }
-		 try{
-			 Thread.sleep(1000);
-		 }
-		 catch
-			 (InterruptedException ie){
-				 ie.printStackTrace(); 
-			 } 	
-	}
-
 }	//public class battle_SystemTest

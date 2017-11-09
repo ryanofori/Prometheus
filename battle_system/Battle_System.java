@@ -58,7 +58,7 @@ public class Battle_System {
 			@SuppressWarnings("resource")
 			Scanner input = new Scanner(System.in);
 			Random number = new Random();
-			int action;
+			int action, menu_selection;
 			//char type;
 			double r = Math.random();
 			//boolean temp;
@@ -254,8 +254,31 @@ public class Battle_System {
 			 * */
 			
 			random_Enemy(); //chooses a random enemy to fight
+			
+			while(true){
+				System.out.println("\nDisplay Character Stats(1) | Display Enemy Stats(2) | Choose Weapons/Abilities(3) | Start Battle(4)");
+				menu_selection = input.nextInt();
+				if (menu_selection == 1){
+					player.displayStats();
+					menu_selection = 0;
+				}
+				
+				else if (menu_selection == 2){
+					//enemy.displayEnemyStats();
+					menu_selection = 0;
+				}
+				
+				else if (menu_selection == 3){
+					//Displays weapons and Items
+					System.out.println("Weapons/Items");
+					menu_selection = 0;
+				}
+				else if (menu_selection == 4){
+					break;
+				}
+			}
 		
-			while(true){ //If your health is greater than 0, keep going through the loop.
+			while(true){ //If your health is greater than 0, keep going through the loop.		
 				System.out.println("\nChoose an Action:  Melee(1)/Magic(2): ");
 				action = input.nextInt();
 				if(action == 2){

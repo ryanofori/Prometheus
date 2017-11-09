@@ -125,4 +125,18 @@ public class Character_Class  {
 		return speed;
 	}
 	
+	public void displayStats(){
+		System.out.println("Character: "+name
+				+ "\nHealth: "+ health
+				+ "\nDamage: "+ damage
+				+ "\nMagic: " + magic
+				+ "\nDefense: " + defense
+				+ "\nArmor: " + armor
+				+ "\nIntelligence: " + intelligence
+				+ "\nSpeed: " + speed
+				+ "\nStrength: " + strength
+				+ "\nResistance: " + resistance
+				);
+	}
+
 }

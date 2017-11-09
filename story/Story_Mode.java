@@ -1,21 +1,8 @@
 package story;
 import java.util.Scanner;
 import battle_system.Battle_System;
-import character.Character_Orc;
-import character.Character_Warrior;
-import character.Character_Class;
-import character.Character_Dwarf;
-import character.Character_Elf;
-import character.Character_Wizard;
-import enemy.Enemy_Giant;
-import enemy.Enemy_Goblin;
-import enemy.Enemy_Grunt;
-import enemy.Enemy_Halfling;
-import enemy.Enemy_Necromancer;
-import enemy.Enemy_Scorpion;
-import enemy.Enemy_Shapeshifter;
-import enemy.Enemy_Siren;
-import enemy.Enemy_Troll;
+import character.*;
+import enemy.*;
 public class Story_Mode {
 	
 	static Scanner input = new Scanner(System.in);
@@ -36,11 +23,11 @@ public class Story_Mode {
 		System.out.println("A quick simulated battle is about to commence. ");
 		System.out.println("Please pay attention as to what's going on. ");
 		battle.battleSystem(player); //Starts the battle class.
-		tutorial2(); //Starts the story2 method.
+		tutorial2(player); //Starts the story2 method.
 		}
 	
 	/*the beginning of the 2nd tutorial */
-	private void tutorial2(){
+	private void tutorial2(Character_Class player){
 		System.out.println("As you can see, the battle system allows for you to choose your own attacks.\n");
 		System.out.println("This is how all of your battles will take place.\n");
 		try {
@@ -55,7 +42,7 @@ public class Story_Mode {
 		System.out.println("Are you ready to move forward? (Yes/No): ");
 		response = input.nextLine();
 		if(response.equalsIgnoreCase ("Yes")){
-			tutorial3();
+			tutorial3(player);
 		}
 		else if (response.equalsIgnoreCase("No")){
 			endTutorial();	
@@ -64,7 +51,7 @@ public class Story_Mode {
 	/*End of the 2nd part of the tutorial.*/
 	
 	/*Beginning the third part of the tutorial*/
-	private void tutorial3(){
+	private void tutorial3(Character_Class player){
 		String user;
 		System.out.println("What will you name your character?");
 		response2 = input.nextLine();
@@ -74,8 +61,9 @@ public class Story_Mode {
 		System.out.println("Shall I remind you again of your character choice? (Yes/No)");
 		response2 = input.nextLine();
 		if(response2.equalsIgnoreCase("Yes")){
-			System.out.println("\n"+speak);
-			System.out.println(speak3+" "+health+" Health");
+			player.getSpeak();
+			System.out.print("I have: ");
+			player.getHealth();
 			endTutorial();
 			}
 		else if(response2.equalsIgnoreCase("No")){

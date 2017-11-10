@@ -22,6 +22,8 @@ public class Character_Class  {
 		backpack = new Inventory();
 		primary_weapon_damage = 10;
 		secondary_weapon_damage = 5;
+		primaryWeapon = "Rusty Axe";
+		secondaryWeapon = "Punch";
 	}
 	
 	public void setPrimaryWeapon(String weap){

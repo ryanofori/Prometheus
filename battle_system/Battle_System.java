@@ -218,6 +218,7 @@ public class Battle_System {
 			 * Choose an Action: Melee(1) | Magic(2) 
 			 * */
 			
+			//Primary Weapon by default
 			while(true){
 				System.out.println("\nDisplay Character Stats(1) | Display Enemy Stats(2) | Choose Weapons/Abilities(3) | Start Battle(4)");
 				menu_selection = input.nextInt();
@@ -251,7 +252,7 @@ public class Battle_System {
 				}
 				
 				else if(action == 1){
-					System.out.println("Choose a Physical Attack: "+player.getPrimaryWeapon()+"(1)");
+					System.out.println("Choose a Physical Attack: "+player.getPrimaryWeapon()+"(1) " + player.getSecondaryWeapon()+"(2)");
 					physical_options = input.nextInt();
 					
 				}
@@ -259,7 +260,8 @@ public class Battle_System {
 				else {
 					System.out.println("Please choose a valid response");
 				}
-					
+				
+							
 				for(int counter=0; counter<1;counter++){  
 					damage = 1+number.nextInt(10); //default enemy damage
 					if(action == 1 && physical_options == 1){

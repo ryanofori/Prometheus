@@ -10,7 +10,7 @@ public class Magic {
 	}
 
 	public int get_Lightning_Bolt(){
-		magic.setMagic(10);
+		magic.setMagic(20);
 		return magic.getMagic();
 	}
 	

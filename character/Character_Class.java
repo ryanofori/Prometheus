@@ -1,9 +1,9 @@
 package character;
 import shopping.Inventory;
 public class Character_Class  {
-	protected int health,damage,magic,defense,boost, weapon_damage,armor;
+	protected int health,damage,magic,defense,boost, weapon_damage,armor, primary_weapon_damage, secondary_weapon_damage;
 	protected int intelligence,speed,strength, resistance, money;
-	protected String name,speak;
+	protected String name,speak,primaryWeapon,secondaryWeapon;
 	public Inventory backpack;
 	public Character_Class(){   //These are the defaults stats, just in case I didn't set one up 
 		health = 100;        // in the main_Class.
@@ -20,6 +20,26 @@ public class Character_Class  {
 		speak = "";
 		money = 200;
 		backpack = new Inventory();
+		primary_weapon_damage = 10;
+		secondary_weapon_damage = 5;
+		primaryWeapon = "Rusty Axe";
+		secondaryWeapon = "Punch";
+	}
+	
+	public void setPrimaryWeapon(String weap){
+		this.primaryWeapon = weap;
+	}
+	
+	public void setPrimaryWeaponDamage(int dmg) {
+		this.primary_weapon_damage = dmg;
+	}
+	
+	public void setSecondaryWeaponDamage(int dmg) {
+		this.secondary_weapon_damage = dmg;
+	}
+	
+	public void setSecondaryWeapon(String weap){
+		this.secondaryWeapon = weap;
 	}
 	
 	public void setWeapon_Damage(int wd){
@@ -70,6 +90,14 @@ public class Character_Class  {
 	
 	public void setSpeak(String s){
 		this.speak = s;
+	}
+	
+	public String getPrimaryWeapon(){
+		return primaryWeapon;
+	}
+	
+	public String getSecondaryWeapon(){
+		return secondaryWeapon;
 	}
 	
 	public String getSpeak(){
@@ -125,4 +153,25 @@ public class Character_Class  {
 		return speed;
 	}
 	
+	public int getPrimaryWeaponDamage() {
+		return primary_weapon_damage;
+	}
+	
+	public int getSecondaryWeaponDamage() {
+		return secondary_weapon_damage;
+	}
+	
+	public void displayStats(){
+		System.out.println("Character: "+name
+				+ "\nHealth: "+ health
+				+ "\nDamage: "+ damage
+				+ "\nMagic: " + magic
+				+ "\nDefense: " + defense
+				+ "\nArmor: " + armor
+				+ "\nIntelligence: " + intelligence
+				+ "\nSpeed: " + speed
+				+ "\nStrength: " + strength
+				+ "\nResistance: " + resistance
+				);
+	}
 }

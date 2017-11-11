@@ -1,6 +1,8 @@
 package shopping;
 import java.util.ArrayList;
 
+import character.Character_Class;
+
 public class Inventory{
     private ArrayList<String> backpack = new ArrayList<String>();
     private int backpackSize = 0;
@@ -11,6 +13,10 @@ public class Inventory{
      */
     public Inventory(){
         backpackSize = 25;
+        backpack.add("Rusty Axe Weapon");
+        backpack.add("1");
+     //   backpack.add("Punch");
+     //   backpack.add("1");
     }
 
     /**
@@ -80,7 +86,27 @@ public class Inventory{
         }
 		return 0;
     }
-
+    /**
+     * Select weapon from inventory
+     * Only works with 1 item in in backpack
+     * @param player
+     * @throws Exception
+     */
+    public String selectWeapon(int index) throws Exception {
+		if(index >= 1) {
+			String weapName = backpack.get(index-1);
+			if(weapName.endsWith("Weapon")) {
+				return weapName;
+			}
+			else {
+				System.out.println(weapName+" is not a weapon.");
+			}
+		}
+		else {
+			System.out.println("Not a valid option\n");
+		}
+		return "Rusty Axe";
+    }
     /**
      * Method to add items to Inventory
      * @param itemToAdd - Name of the Weapon/Potion to add

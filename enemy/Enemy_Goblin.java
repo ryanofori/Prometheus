@@ -1,7 +1,6 @@
 package enemy;
-import character.Character_Class;
 
-public class Enemy_Goblin extends Character_Class {
+public class Enemy_Goblin extends Enemy {
 	
 	//Enemy_Goblin constructor
 	

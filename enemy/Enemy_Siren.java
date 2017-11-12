@@ -1,8 +1,6 @@
 package enemy;
 
-import character.Character_Class;
-
-public class Enemy_Siren extends Character_Class {
+public class Enemy_Siren extends Enemy {
 	
 	//Enemy_Siren constructor 
 	

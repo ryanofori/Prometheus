@@ -1,8 +1,6 @@
 package enemy;
 
-import character.Character_Class;
-
-public class Enemy_Halfling extends Character_Class {
+public class Enemy_Halfling extends Enemy {
 	
 //Enemy_Halfling constructor
 	

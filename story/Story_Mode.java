@@ -241,4 +241,14 @@ public class Story_Mode {
 			endStory();
 		}	
 	}
+	public void Chapter5(){
+		System.out.println("Congratulations on making it to the last location!");
+		System.out.println("You have entered the desert. The only thing seen for miles is sand and one lonely pyramid.");
+		try{
+				Thread.sleep(1000);
+			}
+			catch(InterruptedException ie){
+				ie.printStackTrace();
+			}
+		System.out.println("As you explore this wasteland, you encounter a large, sand-colored scorpion!");
 }

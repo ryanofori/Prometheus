@@ -2,12 +2,12 @@ package tournament;
 import java.util.Scanner;
 import battle_system.Battle_System;
 import character.Character_Class;
-import character.Character_Select;
+import enemy.Enemy;
 
 public class Tournament_Mode {
 	Scanner input = new Scanner(System.in);
 	Battle_System battle = new Battle_System();
-	private Character_Class enemy = Character_Select.randomEnemy();
+	private Enemy enemy = Enemy.randomEnemy();
 	private int fee = 0;
 	
 	public void fight(Character_Class player)throws Exception{

@@ -16,7 +16,7 @@ public class Battle_System {
 		private String user,enemyName;
 		private int magic, enemy_health, magic_options, physical_options, damage, melee, character_health;
 		
-		public void battleSystem(Character_Class player, Character_Class enemy) throws Exception{
+		public void battleSystem(Character_Class player, Enemy enemy) throws Exception{
 			@SuppressWarnings("resource")
 			Scanner input = new Scanner(System.in);
 			Random number = new Random();

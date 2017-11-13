@@ -19,7 +19,7 @@ public class Story_Mode {
 	 * 
 	 * */
 	
-	Character_Class enemy = Character_Select.randomEnemy();
+	Enemy enemy = Enemy.randomEnemy();
 	
 	public void tutorial(Character_Class player) throws Exception{
 		System.out.println("A quick simulated battle is about to commence. ");

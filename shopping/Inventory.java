@@ -1,8 +1,6 @@
 package shopping;
 import java.util.ArrayList;
 
-import character.Character_Class;
-
 public class Inventory{
     private ArrayList<String> backpack = new ArrayList<String>();
     private int backpackSize = 0;

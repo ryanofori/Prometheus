@@ -2,6 +2,8 @@ package battle_system;
 
 import java.util.Scanner;
 import weapons.Select_Weapon;
+
+import java.util.InputMismatchException;
 import java.util.Random;
 import enemy.*;
 import character.*;
@@ -20,7 +22,7 @@ public class Battle_System {
 			@SuppressWarnings("resource")
 			Scanner input = new Scanner(System.in);
 			Random number = new Random();
-			int action, menu_selection;
+			int action, menu_selection = 0;
 			//char type;
 			double r = Math.random();
 			//boolean temp;
@@ -220,134 +222,162 @@ public class Battle_System {
 			
 			//Primary Weapon by default
 			while(true){
-				System.out.println("\nDisplay Character Stats(1) | Display Enemy Stats(2) | Choose Weapons/Abilities(3) | Start Battle(4)");
-				menu_selection = input.nextInt();
-				if (menu_selection == 1){
-					player.displayStats();
-					menu_selection = 0;
-				}
-				
-				else if (menu_selection == 2){
-					enemy.displayStats();
-					menu_selection = 0;
-				}
-				
-				else if (menu_selection == 3){
-					player.backpack.viewInventory();
-					int response = input.nextInt();
-					player.setPrimaryWeapon(player.backpack.selectWeapon(response));
-					menu_selection = 0;
-				}
-				else if (menu_selection == 4){
-					break;
-				}
+				try{
+					System.out.println("\nDisplay Character Stats(1) | Display Enemy Stats(2) | Choose Weapons/Abilities(3) | Start Battle(4)");
+				    menu_selection = input.nextInt();
+				    if(menu_selection >=1 && menu_selection <=4){
+				    	if (menu_selection == 1){
+							player.displayStats();
+							menu_selection = 0;
+						}
+						
+						else if (menu_selection == 2){
+							enemy.displayStats();
+							menu_selection = 0;
+						}
+						
+						else if (menu_selection == 3){
+							player.backpack.viewInventory();
+							int response = input.nextInt();
+							player.setPrimaryWeapon(player.backpack.selectWeapon(response));
+							menu_selection = 0;
+						}
+						else if (menu_selection == 4){
+							System.out.println("Now entering the battle...");
+							try {
+							      Thread.sleep(500);
+							  }
+							  catch (InterruptedException ie) {
+							    ie.printStackTrace();
+							  }
+							break;
+						}
+				    }
+				    else{
+				    	System.out.println("Please enter a number between 1-4");
+				    }
+				}catch(InputMismatchException e){
+					System.out.println("Please enter a valid response");
+				}input.nextLine();
 			}
-		
-			while(true){ //If your health is greater than 0, keep going through the loop.		
-				System.out.println("\nChoose an Action:  Melee(1)/Magic(2): ");
-				action = input.nextInt();
-				if(action == 2){
-					System.out.println("Choose a Magic Attack: "+magic_attacks.get_Flameball_Name()+"(1) "+magic_attacks.get_Lightning_Bolt_Name()+"(2)");
-					magic_options = input.nextInt();
-				}
-				
-				else if(action == 1){
-					System.out.println("Choose a Physical Attack: "+player.getPrimaryWeapon()+"(1) " + player.getSecondaryWeapon()+"(2)");
-					physical_options = input.nextInt();
-					
-				}
-				
-				else {
-					System.out.println("Please choose a valid response");
-				}
-				
+
+			while(true){ //If your health is greater than 0, keep going through the loop.	
+				try{
+					System.out.println("\nChoose an Action:  Melee(1)/Magic(2): ");
+					action = input.nextInt();
+					if(action >=1 && action <=2){
+						if(action == 2){
+							System.out.println("Choose a Magic Attack: "+magic_attacks.get_Flameball_Name()+"(1) "+magic_attacks.get_Lightning_Bolt_Name()+"(2)");
+							magic_options = input.nextInt();
+						}
+						
+						else if(action == 1){
+							System.out.println("Choose a Physical Attack: "+player.getPrimaryWeapon()+"(1) " + player.getSecondaryWeapon()+"(2)");
+							physical_options = input.nextInt();
 							
-				for(int counter=0; counter<1;counter++){  
-					damage = 1+number.nextInt(10); //default enemy damage
-					if(action == 1 && physical_options == 1){
-						melee = 1+number.nextInt(player.getPrimaryWeaponDamage());
+						}
+						
+						else {
+							System.out.println("Please choose a valid response");
+						}
+						
+									
+						for(int counter=0; counter<1;counter++){  
+							damage = 1+number.nextInt(10); //default enemy damage
+							if(action == 1 && physical_options == 1){
+								melee = 1+number.nextInt(player.getPrimaryWeaponDamage());
+							}
+							if(action == 1 && physical_options == 2){
+								melee = 1+number.nextInt(player.getSecondaryWeaponDamage());
+							}
+							
+							if(action == 2 && magic_options == 2){
+								magic = 1+number.nextInt(magic_attacks.get_Lightning_Bolt());
+							}
+							if(action == 2 && magic_options == 1){
+								magic = 1+number.nextInt(magic_attacks.get_Flameball());
+							}
+						}
+							
+						if(physical_options == 1 && r <= .30 || physical_options == 2 && r <= .30){
+							character_health-=damage;
+							System.out.println("*The Enemy Has Dealt "+damage+" Hit Point Damage To You.*\n ");
+								try {
+								      Thread.sleep(500);
+								  }
+								  catch (InterruptedException ie) { //Sleep timer for .5 seconds
+								    ie.printStackTrace();
+								  } 
+								}
+						
+							/* if the user chooses melee and it's attack has a percent of 60. It will execute
+							 * the following. 
+							 */
+							
+						if(physical_options == 1 && r <= .70 || physical_options == 2 && r <= .70){
+							enemy_health-=melee;
+							if(melee > 15){
+								System.out.println("Critical Damage!");
+							}
+								System.out.println("*You Have Dealt "+melee+" Hit Point Damage To Your Enemy.*\n ");
+								try {
+								      Thread.sleep(500);
+								  }
+								  catch (InterruptedException ie) {
+								    ie.printStackTrace();
+								  }
+							}
+							
+							else if (magic_options == 1 && r <= .30 || magic_options == 2 && r <= .30){ //Magic Attack
+								character_health-=damage;
+								System.out.println("*The Enemy Has Dealt "+damage+" Hit Point Damage To You.*\n ");
+								 try {
+								       Thread.sleep(500);
+								   }
+								   catch (InterruptedException ie) { //Sleep timer for .5 seconds
+								     ie.printStackTrace();
+								   }
+							}
+							else if(magic_options == 1 && r <= .70 || magic_options == 2 && r <= .70){	//Magic Attack
+								enemy_health-=magic;
+								if(magic > 25){
+									System.out.println("Critical Damage!"); 
+								}
+								System.out.println("*You Have Dealt "+magic+" Hit Point Damage To Your Enemy.*\n ");
+								 try {
+								       Thread.sleep(500);
+								   }
+								   catch (InterruptedException ie) { //Sleep timer for .5 seconds
+								     ie.printStackTrace();
+								   }	
+							}
+							else{
+								System.out.println("You have missed.\n");
+							}
+							System.out.print("You - "+user+" HP"+" - "+character_health+" "+"\n"); System.out.println("Enemy - "+enemyName+" HP - "+enemy_health);
+							 r= Math.random(); //Refreshes after each loop
+							
+							if(character_health <= 0){
+								System.out.println("You are Dead");
+								System.out.print(enemyName+" ");enemyQuotes.winningQuote();
+								break;
+							}
+							else if(enemy_health <= 0){
+								 System.out.println("The Enemy Has Been Defeated!\n");
+								 enemyQuotes.deathQuote();
+								 break; //Stops the while-loop if your enemies health is less than or = 0
+							 }		
 					}
-					if(action == 1 && physical_options == 2){
-						melee = 1+number.nextInt(player.getSecondaryWeaponDamage());
-					}
-					
-					if(action == 2 && magic_options == 2){
-						magic = 1+number.nextInt(magic_attacks.get_Lightning_Bolt());
-					}
-					if(action == 2 && magic_options == 1){
-						magic = 1+number.nextInt(magic_attacks.get_Flameball());
+						
+					else{
+						System.out.println("Please enter a number between 1-2");
 					}
 				}
-					
-				if(physical_options == 1 && r <= .30 || physical_options == 2 && r <= .30){
-					character_health-=damage;
-					System.out.println("*The Enemy Has Dealt "+damage+" Hit Point Damage To You.*\n ");
-						try {
-						      Thread.sleep(500);
-						  }
-						  catch (InterruptedException ie) { //Sleep timer for .5 seconds
-						    ie.printStackTrace();
-						  } 
-						}
+				catch(InputMismatchException e){
+					System.out.println("Please enter a valid response");
+				}input.nextLine();
+			}
 				
-					/* if the user chooses melee and it's attack has a percent of 60. It will execute
-					 * the following. 
-					 */
-					
-				if(physical_options == 1 && r <= .70 || physical_options == 2 && r <= .70){
-					enemy_health-=melee;
-					if(melee > 15){
-						System.out.println("Critical Damage!");
-					}
-						System.out.println("*You Have Dealt "+melee+" Hit Point Damage To Your Enemy.*\n ");
-						try {
-						      Thread.sleep(500);
-						  }
-						  catch (InterruptedException ie) {
-						    ie.printStackTrace();
-						  }
-					}
-					
-					else if (magic_options == 1 && r <= .30 || magic_options == 2 && r <= .30){ //Magic Attack
-						character_health-=damage;
-						System.out.println("*The Enemy Has Dealt "+damage+" Hit Point Damage To You.*\n ");
-						 try {
-						       Thread.sleep(500);
-						   }
-						   catch (InterruptedException ie) { //Sleep timer for .5 seconds
-						     ie.printStackTrace();
-						   }
-					}
-					else if(magic_options == 1 && r <= .70 || magic_options == 2 && r <= .70){	//Magic Attack
-						enemy_health-=magic;
-						if(magic > 25){
-							System.out.println("Critical Damage!"); 
-						}
-						System.out.println("*You Have Dealt "+magic+" Hit Point Damage To Your Enemy.*\n ");
-						 try {
-						       Thread.sleep(500);
-						   }
-						   catch (InterruptedException ie) { //Sleep timer for .5 seconds
-						     ie.printStackTrace();
-						   }	
-					}
-					else{
-						System.out.println("You have missed.\n");
-					}
-					System.out.print("You - "+user+" HP"+" - "+character_health+" "+"\n"); System.out.println("Enemy - "+enemyName+" HP - "+enemy_health);
-					 r= Math.random(); //Refreshes after each loop
-					
-					if(character_health <= 0){
-						System.out.println("You are Dead");
-						System.out.print(enemyName+" ");enemyQuotes.winningQuote();
-						break;
-					}
-					else if(enemy_health <= 0){
-						 System.out.println("The Enemy Has Been Defeated!\n");
-						 enemyQuotes.deathQuote();
-						 break; //Stops the while-loop if your enemies health is less than or = 0
-					 }		
-			} //End of While loop.
 			if( enemy_health> character_health){ // If the enemies health is more than yours before it reaches 0, it wins. 
 				 System.out.println("The Enemy Has Killed You.\n");
 				 
@@ -364,6 +394,6 @@ public class Battle_System {
 					 (InterruptedException ie){
 						 ie.printStackTrace(); 
 					 }
-		}
-	}	//End of BattleSystem method.
-}	//public class battle_SystemTest
+				 }
+			}	//End of while loop
+		}//public class battle_SystemTest	

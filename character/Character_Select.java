@@ -1,5 +1,6 @@
 package character;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Character_Select {
@@ -9,15 +10,25 @@ public class Character_Select {
 	public static Character_Class character_Select(){
 		
 		/*Here I am asking you which character you would like to be. */
-		System.out.println("Which character class would you like to play as for this session?:"
-				+ "\n\t1.) Warrior"
-				+ "\n\t2.) Orc"
-				+ "\n\t3.) Wizard"
-				+ "\n\t4.) Elf"
-				+ "\n\t5.) Dwarf");
-		response = input.nextInt();
-		
 		while (true) {
+			try{
+				System.out.println("Which character class would you like to play as for this session?:"
+					+ "\n\t1.) Warrior"
+					+ "\n\t2.) Orc"
+					+ "\n\t3.) Wizard"
+					+ "\n\t4.) Elf"
+					+ "\n\t5.) Dwarf");
+			    response = input.nextInt();	
+			    if (response >=1 && response <=5){
+			    	break;
+			    }
+			    else{
+			    	System.out.println("Please enter a number between 1-5");
+			    }
+				}catch(InputMismatchException e){
+					System.out.println("Please enter a valid response");
+					}input.nextLine();
+			}
 			if(response == 1) {
 				Character_Warrior character = new Character_Warrior();
 				System.out.println("You have chosen to be a Warrior");
@@ -47,6 +58,6 @@ public class Character_Select {
 				System.out.println("Invalid Response. Please enter a number from the list above.");
 				response = input.nextInt();
 				}
+			return null;
 			}
 		}
-}

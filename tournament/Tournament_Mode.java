@@ -11,49 +11,56 @@ public class Tournament_Mode {
 	private int fee = 0;
 	
 	public void fight(Character_Class player)throws Exception{
-		System.out.println("Welcome to the Tournament Mode");
-		fee = 200; //Fee to be paid to enter the tournament
-		
-		System.out.println("Pay $"+fee+" to enter the tournament: Yes/No");
+		System.out.println("Welcome to Tournament Mode");
+		fee = 200; //Tournament fee
+		try{
+			Thread.sleep(1000);
+		}
+		catch(InterruptedException ie){
+			ie.printStackTrace();
+		}
+		System.out.println("Pay $"+fee+" to enter the Tournament: Yes/No");
 		String ans = input.nextLine();
 		
-		if(player.getMoney() >= fee && ans.equalsIgnoreCase("Yes")) {
-			player.setMoney(player.getMoney() - fee);
-			System.out.println("You have entered Tournament Mode");
+		if(ans.equalsIgnoreCase("Yes")) {
+			if(player.getMoney() >= fee) {
+				player.setMoney(player.getMoney() - fee);
+				System.out.println("You have entered the Tournament");
+				Battle(player);
+			}
+			else {
+				System.out.println("Not enough money!");
+			}
 		}
-		Battle(player);
-//		try{
-//			Thread.sleep(1000);
-//		}
-//		catch(InterruptedException ie){
-//			ie.printStackTrace();
-//		}
-		System.out.println("You have left the tournment mode");		
+		System.out.println("Now leaving Tournament Mode\n");		
 	}
+	/**
+	 * Method to enter player into tournament
+	 * Currently has infinite loop on purpose until 
+	 * reward and tournament battle system is implemented
+	 * @param player - User character
+	 * @throws Exception
+	 */
 	public void Battle(Character_Class player) throws Exception
 	{
 		while(true)
 		{
-			int ans = 1;
-			System.out.println("Do you want to continue? yes(1) no(2)");
-			ans = input.nextInt();
-			if (ans == 1)
-			{
-				battle.battleSystem(player, enemy);
-				//Enter battle			
-			}
-			else
-				break;
-			/*if (0 < 2)
-			{
-				//create 
-				System.out.println("You have " Won or lost point);
-			}*/
+			battle.battleSystem(player, enemy);//Enter battle
+			enemy = Enemy.randomEnemy(); //Random next enemy
+			/*
+			 * Will need a second version of battle system
+			 * It must return true if the player wins the battle
+			 * False if the player lost
+			 * 
+			 *  Winning = Continue to next round w/ health fully restored
+			 *  Losing = Determine how far & what reward player will be given
+			 */
+			
 		}
-		//Method for calculating how far you went in tournment mode 
-		//and assign won or lose status accordinginly
+		//Method for calculating how far you went in tournament mode 
+		//and assign won or lose status accordingly
 		//Create a loop counter of how many times the keep going further in the 
-		//tournnament
+		//tournament
 	}
 	
 	/*

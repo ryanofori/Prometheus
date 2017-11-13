@@ -8,7 +8,7 @@ public class Shopping {
 	
 	//dummy data - just to use for now.
 	//when Weapons class is created, change asdf to Weapons
-	private asdf[] weaponsStock = {new asdf("Sword", 350, "weapon"), new asdf("Knife", 50, "weapon"), new asdf("Dagger", 125, "weapon"), new asdf("Mace", 350, "weapon"), new asdf("Broken Stick", 5, "weapon")}; 
+	private asdf[] weaponsStock = {new asdf("Sword Weapon", 350, "weapon"), new asdf("Knife Weapon", 50, "weapon"), new asdf("Dagger Weapon", 125, "weapon"), new asdf("Mace Weapon", 350, "weapon")}; 
 	//when Items class is created, change asdf to Items
 	private asdf[] itemsStock = {new asdf("Health Potion", 150, "item"), new asdf("Mana Potion", 150, "item"), new asdf("Antidote", 100, "item"), new asdf("Energy Restore", 225, "item"), new asdf("Burn Heal", 250, "item")};	
 	
@@ -41,7 +41,7 @@ public class Shopping {
 			else if (response.equals("2"))
 				browseItems(person);
 			else if (response.equals("3"))
-				person.backpack.viewInventory();
+				person.backpack.viewInventory(1);
 			else if (response.equals("4"))
 				exitStore();
 			else

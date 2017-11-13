@@ -40,7 +40,6 @@ public class Story_Mode {
 		   }
 		System.out.println("Please Press Enter to Continue");
 		response = input.nextLine();
-		response = input.nextLine();
 		System.out.println("Are you ready to move forward? (Yes/No): ");
 		response = input.nextLine();
 		if(response.equalsIgnoreCase ("Yes")){

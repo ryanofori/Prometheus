@@ -1,8 +1,6 @@
 package enemy;
 
-import character.Character_Class;
-
-public class Enemy_Grunt extends Character_Class {
+public class Enemy_Grunt extends Enemy {
 	
 	//Enemy_Grunt constructor 
 	

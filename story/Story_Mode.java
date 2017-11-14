@@ -19,13 +19,19 @@ public class Story_Mode {
 	 * 
 	 * */
 	
-	Character_Class enemy = Character_Select.randomEnemy();
+	
+	/* [Random Enemy Generator]
+	 * The purpose of the random enemy generator is for testing/functionality purposes only.
+	 * It will not be used in the final version of the game. 
+	 * 
+	 * */
+	Enemy enemy = Enemy.randomEnemy(); //Generates a random enemy
 	
 	public void tutorial(Character_Class player) throws Exception{
 		System.out.println("A quick simulated battle is about to commence. ");
 		System.out.println("Please pay attention as to what's going on. ");
 		battle.battleSystem(player,enemy); //Starts the battle class.
-		tutorial2(player); //Starts the story2 method.
+		tutorial2(player); 
 		}
 	
 	/*the beginning of the 2nd tutorial */
@@ -39,7 +45,6 @@ public class Story_Mode {
 		     ie.printStackTrace();
 		   }
 		System.out.println("Please Press Enter to Continue");
-		response = input.nextLine();
 		response = input.nextLine();
 		System.out.println("Are you ready to move forward? (Yes/No): ");
 		response = input.nextLine();

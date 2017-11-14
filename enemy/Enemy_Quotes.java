@@ -3,9 +3,7 @@ package enemy;
  * Currently, it is not yet complete, but over time I will be coming back to add more and removing
  * the not needed ones. */
 
-import character.Character_Class;
-
-public class Enemy_Quotes extends Character_Class {
+public class Enemy_Quotes extends Enemy {
 	
 	/*I have set rand to hold the array of string and be able to
 	 * spit out any string from within this method by using the

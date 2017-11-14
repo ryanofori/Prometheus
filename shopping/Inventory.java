@@ -1,11 +1,9 @@
 package shopping;
-import character.Character_Class;
 import java.util.ArrayList;
 
 public class Inventory{
     private ArrayList<String> backpack = new ArrayList<String>();
     private int backpackSize = 0;
- //   private Character_Class user = new Character_Class();
 
     /**
      * Constructor for Inventory
@@ -13,6 +11,10 @@ public class Inventory{
      */
     public Inventory(){
         backpackSize = 25;
+        backpack.add("Rusty Axe Weapon");
+        backpack.add("1");
+     //   backpack.add("Punch");
+     //   backpack.add("1");
     }
 
     /**
@@ -55,34 +57,54 @@ public class Inventory{
         			removeFromInventory(itemName); //Remove the item
         			return 20; //HP to be added since HP is handled in the battle system
         		}
-			if(itemName.startsWith("Mana")) {
+        		if(itemName.startsWith("Mana")) {
         			removeFromInventory(itemName); //Remove the item
         			return 20; //Mana to be added
         		}
         	}
-		if(itemName.equalsIgnoreCase("Antidote")) {
-			removeFromInventory(itemName); //Remove the item
-			return 1; //Use in battle system, for heal?
-		}
-		if(itemName.endsWith("Restore")) {
-			if(itemName.startsWith("Energy")) {
-				removeFromInventory(itemName); //Remove the item
-				return 1; //Use in battle system, for restore energy
-			}
-		}
-		if(itemName.endsWith("Heal")) {
-			if(itemName.startsWith("Burn")) {
+			if(itemName.equalsIgnoreCase("Antidote")) {
 				removeFromInventory(itemName); //Remove the item
 				return 1; //Use in battle system, for heal?
 			}
-		}
+			if(itemName.endsWith("Restore")) {
+				if(itemName.startsWith("Energy")) {
+					removeFromInventory(itemName); //Remove the item
+					return 1; //Use in battle system, for restore energy
+				}
+			}
+			if(itemName.endsWith("Heal")) {
+				if(itemName.startsWith("Burn")) {
+					removeFromInventory(itemName); //Remove the item
+					return 1; //Use in battle system, for heal?
+				}
+			}
         }
         else {
         	throw new Exception(itemName+" is not in your inventory!");
         }
 		return 0;
     }
-
+    /**
+     * Select weapon from inventory
+     * Only works with 1 item in in backpack
+     * @param player
+     * @throws Exception
+     */
+    public String selectWeapon(int index) throws Exception {
+		if(index >= 1) {
+			String weapName = backpack.get(index-1);
+			if(weapName.endsWith("Weapon")) {
+				return weapName;
+			}
+			else {
+				System.out.println(weapName+" is not a weapon.");
+			}
+		}
+		else {
+			System.out.println("Not a valid option\n");
+		}
+		return "Rusty Axe";
+    }
     /**
      * Method to add items to Inventory
      * @param itemToAdd - Name of the Weapon/Potion to add
@@ -132,9 +154,17 @@ public class Inventory{
      */
     public void viewInventory(){
         int counter = 0;
-        for(int i=0; i<backpack.size(); i+=2){
-            counter++;
-            System.out.println(counter+") "+backpack.get(i)+"("+backpack.get(i+1)+")");
+        if(backpack.size() < 1) {
+        	System.out.println("No Items in backpack!\n");
+        }
+        else {
+	        for(int i=0; i<backpack.size(); i+=2){
+	            counter++;
+	            System.out.println(counter+".) "+backpack.get(i)+"("+backpack.get(i+1)+")");
+	            if((i+1) == (backpack.size()-1)) {
+	            	System.out.println();
+	            }
+	        }
         }
     }
 }

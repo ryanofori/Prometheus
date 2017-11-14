@@ -1,20 +1,8 @@
 package story;
 import java.util.Scanner;
 import battle_system.Battle_System;
-import character.Character_Orc;
-import character.Character_Warrior;
-import character.Character_Dwarf;
-import character.Character_Elf;
-import character.Character_Wizard;
-import enemy.Enemy_Giant;
-import enemy.Enemy_Goblin;
-import enemy.Enemy_Grunt;
-import enemy.Enemy_Halfling;
-import enemy.Enemy_Necromancer;
-import enemy.Enemy_Scorpion;
-import enemy.Enemy_Shapeshifter;
-import enemy.Enemy_Siren;
-import enemy.Enemy_Troll;
+import character.*;
+import enemy.*;
 public class Story_Mode {
 	
 	static Scanner input = new Scanner(System.in);
@@ -32,120 +20,22 @@ public class Story_Mode {
 	 * */
 	
 	
+	/* [Random Enemy Generator]
+	 * The purpose of the random enemy generator is for testing/functionality purposes only.
+	 * It will not be used in the final version of the game. 
+	 * 
+	 * */
+	Enemy enemy = Enemy.randomEnemy(); //Generates a random enemy
 	
-	private int character_Select(int choice){	
-		return choice;
-	}
-	
-	private int character_Info(){
-		System.out.println("Choose a Character: Warrior(1), Orc(2), Dwarf(3), Elf(4), or Wizard(5): ");
-		number = input.nextInt(); //Grabs the users input
-		if (number == 1){
-			Character_Warrior character = new Character_Warrior();
-			System.out.println("You have chosen the Warrior to take on this adventure! ");
-			try {
-			       Thread.sleep(2000);  //A sleep timer of 2 second. 
-			   }
-			   catch (InterruptedException ie) {
-			     ie.printStackTrace();
-			   }
-			speak = character.getSpeak();
-			speak2 = character.getSpeak2();
-			speak3 = character.getSpeak3();
-			health = character.getHealth();
-			System.out.println(speak); //I am Warrior!
-			System.out.println(speak3+" "+health+" Health"); //I have 100 health.
-			
-		}
-		else if(number == 2){
-			Character_Orc character = new Character_Orc();
-			System.out.println("You have chosen the Orc to take on this adventure! ");
-			try {
-			       Thread.sleep(2000); //Sleep timer of 2 seconds. 
-			   }
-			   catch (InterruptedException ie) {
-			     ie.printStackTrace();
-			   }
-			speak = character.getSpeak();
-			speak2 = character.getSpeak2();
-			speak3 = character.getSpeak3();
-			health = character.getHealth();
-			System.out.println(speak);
-			System.out.println(speak3+" "+health+" Health");
-			
-			}
-		else if(number == 3){
-			Character_Dwarf character = new Character_Dwarf();
-			System.out.println("You have chosen the Dwarf to take on this adventure! ");
-			try {
-			       Thread.sleep(2000); //Sleep timer of 2 seconds. 
-			   }
-			   catch (InterruptedException ie) {
-			     ie.printStackTrace();
-			   }
-			speak = character.getSpeak();
-			speak2 = character.getSpeak2();
-			speak3 = character.getSpeak3();
-			health = character.getHealth();
-			System.out.println(speak);
-			System.out.println(speak3+" "+health+" Health");
-		}
-		else if(number == 4){
-			Character_Elf character = new Character_Elf();
-			System.out.println("You have chosen the Elf to take on this adventure! ");
-			try {
-			       Thread.sleep(2000); //Sleep timer of 2 seconds. 
-			   }
-			   catch (InterruptedException ie) {
-			     ie.printStackTrace();
-			   }
-			speak = character.getSpeak();
-			speak2 = character.getSpeak2();
-			speak3 = character.getSpeak3();
-			health = character.getHealth();
-			System.out.println(speak);
-			System.out.println(speak3+" "+health+" Health");
-		}
-		else if(number == 5){
-			Character_Wizard character = new Character_Wizard();
-			System.out.println("You have chosen the Wizard to take on this adventure! ");
-			try {
-			       Thread.sleep(2000); //Sleep timer of 2 seconds. 
-			   }
-			   catch (InterruptedException ie) {
-			     ie.printStackTrace();
-			   }
-			speak = character.getSpeak();
-			speak2 = character.getSpeak2();
-			speak3 = character.getSpeak3();
-			health = character.getHealth();
-			System.out.println(speak);
-			System.out.println(speak3+" "+health+" Health");
-		}
-		else{
-			System.out.println("Please select a valid response");
-			try{
-				Thread.sleep(1000);
-			}
-			catch(InterruptedException ie){
-				ie.printStackTrace();
-			}
-			character_Info();
-		}
-		return number;
-	}
-	
-	public void tutorial() throws Exception{
-		character_Info();
-		int select = character_Select(number);
+	public void tutorial(Character_Class player) throws Exception{
 		System.out.println("A quick simulated battle is about to commence. ");
 		System.out.println("Please pay attention as to what's going on. ");
-		battle.battleSystem(select); //Starts the battle class.
-		tutorial2(); //Starts the story2 method.
+		battle.battleSystem(player,enemy); //Starts the battle class.
+		tutorial2(player); 
 		}
 	
 	/*the beginning of the 2nd tutorial */
-	private void tutorial2(){
+	private void tutorial2(Character_Class player){
 		System.out.println("As you can see, the battle system allows for you to choose your own attacks.\n");
 		System.out.println("This is how all of your battles will take place.\n");
 		try {
@@ -156,11 +46,10 @@ public class Story_Mode {
 		   }
 		System.out.println("Please Press Enter to Continue");
 		response = input.nextLine();
-		response = input.nextLine();
 		System.out.println("Are you ready to move forward? (Yes/No): ");
 		response = input.nextLine();
 		if(response.equalsIgnoreCase ("Yes")){
-			tutorial3();
+			tutorial3(player);
 		}
 		else if (response.equalsIgnoreCase("No")){
 			endTutorial();	
@@ -169,7 +58,7 @@ public class Story_Mode {
 	/*End of the 2nd part of the tutorial.*/
 	
 	/*Beginning the third part of the tutorial*/
-	private void tutorial3(){
+	private void tutorial3(Character_Class player){
 		String user;
 		System.out.println("What will you name your character?");
 		response2 = input.nextLine();
@@ -179,8 +68,9 @@ public class Story_Mode {
 		System.out.println("Shall I remind you again of your character choice? (Yes/No)");
 		response2 = input.nextLine();
 		if(response2.equalsIgnoreCase("Yes")){
-			System.out.println("\n"+speak);
-			System.out.println(speak3+" "+health+" Health");
+			player.getSpeak();
+			System.out.print("I have: ");
+			player.getHealth();
 			endTutorial();
 			}
 		else if(response2.equalsIgnoreCase("No")){

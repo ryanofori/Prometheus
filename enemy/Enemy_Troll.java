@@ -1,8 +1,7 @@
 package enemy;
 
-import character.Character_Class;
 
-public class Enemy_Troll extends Character_Class {
+public class Enemy_Troll extends Enemy {
 	
 	//Enemy_Troll Constructor
 	

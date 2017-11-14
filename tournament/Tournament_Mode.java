@@ -2,26 +2,26 @@ package tournament;
 import java.util.Scanner;
 import battle_system.Battle_System;
 import character.Character_Class;
-import character.Character_Class;;
+import enemy.Enemy;
 
 public class Tournament_Mode {
 	Scanner input = new Scanner(System.in);
-	Character_Class health = new Character_Class();
-	Character_Class name = new Character_Class();
-	Character_Class defence = new Character_Class();
-	public void fight(){		
+	Battle_System battle = new Battle_System();
+	private Enemy enemy = Enemy.randomEnemy();
+	private int fee = 0;
+	
+	public void fight(Character_Class player)throws Exception{
 		System.out.println("Welcome to the Tournament Mode");
-		while(true)
-		{
-			System.out.println("Pay " /*$*/ + "to enter the tournament");
-			break;
-		}
-		System.out.println("You have enter Tournament Mode");
-		//System.out.println(name.getName());
+		fee = 200; //Fee to be paid to enter the tournament
 		
-		System.out.println("Health: " + health.getHealth());
-		System.out.println("Defence: " + defence.getDefense());
-		Battle();
+		System.out.println("Pay $"+fee+" to enter the tournament: Yes/No");
+		String ans = input.nextLine();
+		
+		if(player.getMoney() >= fee && ans.equalsIgnoreCase("Yes")) {
+			player.setMoney(player.getMoney() - fee);
+			System.out.println("You have entered Tournament Mode");
+		}
+		Battle(player);
 //		try{
 //			Thread.sleep(1000);
 //		}
@@ -30,7 +30,7 @@ public class Tournament_Mode {
 //		}
 		System.out.println("You have left the tournment mode");		
 	}
-	public void Battle()
+	public void Battle(Character_Class player) throws Exception
 	{
 		while(true)
 		{
@@ -39,7 +39,8 @@ public class Tournament_Mode {
 			ans = input.nextInt();
 			if (ans == 1)
 			{
-				//Enter battle				
+				battle.battleSystem(player, enemy);
+				//Enter battle			
 			}
 			else
 				break;

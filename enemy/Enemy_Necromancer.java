@@ -1,8 +1,6 @@
 package enemy;
 
-import character.Character_Class;
-
-public class Enemy_Necromancer extends Character_Class {
+public class Enemy_Necromancer extends Enemy {
 	
 //Enemy_Necromancer constructor
 	

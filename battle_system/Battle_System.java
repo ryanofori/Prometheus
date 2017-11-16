@@ -237,7 +237,7 @@ public class Battle_System {
 						}
 						
 						else if (menu_selection == 3){
-							player.backpack.viewInventory();
+							player.backpack.viewInventory(2); //Display weapons
 							int response = input.nextInt();
 							player.setPrimaryWeapon(player.backpack.selectWeapon(response));
 							menu_selection = 0;

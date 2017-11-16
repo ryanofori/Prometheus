@@ -7,8 +7,9 @@ public class Shopping {
 	
 	
 	//dummy data - just to use for now.
-	//when Weapons class is created, change asdf to Weapons
+	//when Weapons class is created, change asdf to Weapon.
 	private asdf[] weaponsStock = {new asdf("Sword Weapon", 350, "weapon", 1), new asdf("Knife Weapon", 50, "weapon", 2), new asdf("Dagger Weapon", 125, "weapon", 3), new asdf("Mace Weapon", 350, "weapon", 5)}; 
+
 	//when Items class is created, change asdf to Items
 	private asdf[] itemsStock = {new asdf("Health Potion", 150, "item", 1), new asdf("Mana Potion", 150, "item", 2), new asdf("Antidote", 100, "item", 3), new asdf("Energy Restore", 225, "item", 4), new asdf("Burn Heal", 250, "item", 5)};	
 	

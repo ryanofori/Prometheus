@@ -4,18 +4,14 @@ import character.Character_Class;
 import java.util.Scanner;
 
 public class Shopping {
-	
-	
-	//dummy data - just to use for now.
-	//when Weapons class is created, change asdf to Weapon.
-	private asdf[] weaponsStock = {new asdf("Sword Weapon", 350, "weapon", 1), new asdf("Knife Weapon", 50, "weapon", 2), new asdf("Dagger Weapon", 125, "weapon", 3), new asdf("Mace Weapon", 350, "weapon", 5)}; 
 
-	//when Items class is created, change asdf to Items
-	private asdf[] itemsStock = {new asdf("Health Potion", 150, "item", 1), new asdf("Mana Potion", 150, "item", 2), new asdf("Antidote", 100, "item", 3), new asdf("Energy Restore", 225, "item", 4), new asdf("Burn Heal", 250, "item", 5)};	
+	private shopWeaponItem[] weaponsStock = {new shopWeaponItem("Sword Weapon", 350, "weapon", 1), new shopWeaponItem("Knife Weapon", 50, "weapon", 2), new shopWeaponItem("Dagger Weapon", 125, "weapon", 3), new shopWeaponItem("Mace Weapon", 350, "weapon", 5)}; 
+	private shopWeaponItem[] itemsStock = {new shopWeaponItem("Health Potion", 150, "item", 1), new shopWeaponItem("Mana Potion", 150, "item", 2), new shopWeaponItem("Antidote", 100, "item", 3), new shopWeaponItem("Energy Restore", 225, "item", 4), new shopWeaponItem("Burn Heal", 250, "item", 5)};	
 	
 	static Scanner input = new Scanner(System.in);
 	private String response = null;
 	private boolean currentlyHere, browsing = false; //using it for while loop so I don't have to use recursion
+	
 	
 	
 	public void store(Character_Class person) throws Exception{
@@ -74,6 +70,7 @@ public class Shopping {
 			displayStock(weaponsStock);
 			response = input.nextLine();
 			switch (response.toString()){
+			
 				case "0":	buyItem(person, weaponsStock[0].getName(), weaponsStock[0].getPrice(), weaponsStock[0].getRequiredLevel()); //Sword
 							break;
 				case "1":	buyItem(person, weaponsStock[1].getName(), weaponsStock[1].getPrice(), weaponsStock[1].getRequiredLevel()); //Knife
@@ -93,6 +90,7 @@ public class Shopping {
 			}
 		}	
 	}
+	
 	
 	//Displays weapons then switch statement to handle player choices
 	public void browseItems(Character_Class person) throws Exception{
@@ -127,10 +125,10 @@ public class Shopping {
 	 * Display Stock
 	 */
 	
-	public void displayStock(asdf[] stock){
+	public void displayStock(shopWeaponItem[] stock){
 		System.out.println();
 		for(int index = 0; index < weaponsStock.length; index++){
-			System.out.println("("+ index +") "+  stock[index].getPrice() + " - "+ stock[index].getName() );
+			System.out.println("("+ index +") "+  stock[index].getPrice() + " - "+ stock[index].getName() + " - " + "You must be Level " + stock[index].getRequiredLevel() + " to purchase.");
 		}
 		System.out.println("(9) Back to Store Menu");
 	}
@@ -145,7 +143,7 @@ public class Shopping {
 			System.out.println("Here's your " + item);
 			System.out.println("You have $" + person.getMoney() + " left. \n Would you like anything else? \n");
 		}
-		if(person.getMoney() >= price && person.getLevel() < requiredLevel){
+		else if(person.getMoney() >= price && person.getLevel() < requiredLevel){
 			System.out.println("You don't meet the level requirements for this purchase");
 		}
 		else {
@@ -175,52 +173,19 @@ public class Shopping {
 	}
 	
 	/*
-	public Weapons[] getWeaponsStock(){
-		return weaponsStock;
-	}
-	
-	public Items[] getItemsStock(){
-		return itemsStock;
-	}
-	*/
-	
-	/*
-	public void selectOption(String choice){
-		if (choice == "1")		//Weapons selection
-			System.out.println();
-		else if (choice == "2")	//Items selection
-			System.out.println();
-		else if (choice == "3")	//Back to main selection
-			System.out.println();
-	}	
-	*/
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	/*
 	 * JUNK CLASS FOR JUNK OBJECTS FOR JUNK INFORMATION  <-- DELETE AS SOON REAL WEAPONS AND ITEMS ARE MADE
 	 */
-	
-	class asdf {
+	class shopWeaponItem {
 		private String name; //name
 		private int price;   //gold price
 		private String type; //item or weapon
 		private int requiredLevel; //required level to purchase weapon
 		
-		asdf(){
+		shopWeaponItem(){
 		}
 		
 		//Constructor - 4 accepted arguments
-		asdf(String name, int price, String type, int requiredLevel){
+		shopWeaponItem(String name, int price, String type, int requiredLevel){
 			this.name = name;
 			this.price = price;
 			this.type = type;

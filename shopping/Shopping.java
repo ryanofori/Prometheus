@@ -38,7 +38,7 @@ public class Shopping {
 			else if (response.equals("2"))
 				browseItems(person);
 			else if (response.equals("3"))
-				person.backpack.viewInventory(1);
+				person.backpack.viewInventory();
 			else if (response.equals("4"))
 				exitStore();
 			else

@@ -153,16 +153,26 @@ public class Inventory{
      * 				 2 = Weapons Only
      * 				 3 = Items Only
      */
-    public void viewInventory(int sort){
-        int weapCounter = 0,
-        	itemCounter = 0,
-        	displayWeapon = 0, 
-        	displayItems = 0;
+    public void viewInventory(){
+        int //weapCounter = 0,
+        //	itemCounter = 0,
+        //	displayWeapon = 0,
+        	counter = 0;
+       // 	displayItems = 0;
         if(backpack.size() < 1) {
         	System.out.println("No Items in backpack!\n");
         }
         else {
-        	//Default sort (Show Weapons, Items)
+        	for(int i=0; i<backpack.size(); i+=2){
+	            counter++;
+	            System.out.println(counter+".) "+backpack.get(i)+"("+backpack.get(i+1)+")");
+        	
+	            if((i+1) == (backpack.size()-1)) {
+	            	System.out.println();
+	            }
+	        }
+        	
+        	/*Default sort (Show Weapons, Items)
         	if(sort == 1) {
 	        	//Weapon sort display
 	        	for(int i=0; i<backpack.size(); i+=2){
@@ -236,7 +246,7 @@ public class Inventory{
 		            	System.out.println();
 		            }
 		        }
-		    }
+		    }*/
         }
     }
 }

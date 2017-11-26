@@ -43,12 +43,13 @@ public class Tournament_Mode {
 	 */
 	public void Battle(Character_Class player) throws Exception
 	{
-		int round = 1;
+		int round = 0;
 		while(true)
 		{
+			round++;
+			player.setTournyRounds(round);
 			battle.battleSystem(player, enemy);//Enter battle
 			enemy = Enemy.randomEnemy(); //Random next enemy
-			round++;
 			/*
 			 * Will need a second version of battle system
 			 * It must return true if the player wins the battle

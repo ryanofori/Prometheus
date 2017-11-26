@@ -43,8 +43,11 @@ public class Tournament_Mode {
 	 */
 	public void Battle(Character_Class player) throws Exception
 	{
+		int round = 0;
 		while(true)
 		{
+			round++;
+			player.setTournyRounds(round);
 			battle.battleSystem(player, enemy);//Enter battle
 			enemy = Enemy.randomEnemy(); //Random next enemy
 			/*

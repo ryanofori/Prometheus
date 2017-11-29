@@ -371,6 +371,6 @@ public class Story_Mode {
 		catch(InterruptedException ie) {
 			ie.printStackTrace();
 		}
-		chapter5(player);
+		// chapter5(player);
 	}
 }

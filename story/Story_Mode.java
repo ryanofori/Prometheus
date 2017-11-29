@@ -241,14 +241,52 @@ public class Story_Mode {
 			endStory();
 		}	
 	}
-	public void Chapter5(){
+	public void Chapter5(Chracter_Class player)throws Exception{
 		System.out.println("Congratulations on making it to the last location!");
-		System.out.println("You have entered the desert. The only thing seen for miles is sand and one lonely pyramid.");
+		System.out.println("You are woken by the sweltering heat beating down on your face.");
 		try{
 				Thread.sleep(1000);
 			}
 			catch(InterruptedException ie){
 				ie.printStackTrace();
 			}
+		System.out.println("You have entered the desert. The only thing seen for miles is sand and one lonely pyramid.");
+		System.out.println("The heat is almost too much to bear and the sunlight makes your eyes squint.");
 		System.out.println("As you explore this wasteland, you encounter a large, sand-colored scorpion!");
+		try{
+				Thread.sleep(1000);
+			}
+			catch(InterruptedException ie){
+				ie.printStackTrace();
+			}
+		battle.battleSystem(player, Scorpion);
+		System.out.println("After defeating the scorpion, you coninue on your journey.");
+		System.out.println("You continue through the desert as you see a small pyramid in the distance.");
+		try{
+				Thread.sleep(1000);
+			}
+			catch(InterruptedException ie){
+				ie.printStackTrace();
+			}
+		System.out.println("You walk for what seems like a lifetime. Your feet begin to ache.");
+		System.out.println("When you finally reach the pyramid you realize it was a lot bigger than you thought.");
+		System.out.println("As you look up at the massive pyramid, the wind begins to blow and sand begins to whip around you.");
+		try{
+				Thread.sleep(1000);
+			}
+			catch(InterruptedException ie){
+				ie.printStackTrace();
+			}
+		System.out.println("As the sand begins to setle, you notice a shadow through the haze.");
+		System.out.println("When the sand finally clears your vision, you see a Necromancer ready to battle!");
+		try{
+				Thread.sleep(1000);
+			}
+			catch(InterruptedException ie){
+				ie.printStackTrace();
+			}
+		battle.battleSystem(player, Necromancer);
+		System.out.println("Now that you have defeated the Necromancer, you have completed your journey!")'
+		System.out.println("Congratulations!!");
+		endStory(player);
 }

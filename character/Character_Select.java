@@ -8,11 +8,9 @@ public class Character_Select {
 	static Scanner input = new Scanner(System.in);
 
 	public static Character_Class character_Select(){
-		
-		/*Here I am asking you which character you would like to be. */
 		while (true) {
 			try{
-				System.out.println("Which character class would you like to play as for this session?:"
+				System.out.println("Which character would you like to play as for this session?:"
 					+ "\n\t1.) Warrior"
 					+ "\n\t2.) Orc"
 					+ "\n\t3.) Wizard"
@@ -32,7 +30,7 @@ public class Character_Select {
 			if(response == 1) {
 				
 				Character_Warrior character = new Character_Warrior();
-				displayWarriorChars(character);
+				displayCharacter(character);
 				if(confirmCharacter()){
 					return character;
 				}
@@ -40,28 +38,28 @@ public class Character_Select {
 			}
 			else if(response == 2) {
 				Character_Orc character = new Character_Orc();
-				System.out.println("You have chosen to be an Orc");
+				displayCharacter(character);
 				if(confirmCharacter()){
 					return character;
 				}
 			}
 			else if(response == 3) {
 				Character_Wizard character = new Character_Wizard();
-				System.out.println("You have chosen to be a Wizard");
+				displayCharacter(character);
 				if(confirmCharacter()){
 					return character;
 				}
 			}
 			else if(response == 4) {
 				Character_Elf character = new Character_Elf();
-				System.out.println("You have chosen to be an Elf");
+				displayCharacter(character);
 				if(confirmCharacter()){
 					return character;
 				}
 			}
 			else if(response == 5) {
 				Character_Dwarf character = new Character_Dwarf();
-				System.out.println("You have chosen to be a Dwarf");
+				displayCharacter(character);
 				if(confirmCharacter()){
 					return character;
 				}
@@ -96,40 +94,29 @@ public class Character_Select {
 		
 	}
 
-		public static void displayWarriorChars (Character_Warrior warrior){			
+		public static void displayCharacter (Character_Class player){			
 		
-		    System.out.println("You have chosen to be a Warrior");
-		    if (warrior != null){	
+		    System.out.println("You have chosen to be " + player.getName());
+		    if (player != null){	
+		    System.out.println ("You start out at Level " + player.getLevel() + " and you have $" + player.getMoney() + " in your backpack.");
 		    System.out.println ("\n-----------------------------");
-		    System.out.println ("Charecter-Traits");
-		    System.out.println ("-----------------------------");
-		    System.out.format("%10s%15s%15s%15s%20s", "Speak", "Speed", "Strength", "Health", "Intelligence");
+		    System.out.println ("Character Traits");
+		    System.out.println ("-------------------------------");
+		    System.out.format("%10s%15s%15s", "Speed", "Strength", "Health");
 		    System.out.println ("");		    		   
-		    System.out.format ("%10s%15s%15s%15s%20s", ""+warrior.speak, warrior.speed, warrior.strength, ""+warrior.health, warrior.intelligence);
+		    System.out.format ("%10s%15s%15s", "" + player.getSpeed(), player.getStrength(), ""+ player.getHealth());
 		    System.out.println ("");
-		    System.out.println ("\n-----------------------------");
-		    System.out.println ("Defense");
-		    System.out.println ("-----------------------------");
-		    System.out.format("%10s%15s%15s%15s%20s", "Armor", "Boost", "Damage", "Defense", "Resistance");
+		    System.out.format("%10s%15s%15s", "Armor", "Resistance", "Magic");
 		    System.out.println ("");		       
-		    System.out.format ("%10s%15s%15s%15s%20s", ""+warrior.armor, warrior.boost, warrior.damage, ""+warrior.defense, warrior.resistance);
+		    System.out.format ("%10s%15s%15s", "" + player.getArmor(), player.getResistance(), player.getMagic());
 		    System.out.println ("");	
-		
 		    System.out.println ("\n-----------------------------");
 		    System.out.println ("Weapons");
 		    System.out.println ("-----------------------------");
-		    System.out.format("%10s%15s%15s%15s%20s", "Primary weapon damage", "  Primary weapon", " Weapon damage", " Secondary weapon damage", "Secondary weapon");
+		    System.out.format("Primary weapon: " + player.getPrimaryWeapon() + "\n Damage: " + player.getPrimaryWeaponDamage());
 		    System.out.println ("");		       
-		    System.out.format ("%10s%25s%10s%20s%20s", ""+warrior.primary_weapon_damage, warrior.primaryWeapon, warrior.weapon_damage, ""+warrior.secondary_weapon_damage, warrior.secondaryWeapon);
-		    System.out.println ("");
-		    
-		    System.out.println ("\n-----------------------------");
-		    System.out.println ("Miscellaneous");
-		    System.out.println ("-----------------------------");
-		    System.out.format("%10s%15s", "Magic","Money");
-		    System.out.println ("");		       
-		    System.out.format ("%10s%15s", warrior.magic, warrior.money);
-		    System.out.println ("");
+		    System.out.format ("Secondary weapon: " + player.getSecondaryWeapon() + "\n Damage " + player.getSecondaryWeaponDamage());
+		    System.out.println ("");		    System.out.println ("");
 		    }
 	      }
 		}

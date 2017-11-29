@@ -259,7 +259,7 @@ public class Story_Mode {
 			catch(InterruptedException ie){
 				ie.printStackTrace();
 			}
-		battle.battleSystem(player, enemy);
+		battle.battleSystem(player, enemy.Scorpion);
 		System.out.println("After defeating the scorpion, you coninue on your journey.");
 		System.out.println("You continue through the desert as you see a small pyramid in the distance.");
 		try{
@@ -285,7 +285,7 @@ public class Story_Mode {
 			catch(InterruptedException ie){
 				ie.printStackTrace();
 			}
-		battle.battleSystem(player, enemy);
+		battle.battleSystem(player, enemy.Necromancer);
 		System.out.println("Now that you have defeated the Necromancer, you have completed your journey!")'
 		System.out.println("Congratulations!!");
 		endStory(player);

@@ -7,13 +7,8 @@ public class Character_Elf extends Character_Class {
 	public Character_Elf() {
 			super.name = "Elf";
 			super.health = 100;
-			super.damage = 60;
 			super.magic = 60;
-			super.defense = 40;
-			super.boost = 50;
-			super.weapon_damage = 60;
 			super.armor = 70;
-			super.intelligence = 80;
 			super.speed = 80;
 			super.strength = 60;
 			super.resistance = 40;

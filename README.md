@@ -85,15 +85,26 @@ The battle system is the main action of the game, both in story mode and tournam
 The Store is a place where the player may purchase more weapons or itmes to store in their backpack for later use. 
 The player must be a certain level in order to purchase certain items.
 So far the player can purchase the following:
+
 Weapons:
+
 Sword  | $350 | Level 1
+
 Knife  | $50  | Level 2
+
 Dagger | $125 | Level 3
+
 Mace   | $350 | Level 5
+
 Items(Consumables):
+
 Health Potion  | $150 | Level 1
+
 Mana Potion    | $250 | Level 2
+
 Antidote       | $100 | Level 3
+
 Energy Restore | $225 | Level 4
+
 
 While in the Store the player may also view their Inventory aka Backpack.

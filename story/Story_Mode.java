@@ -131,6 +131,7 @@ public class Story_Mode {
 			endStory();
 		}	
 	}
+  
 	public void chapter1(Character_Class player) throws Exception {
 		System.out.println("Welcome to the world of Prometheus!.");
 		System.out.println("You are traveling down a road heading to the city and you come across a bridge leading over a river, there lives a troll that controls of the bridge that leads to a city. ");
@@ -233,36 +234,6 @@ public class Story_Mode {
 			}
 		}
 			
-
-		
-		
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 public void chapter3(Character_Class player) throws Exception {
 		System.out.println("As you continue along your journey, you are becoming very exhausted from traveling thus far.");
 		System.out.println("You start looking for somewhere to take a break.");
@@ -466,7 +437,7 @@ public void chapter3(Character_Class player) throws Exception {
 			ie.printStackTrace();
 		}
 		System.out.println("About midday you stop halfway down to eat lunch.");
-		System.out.println("While eating you feel like you are being watched but don�t see anyone or anything.");
+		System.out.println("While eating you feel like you are being watched but don't see anyone or anything.");
 		try {
 			Thread.sleep(1000);
 		}
@@ -502,6 +473,55 @@ public void chapter3(Character_Class player) throws Exception {
 		catch(InterruptedException ie) {
 			ie.printStackTrace();
 		}
-		// chapter5(player);
+		chapter5(player);
 	}
+  
+  public void Chapter5(Chracter_Class player)throws Exception{
+		System.out.println("Congratulations on making it to the last location!");
+		System.out.println("You are woken by the sweltering heat beating down on your face.");
+		try{
+				Thread.sleep(1000);
+			}
+			catch(InterruptedException ie){
+				ie.printStackTrace();
+			}
+		System.out.println("You have entered the desert. The only thing seen for miles is sand and one lonely pyramid.");
+		System.out.println("The heat is almost too much to bear and the sunlight makes your eyes squint.");
+		System.out.println("As you explore this wasteland, you encounter a large, sand-colored scorpion!");
+		try{
+				Thread.sleep(1000);
+			}
+			catch(InterruptedException ie){
+				ie.printStackTrace();
+			}
+		battle.battleSystem(player, enemy.Scorpion);
+		System.out.println("After defeating the scorpion, you coninue on your journey.");
+		System.out.println("You continue through the desert as you see a small pyramid in the distance.");
+		try{
+				Thread.sleep(1000);
+			}
+			catch(InterruptedException ie){
+				ie.printStackTrace();
+			}
+		System.out.println("You walk for what seems like a lifetime. Your feet begin to ache.");
+		System.out.println("When you finally reach the pyramid you realize it was a lot bigger than you thought.");
+		System.out.println("As you look up at the massive pyramid, the wind begins to blow and sand begins to whip around you.");
+		try{
+				Thread.sleep(1000);
+			}
+			catch(InterruptedException ie){
+				ie.printStackTrace();
+			}
+		System.out.println("As the sand begins to setle, you notice a shadow through the haze.");
+		System.out.println("When the sand finally clears your vision, you see a Necromancer ready to battle!");
+		try{
+				Thread.sleep(1000);
+			}
+			catch(InterruptedException ie){
+				ie.printStackTrace();
+			}
+		battle.battleSystem(player, enemy.Necromancer);
+		System.out.println("Now that you have defeated the Necromancer, you have completed your journey!")'
+		System.out.println("Congratulations!!");
+		endStory(player);
 }

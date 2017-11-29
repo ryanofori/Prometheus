@@ -1,17 +1,13 @@
 package tournament;
-import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.Scanner;
 
-import battle_system.Battle_System;
 import character.Character_Class;
-import enemy.Enemy;
 
 public class Tournament_Mode {
 	Scanner input = new Scanner(System.in);	
 	public void Gamble(Character_Class player)throws Exception{
 		System.out.println("Welcome to Wager Mode");
-		String ans;
 		int stage = 1;
 		int choice = 0;
 		int withdraw;
@@ -37,7 +33,7 @@ public class Tournament_Mode {
 		if(player.getMoney() <  withdraw){
 			System.out.println("Not enough money! Pick a different value.");
 			Pause();
-			ans = input.nextLine();
+			withdraw = input.nextInt();
 		}
 			else
 			break;

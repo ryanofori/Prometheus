@@ -171,9 +171,7 @@ public class Shopping {
 	public void setItemsStock(){
 		
 	}
-	
-	/*
-	 * JUNK CLASS FOR JUNK OBJECTS FOR JUNK INFORMATION  <-- DELETE AS SOON REAL WEAPONS AND ITEMS ARE MADE
+	 /* JUNK CLASS FOR JUNK OBJECTS FOR JUNK INFORMATION  <-- DELETE AS SOON REAL WEAPONS AND ITEMS ARE MADE
 	 */
 	class shopWeaponItem {
 		private String name; //name

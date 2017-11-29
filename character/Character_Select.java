@@ -28,13 +28,11 @@ public class Character_Select {
 					}input.nextLine();
 			}
 			if(response == 1) {
-				
 				Character_Warrior character = new Character_Warrior();
 				displayCharacter(character);
 				if(confirmCharacter()){
 					return character;
 				}
-				
 			}
 			else if(response == 2) {
 				Character_Orc character = new Character_Orc();
@@ -89,7 +87,11 @@ public class Character_Select {
 					    }
 			    }
 				return character;
+<<<<<<< HEAD
 	       }
+=======
+	}
+>>>>>>> 2e892a2f36a84ff33182080352fefad510cb06b5
 
 		public static void displayCharacter (Character_Class player){			
 		    System.out.println("You have chosen to be " + player.getName());

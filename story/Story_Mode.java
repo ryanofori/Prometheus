@@ -157,8 +157,7 @@ public class Story_Mode {
 			ie.printStackTrace();
 		}
 		System.out.println("There are weapons hidden on each side of the bridge but it is going to take bravery to fight off the troll..");
-		System.out.println("A storm is brewing overhead as you pull your rusty axe free. 
-.");
+		System.out.println("A storm is brewing overhead as you pull your rusty axe free.");
 		try {
 			Thread.sleep(1000);
 		}
@@ -181,6 +180,7 @@ public class Story_Mode {
 		catch(InterruptedException ie) {
 			ie.printStackTrace();
 		}
+	}
 
 		public void chapter2(Character_Class player) throws Exception {
 			System.out.println("Congratulations!.");
@@ -231,6 +231,7 @@ public class Story_Mode {
 			catch(InterruptedException ie) {
 				ie.printStackTrace();
 			}
+		}
 			
 
 		

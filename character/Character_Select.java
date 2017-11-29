@@ -28,13 +28,11 @@ public class Character_Select {
 					}input.nextLine();
 			}
 			if(response == 1) {
-				
 				Character_Warrior character = new Character_Warrior();
 				displayCharacter(character);
 				if(confirmCharacter()){
 					return character;
 				}
-				
 			}
 			else if(response == 2) {
 				Character_Orc character = new Character_Orc();
@@ -90,12 +88,9 @@ public class Character_Select {
 			    }
 				
 				return character;
-		
-		
 	}
 
 		public static void displayCharacter (Character_Class player){			
-		
 		    System.out.println("You have chosen to be " + player.getName());
 		    if (player != null){	
 		    System.out.println ("You start out at Level " + player.getLevel() + " and you have $" + player.getMoney() + " in your backpack.");

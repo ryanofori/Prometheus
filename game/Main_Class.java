@@ -10,6 +10,7 @@ import java.util.Scanner;
 
 public class Main_Class  {
 	public static void main(String [] args) throws Exception{
+		@SuppressWarnings("resource")
 		Scanner input = new Scanner(System.in);
 		int response = 0;
 		
@@ -59,6 +60,5 @@ public class Main_Class  {
 				}
 			input.nextLine();	
 			}   
-		input.close();	
 		}
 	}

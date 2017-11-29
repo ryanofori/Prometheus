@@ -1,9 +1,9 @@
 package character;
 import shopping.Inventory;
 public class Character_Class  {
-	protected int level,health,magic,armor,primary_weapon_damage, secondary_weapon_damage;
-	protected int speed,strength,resistance,money,tournyRounds;
-	protected String name,speak,primaryWeapon,secondaryWeapon,classType;
+	protected int level,exp,health,magic,armor,primary_weapon_damage, secondary_weapon_damage;
+	protected int speed,strength,resistance,money,tournyRounds,MAX_EXP = 100;
+	protected String name,speak,primaryWeapon,secondaryWeapon;
 	public Inventory backpack;
 	public Character_Class(){   //These are the defaults stats, just in case I didn't set one up 
 		level = 1; //Character begins at level 1 by default
@@ -21,6 +21,9 @@ public class Character_Class  {
 		secondary_weapon_damage = 5;
 		primaryWeapon = "Rusty Axe";
 		secondaryWeapon = "Punch";
+	}
+	public void levelUp(int exp1) {
+		this.exp = exp1;
 	}
 	public void setPrimaryWeapon(String weap){
 		this.primaryWeapon = weap;

@@ -16,7 +16,34 @@ public class Character_Warrior extends Character_Class {
 		}
 		
 		// END NEW CONSTRUCTOR.
-	
+		
+		public void levelUp(int exp1) {
+			exp = exp1;
+			while(true) {
+				if(getLevel() >= 10) {
+					break;
+				}
+				else{
+					if(exp >= MAX_EXP) {
+						exp -= MAX_EXP;
+					}
+					if(exp < 0) {
+						exp = 0;
+					}
+					level++;
+					MAX_EXP += 50;
+					health += 15;
+					health = getHealth();
+					armor += 10;
+					magic += 1;
+					speed += 3;
+					strength += 7;
+					resistance += 12;
+					System.out.println("You have leveled up!");
+				}
+			}
+		}
+		
 		public String getSpeak(){
 			return "I am a Warrior";
 		}

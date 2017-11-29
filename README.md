@@ -8,10 +8,9 @@ This text-based game programmed in Java assumes a character to experience 3 kind
 
 * **Story** is the activity where the player is first displayed with an interactive story introduction, followed by one or more battles. The battles outcomes depend on the strength (health) of the character, his/her ammunition (weapon + armor) and a number of randomized factors. Same is applicable to enemies. Completing the story as a winner is associated with monetary reward. Loosing in at most one battle is the **game over** condition. (Suggestion: The story mode could be based on the story of Prometheus if anyone likes the idea).
 
+* **Tournament** is now a wagering atmosphere in which the player participates in a coin toss. The player is asked how much money he/she would like to gamble, then chooses heads or tails. If the player wins they recieve their investment back plus a reward for winning. If they lose, they recieve nothing. There are 5 stages within the class, the higher you go up in the stages the bigger your reward. There is a restriction within each stage of gambling, the player may only toss the coins a certain ammount of times until they are booted to the next stage. The player may leave the tournament mode at any time.
 
-* **Tournament** is where the character can **gamble** to *boost* or *loose* previously gained money. The tournament has a number of **levels of hardness** where opponents of matching skill levels will gamble with the character. The outcome of every round is randomized. The character can leave the tournament at any time, but will not be able to return to the same level there after, s/he will have to start from the very beginning. From this perspective the biggest difference in levels is the associated reward. The lower the level, the smaller reward (or loss). The character will not be allowed to gamble on the particular level shoud s/he not have enough money to match the possible reward / loss. The tournament style will be a 16 person single elimaination. (The stats (health weapon + armor, ) that the character achevied in game will be automatically transfered to the tournament.) The other players in the tournament will have stats weighted based on their placement in the tournament. As the other players progress in the tournament their stats will increase.
-
-* **Shopping** is where the character can spend previously gained money (in story or tournament activity) and purchase better items for battles. Better items such as weapons, armor, and skills increases the chance of winning.
+* **Shopping** is where the character can spend previously gained money (in story or tournament activity) and purchase better items for battles. Better items such as weapons, armor, and skills increases the chance of winning. Some items within the Shopping Class require the player to be at a certain level to purchase. Levels are explained in the Character Class.
 
 
 ## Problem Formulation
@@ -30,25 +29,19 @@ Additional packages included for functionality of the game:
 * Battle System
 
 ## Characters
-There should be additional characters alongside the Warrior and Orc for users to choose from. These are Wizard, Dwarf, Elf. Each character including the choosable and the enemies will have their own set of unique attributes set on a scale from 0 to 200. (The base attributes will be 0-100, but the scale to 200 allows for upgrades.) 
+There should be additional characters alongside the Warrior and Orc for users to choose from. These are Wizard, Dwarf, Elf. Each character including the choosable and the enemies will have their own set of unique attributes set on a scale from 0 to 200. (The base attributes will be 0-100, but the scale to 200 allows for upgrades.) Each character begings at level 1 by  default. There will be a leveling system implemented soon.
 
 Base Attributes for each user character:
  
-Warrior: | damage: 50 | magic: 20  | defense: 50 | boost: 50 | weapon damage: 60 | armor: 50 | intelligence: 50  | speed: 70 | resistance: 60 | strength: 60 |
+Warrior: | magic: 20  | armor: 50 | speed: 70 | resistance: 60 | strength: 60 |
 
-----  Orc:   |  damage: 60 | magic: 30  | defense: 80 | boost: 50 | weapon damage: 80 | armor: 70 | intelligence: 10  | speed: 20 | resistance: 30 | strength: 90 |
+Orc:     | magic: 30  | armor: 70 | speed: 20 | resistance: 30 | strength: 90 |
 
-Wizard: |  damage: 60 | magic: 100 | defense: 10 | boost: 50 | weapon damage: 40 | armor: 20 | intelligence: 100 | speed: 50 | resistance: 60 | strength: 40 |
+Wizard:  | magic: 100 | armor: 20 | speed: 50 | resistance: 60 | strength: 40 |
 
--Dwarf:  | damage: 40 | magic: 30  | defense: 70 | boost: 50 | weapon damage: 60 | armor: 50 | intelligence:  30 | speed: 50 | resistance: 50 | strength: 60 |
+Dwarf:   | magic: 30  | armor: 50 | speed: 50 | resistance: 50 | strength: 60 |
 
------Elf:   |  damage: 60 | magic: 60 | defense:  40 | boost: 50 | weapon damage: 60 | armor: 70 | intelligence:  80 | speed: 80 | resistance: 40 | strength: 60 |
-  
- 
-		
-A new class should be created for each character, and will derive from the character class. 
-
-Damage level will be affected by the character intelligence, speed, and magic. 
+Elf:     | magic: 60  | armor: 70 | speed: 80 | resistance: 40 | strength: 60 |
 
 The attributes of the characters should be displayed when the user is deciding which character to choose, and also after a powerup. 
 
@@ -80,11 +73,6 @@ Necromancer:   |  damage: 200 | magic: 200 | defense:  140 | weapon damage: 190 
 
 Enemy Stats should be displayed before battle as well, then only the health will be displayed during battle.
 
-
-## Tournament Activity
-The Tournament mode should be arcade style. Once you enter a tournament, the character is unable to leave the tournament until either they have defeated each opponent or they have run out of money and are unable to purchase a revive. You are unable to start a tournament unless you have the set wager amount.  
-
-
 ## Battle System
 The battle system is the main action of the game, both in story mode and tournament mode. The following are different aspects of the battle system to be included:
 * **Entering a battle -** When a player enters a battle, they will be given information about their enemies and the abilities, weapons, and items they have available, or be given an option to view the latter.
@@ -94,16 +82,29 @@ The battle system is the main action of the game, both in story mode and tournam
 * **Items -** The player can obtain different items that have a one-time use during battles. These items can do things such as heal the player, boost the player's stats, or cause different effects during battle.
 
 ## Shopping
-The Shopping mode is when the player enters the store to buy available good weapons or items. 
-Current thinking of how it goes:
+The Store is a place where the player may purchase more weapons or itmes to store in their backpack for later use. 
+The player must be a certain level in order to purchase certain items.
+So far the player can purchase the following:
 
-* Player calls shop method in Battle_System.
-* Shop loads stock of Weapons and Consumables.
-* Player has options of looking at  'Weapons (1)', 'Consumables (2)', 'View Backpack (3)' or leaving.
-* Items are currently categorized as: weapons and items
-* Player is allowed to back out a level like say (Store -> Weapons (types 'back' or key mapped to it) -> Store.
-* Player buys one item at a time. (No shopping cart)
-* Purchasing the item will add it to the players inventory.
-* Player can view the contents of his backpack before or after purchasing.
+Weapons:
+
+Sword  | $350 | Level 1
+
+Knife  | $50  | Level 2
+
+Dagger | $125 | Level 3
+
+Mace   | $350 | Level 5
+
+Items(Consumables):
+
+Health Potion  | $150 | Level 1
+
+Mana Potion    | $250 | Level 2
+
+Antidote       | $100 | Level 3
+
+Energy Restore | $225 | Level 4
 
 
+While in the Store the player may also view their Inventory aka Backpack.

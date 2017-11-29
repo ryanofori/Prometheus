@@ -131,8 +131,139 @@ public class Story_Mode {
 			endStory();
 		}	
 	}
+	public void chapter1(Character_Class player) throws Exception {
+		System.out.println("Welcome to the world of Prometheus!.");
+		System.out.println("You are traveling down a road heading to the city and you come across a bridge leading over a river, there lives a troll that controls of the bridge that leads to a city. ");
+		try {
+			Thread.sleep(1000);
+		}
+		catch(InterruptedException ie) {
+			ie.printStackTrace();
+		}
+		System.out.println("He is such a short ugly fellow, but seemed to be strong. His hair is curly, brown, and often is mistaken as a mop. ");
+		System.out.println("As you were walking to the city, you approach a sleeping troll, and you happened to awaken him. ");
+		try {
+			Thread.sleep(1000);
+		}
+		catch(InterruptedException ie) {
+			ie.printStackTrace();
+		}
+		System.out.println("Every time someone tried to cross the bridge, the troll comes closer and closer and he jumps out in front, cross his arms and demands money ");
+		System.out.println("He repeatedly says, “Pay me gold and me let you pass”. If you do not pay, he shoves you and says he’ll take what he wants. ");
+		try {
+			Thread.sleep(1000);
+		}
+		catch(InterruptedException ie) {
+			ie.printStackTrace();
+		}
+		System.out.println("There are weapons hidden on each side of the bridge but it is going to take bravery to fight off the troll..");
+		System.out.println("A storm is brewing overhead as you pull your rusty axe free.");
+		try {
+			Thread.sleep(1000);
+		}
+		catch(InterruptedException ie) {
+			ie.printStackTrace();
+		}
+		System.out.println("Once you defeat the troll, you continue across the bridge and head into the city. ");
+		System.out.println("You find the local inn and you ask for a room..");
+		try {
+			Thread.sleep(1000);
+		}
+		catch(InterruptedException ie) {
+			ie.printStackTrace();
+		}
+		System.out.println("The innkeeper agrees and points you in the direction of the open room. ");
+	System.out.println("You ask for some food, something simple, and take it back to your room to eat and sleep. ");
+		try {
+			Thread.sleep(1000);
+		}
+		catch(InterruptedException ie) {
+			ie.printStackTrace();
+		}
+	}
+
+		public void chapter2(Character_Class player) throws Exception {
+			System.out.println("Congratulations!.");
+			System.out.println("you have made it to battle two where you will be battling within a greenery full forest.");
+			try {
+				Thread.sleep(1000);
+			}
+			catch(InterruptedException ie) {
+				ie.printStackTrace();
+			}
+			System.out.println("Within this deep dark forest, you are looking for nourishments for yourself so you can make sure you have enough energy during your journey ");
+			System.out.println("Searching the forest, you find this old creepy cabin ");
+			try {
+				Thread.sleep(1000);
+			}
+			catch(InterruptedException ie) {
+				ie.printStackTrace();
+			}
+			System.out.println("decide to go into it, and find yourself so much food.");
+			System.out.println("You grab all the food but during this you notice a Halfling hoovering you. ");
+			try {
+				Thread.sleep(1000);
+			}
+			catch(InterruptedException ie) {
+				ie.printStackTrace();
+			}
+			System.out.println("He asks you “why are you taking my food, who are you” ");
+			System.out.println("You answer by saying I am sorry, I am so hungry”);	");
+			try {
+				Thread.sleep(1000);
+			}
+			catch(InterruptedException ie) {
+				ie.printStackTrace();
+			}
+			System.out.println(".I just fought a troll under a bridge within Prometheus, I need energy, I am weak! ");
+			System.out.println(".This Halfling has no pity for you..");
+			try {
+				Thread.sleep(1000);
+			}
+			catch(InterruptedException ie) {
+				ie.printStackTrace();
+			}
+			System.out.println(". He challenges you into a battle for entering his property without permission. ");
+		System.out.println("During that battle, you have seemed to defeat him because he has no strength compared to you. ");
+			try {
+				Thread.sleep(1000);
+			}
+			catch(InterruptedException ie) {
+				ie.printStackTrace();
+			}
+		}
+			
+
+		
+		
+
 	
-	public void chapter3(Character_Class player) throws Exception {
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+public void chapter3(Character_Class player) throws Exception {
 		System.out.println("As you continue along your journey, you are becoming very exhausted from traveling thus far.");
 		System.out.println("You start looking for somewhere to take a break.");
 		try {
@@ -335,7 +466,7 @@ public class Story_Mode {
 			ie.printStackTrace();
 		}
 		System.out.println("About midday you stop halfway down to eat lunch.");
-		System.out.println("While eating you feel like you are being watched but don�t see anyone or anything.");
+		System.out.println("While eating you feel like you are being watched but don�t see anyone or anything.");
 		try {
 			Thread.sleep(1000);
 		}

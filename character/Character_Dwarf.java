@@ -31,7 +31,7 @@ public class Character_Dwarf extends Character_Class {
 					exp = 0;
 				}
 				level++;
-				MAX_EXP += 5;
+				MAX_EXP += 50;
 				health += 11;
 				health = getHealth();
 				armor += 9;

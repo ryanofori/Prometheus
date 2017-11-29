@@ -87,11 +87,7 @@ public class Character_Select {
 					    }
 			    }
 				return character;
-<<<<<<< HEAD
 	       }
-=======
-	}
->>>>>>> 2e892a2f36a84ff33182080352fefad510cb06b5
 
 		public static void displayCharacter (Character_Class player){			
 		    System.out.println("You have chosen to be " + player.getName());

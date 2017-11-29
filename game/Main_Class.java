@@ -31,7 +31,7 @@ public class Main_Class  {
 		Character_Class player = Character_Select.character_Select();
 	    while(true){
 			try{
-				player.levelUp(1000);
+			//	player.levelUp(1000);
 				System.out.println("Please select a mode: Story Mode(1) | Shopping(2) | Wager(3) | Exit(4)");
 				response = input.nextInt();
 				if (response >=1 && response <= 4){	

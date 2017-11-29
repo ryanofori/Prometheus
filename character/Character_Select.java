@@ -88,35 +88,31 @@ public class Character_Select {
 					    	character_Select();
 					    }
 			    }
-				
 				return character;
-		
-		
-	}
+	       }
 
 		public static void displayCharacter (Character_Class player){			
-		
 		    System.out.println("You have chosen to be " + player.getName());
-		    if (player != null){	
-		    System.out.println ("You start out at Level " + player.getLevel() + " and you have $" + player.getMoney() + " in your backpack.");
-		    System.out.println ("\n-----------------------------");
-		    System.out.println ("Character Traits");
-		    System.out.println ("-------------------------------");
-		    System.out.format("%10s%15s%15s", "Speed", "Strength", "Health");
-		    System.out.println ("");		    		   
-		    System.out.format ("%10s%15s%15s", "" + player.getSpeed(), player.getStrength(), ""+ player.getHealth());
-		    System.out.println ("");
-		    System.out.format("%10s%15s%15s", "Armor", "Resistance", "Magic");
-		    System.out.println ("");		       
-		    System.out.format ("%10s%15s%15s", "" + player.getArmor(), player.getResistance(), player.getMagic());
-		    System.out.println ("");	
-		    System.out.println ("\n-----------------------------");
-		    System.out.println ("Weapons");
-		    System.out.println ("-----------------------------");
-		    System.out.format("Primary weapon: " + player.getPrimaryWeapon() + "\n Damage: " + player.getPrimaryWeaponDamage());
-		    System.out.println ("");		       
-		    System.out.format ("Secondary weapon: " + player.getSecondaryWeapon() + "\n Damage " + player.getSecondaryWeaponDamage());
-		    System.out.println ("");		    System.out.println ("");
+		    if (player != null){
+			    System.out.println ("You start out at Level " + player.getLevel() + " and you have $" + player.getMoney() + " in your backpack.");
+			    System.out.println ("\n-----------------------------");
+			    System.out.println ("Character Traits");
+			    System.out.println ("-------------------------------");
+			    System.out.format("%10s%15s%15s", "Speed", "Strength", "Health");
+			    System.out.println ("");		    		   
+			    System.out.format ("%10s%15s%15s", "" + player.getSpeed(), player.getStrength(), ""+ player.getHealth());
+			    System.out.println ("");
+			    System.out.format("%10s%15s%15s", "Armor", "Resistance", "Magic");
+			    System.out.println ("");		       
+			    System.out.format ("%10s%15s%15s", "" + player.getArmor(), player.getResistance(), player.getMagic());
+			    System.out.println ("");	
+			    System.out.println ("\n-----------------------------");
+			    System.out.println ("Weapons");
+			    System.out.println ("-----------------------------");
+			    System.out.format("Primary weapon: " + player.getPrimaryWeapon() + "\n Damage: " + player.getPrimaryWeaponDamage());
+			    System.out.println ("");		       
+			    System.out.format ("Secondary weapon: " + player.getSecondaryWeapon() + "\n Damage " + player.getSecondaryWeaponDamage());
+			    System.out.println ("");		    System.out.println ("");
 		    }
-	      }
 		}
+}

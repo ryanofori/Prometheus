@@ -1,8 +1,6 @@
 package enemy;
 
-import character.Character_Class;
-
-public class Enemy_Shapeshifter extends Character_Class {
+public class Enemy_Shapeshifter extends Enemy {
 	
 	//Enemy_Shapeshifter constructor 
 	

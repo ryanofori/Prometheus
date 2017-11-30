@@ -2,7 +2,7 @@ package enemy;
 
 public class Enemy {
 	protected String name;
-	protected int health,damage,magic,defense,boost, weapon_damage,armor, intelligence, speed, strength, resistance;
+	protected int health,damage,magic,defense,boost, weapon_damage,armor, intelligence, speed, strength, resistance, MAX_EXP=100;
 	
 	public Enemy() {  // Default Values.
 		name = "Enemy";
@@ -53,6 +53,8 @@ public class Enemy {
 				+ "\nResistance: " + resistance
 				);
 	}
+	
+	
 	
 	public String getName(){
 		return name;

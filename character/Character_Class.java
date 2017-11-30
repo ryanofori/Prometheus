@@ -14,7 +14,7 @@ public class Character_Class  {
 		strength = 0;
 		resistance = 0;
 		speak = "";
-		money = 200;
+		money = 500;
 		tournyRounds = 0;
 		backpack = new Inventory();
 		primary_weapon_damage = 10;

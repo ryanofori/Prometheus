@@ -30,12 +30,14 @@ public class Story_Mode {
 	public void tutorial(Character_Class player) throws Exception{
 		System.out.println("A quick simulated battle is about to commence. ");
 		System.out.println("Please pay attention as to what's going on. ");
+		System.out.println("Here are 5 free levels!");
+		player.levelUp(1000);
 		battle.battleSystem(player,enemy); //Starts the battle class.
 		tutorial2(player); 
 		}
 	
 	/*the beginning of the 2nd tutorial */
-	private void tutorial2(Character_Class player){
+	private void tutorial2(Character_Class player) throws Exception{
 		System.out.println("As you can see, the battle system allows for you to choose your own attacks.\n");
 		System.out.println("This is how all of your battles will take place.\n");
 		try {
@@ -52,13 +54,13 @@ public class Story_Mode {
 			tutorial3(player);
 		}
 		else if (response.equalsIgnoreCase("No")){
-			endTutorial();	
+			endTutorial(player);	
 		}
 	}
 	/*End of the 2nd part of the tutorial.*/
 	
 	/*Beginning the third part of the tutorial*/
-	private void tutorial3(Character_Class player){
+	private void tutorial3(Character_Class player) throws Exception{
 		String user;
 		System.out.println("What will you name your character?");
 		response2 = input.nextLine();
@@ -71,17 +73,17 @@ public class Story_Mode {
 			player.getSpeak();
 			System.out.print("I have: ");
 			player.getHealth();
-			endTutorial();
+			endTutorial(player);
 			}
 		else if(response2.equalsIgnoreCase("No")){
 			System.out.println("Good Deal then!");
 			System.out.println("This concludes this portion of the game. ");
-			endTutorial();
+			endTutorial(player);
 		}
 	}
 	
-	public void endTutorial(){
-		System.out.println("Thanks for playing! ");
+	public void endTutorial(Character_Class player) throws Exception{
+		Introduction(player);
 	} 
 	
 	public void endStory(){
@@ -93,7 +95,7 @@ public class Story_Mode {
 	 * Contributors can add new story elements below this comment section
 	 * 
 	 * */
-	public void Introduction(){
+	public void Introduction(Character_Class player) throws Exception{
 		String user;
 		System.out.println("What will you name your character?");
 		response = input.nextLine();
@@ -125,7 +127,7 @@ public class Story_Mode {
 		System.out.println("Are you ready to begin? (Yes/No)");
 		response2 = input.nextLine();
 		if(response2.equalsIgnoreCase("Yes")){
-		//	Chapter1();
+			chapter1(player);
 		}
 		else if (response2.equalsIgnoreCase("No")){
 			endStory();
@@ -150,7 +152,7 @@ public class Story_Mode {
 			ie.printStackTrace();
 		}
 		System.out.println("Every time someone tried to cross the bridge, the troll comes closer and closer and he jumps out in front, cross his arms and demands money ");
-		System.out.println("He repeatedly says, “Pay me gold and me let you pass”. If you do not pay, he shoves you and says he’ll take what he wants. ");
+		System.out.println("He repeatedly says, Pay me gold and me let you pass. If you do not pay, he shoves you and says hell take what he wants. ");
 		try {
 			Thread.sleep(1000);
 		}
@@ -181,6 +183,7 @@ public class Story_Mode {
 		catch(InterruptedException ie) {
 			ie.printStackTrace();
 		}
+		chapter2(player);
 	}
 
 		public void chapter2(Character_Class player) throws Exception {
@@ -208,8 +211,8 @@ public class Story_Mode {
 			catch(InterruptedException ie) {
 				ie.printStackTrace();
 			}
-			System.out.println("He asks you “why are you taking my food, who are you” ");
-			System.out.println("You answer by saying I am sorry, I am so hungry”);	");
+			System.out.println("He asks you why are you taking my food, who are you ");
+			System.out.println("You answer by saying I am sorry, I am so hungry);	");
 			try {
 				Thread.sleep(1000);
 			}
@@ -232,6 +235,7 @@ public class Story_Mode {
 			catch(InterruptedException ie) {
 				ie.printStackTrace();
 			}
+			chapter3(player);
 		}
 			
 public void chapter3(Character_Class player) throws Exception {
@@ -473,10 +477,10 @@ public void chapter3(Character_Class player) throws Exception {
 		catch(InterruptedException ie) {
 			ie.printStackTrace();
 		}
-		chapter5(player);
+		Chapter5(player);
 	}
   
-  public void Chapter5(Chracter_Class player)throws Exception{
+  public void Chapter5(Character_Class player)throws Exception{
 		System.out.println("Congratulations on making it to the last location!");
 		System.out.println("You are woken by the sweltering heat beating down on your face.");
 		try{
@@ -494,7 +498,8 @@ public void chapter3(Character_Class player) throws Exception {
 			catch(InterruptedException ie){
 				ie.printStackTrace();
 			}
-		battle.battleSystem(player, enemy.Scorpion);
+		Enemy_Scorpion scorpion = new Enemy_Scorpion();
+		battle.battleSystem(player, scorpion);
 		System.out.println("After defeating the scorpion, you coninue on your journey.");
 		System.out.println("You continue through the desert as you see a small pyramid in the distance.");
 		try{
@@ -520,8 +525,10 @@ public void chapter3(Character_Class player) throws Exception {
 			catch(InterruptedException ie){
 				ie.printStackTrace();
 			}
-		battle.battleSystem(player, enemy.Necromancer);
-		System.out.println("Now that you have defeated the Necromancer, you have completed your journey!")'
+		Enemy_Necromancer necro = new Enemy_Necromancer();
+		battle.battleSystem(player, necro);
+		System.out.println("Now that you have defeated the Necromancer, you have completed your journey!");
 		System.out.println("Congratulations!!");
-		endStory(player);
+		endStory();
+  }
 }

@@ -19,14 +19,12 @@ public class Character_Orc extends Character_Class {
 	
 	public void levelUp(int exp1) {
 		exp = exp1;
-		while(true) {
+		while(exp >= MAX_EXP) {
 			if(getLevel() >= 10) {
 				break;
 			}
 			else{
-				if(exp >= MAX_EXP) {
-					exp -= MAX_EXP;
-				}
+				exp -= MAX_EXP;
 				if(exp < 0) {
 					exp = 0;
 				}
